@@ -173,16 +173,16 @@ progress::-moz-progress-value {
     margin-bottom: 20px;
 }
 
-.weixin{
+.resume{
     margin-top: 20px;
-    background-color: #e0eaf0;   
+    background-color: whitesmoke;   
     position: relative;
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
 }
 
-.weixin img{
+.resume img{
     width: 200px;
 }
 
