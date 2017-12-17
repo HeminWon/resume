@@ -87,6 +87,8 @@ h1, h2, h3, h4, h5 {
 
 hr {
     margin-bottom: 8px;
+	border-top:1px solid #000;
+
 }
 
 .info-unit {
@@ -184,6 +186,7 @@ progress::-moz-progress-value {
 
 .resume img{
     width: 200px;
+	cursor:pointer;
 }
 
 .left-label {
@@ -300,3 +303,34 @@ a:hover{
                 /*color:#0d9ba9;*/
             }
 
+/*右边导航条样式开始*/
+.nav-box {
+	position:fixed;
+	top:44%;
+	right:0;
+}
+.nav-box li {
+	list-style:none;
+	border-radius:10px 0 0 10px;
+	padding-left:10px;
+	line-height:38px;
+	width:80px;
+	height:38px;
+	background-color:whitesmoke;
+	margin-top:10px;
+	text-align:left;
+	transition:width .2s;
+	-moz-transition: width .2s;
+	-webkit-transition: width .2s;
+	-o-transition: width .2s;
+	float: right;
+	clear: right
+}
+.nav-box li:hover {
+	width:100px;
+}
+.nav-box li a {
+	display:block;
+	color:#000;
+}
+/*右边导航条样式结束*/
