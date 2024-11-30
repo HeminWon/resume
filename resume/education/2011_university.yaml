@@ -1,8 +1,8 @@
 institution: University
-area: Software Development
-studyType: Bachelor
-startDate: '2011-01-01'
-endDate: '2013-01-01'
-gpa: '4.0'
+area: 电子信息学院
+studyType: 本科
+startDate: '2012-09-01'
+endDate: '2016-06-01'
+gpa: '3.0'
 courses:
-    - DB1101 - Basic SQL
+    - 集成电路设计与集成系统

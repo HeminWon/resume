@@ -1,5 +1,37 @@
-{
-    "name": "Web Development",
-    "level": "Master",
-    "keywords": ["HTML", "CSS", "Javascript"],
-}
+- name: iOS 开发
+  level: 熟练
+  keywords:
+    - Objective-C
+    - Swift
+    - SwiftUI
+    - Combine
+    - GCD
+    - Runtime
+    - Runloop
+    - CocoaPods
+    - SourceTree
+    - Charles
+    - Postman
+
+- name: 第三方库
+  level: 熟练
+  keywords:
+    - 熟练使用知名三方库
+    - 离散型二次封装
+    - 集约型二次封装
+
+- name: 设计模式
+  level: 熟练
+  keywords:
+    - 工厂模式
+    - 策略模式
+    - 状态模式
+    - 命令模式
+
+- name: 自动化脚本
+  level: 熟练
+  keywords:
+    - Python
+    - shell
+    - Go
+    - 自动化重复工作

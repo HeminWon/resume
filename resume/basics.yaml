@@ -1,17 +1,17 @@
-name: John Doe
-label: Programmer
+name: 王明海
+label: iOS研发工程师
 picture: ""
-email: john@gmail.com
-phone: (912) 555-4321
-website: "http://johndoe.com"
+email: heminwmh@gmail.com
+phone: (86)159-5713-0984
+website: "https://github.com/HeminWon"
 summary: A summary of John Doe...
 location:
-    address: 2712 Broadway St
-    postalCode: CA 94115
-    city: San Francisco
-    countryCode: US
-    region: California
+    address: 西湖区
+    postalCode: 310013
+    city: 杭州市
+    countryCode: CN
+    region: 浙江省
 profiles:
     - network: Twitter
-      username: john
-      url: "http://twitter.com/john"
+      username: heminwon
+      url: "http://twitter.com/heminwon"
