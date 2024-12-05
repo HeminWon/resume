@@ -1,0 +1,44 @@
+/* src/Resume.css */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.side {
+    width: 30%;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.main {
+    width: 70%;
+    padding: 20px;
+}
+
+.info-unit {
+    margin-bottom: 20px;
+}
+
+.info-header {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.left-label {
+    font-weight: bold;
+}
+
+.stack-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.progress {
+    width: 100%;
+}

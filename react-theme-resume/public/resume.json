@@ -1,0 +1,216 @@
+{
+	"basics": {
+		"name": "王明海",
+		"label": "iOS研发工程师",
+		"picture": "",
+		"email": "heminwmh@gmail.com",
+		"phone": "(86)159-5713-0984",
+		"website": "https://github.com/HeminWon",
+		"summary": "A summary of John Doe...",
+		"location": {
+			"address": "西湖区",
+			"postalCode": 310013,
+			"city": "杭州市",
+			"countryCode": "CN",
+			"region": "浙江省"
+		},
+		"profiles": [
+			{
+				"network": "Twitter",
+				"username": "heminwon",
+				"url": "http://twitter.com/heminwon"
+			}
+		]
+	},
+	"languages": [
+		{
+			"language": "中文",
+			"fluency": "Native speaker"
+		},
+		{
+			"language": "English",
+			"fluency": "Beginner"
+		}
+	],
+	"references": [
+		{
+			"name": "Jane Doe",
+			"reference": "Reference..."
+		}
+	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
+		}
+	],
+	"education": [
+		{
+			"institution": "University",
+			"area": "电子信息学院",
+			"studyType": "本科",
+			"startDate": "2012-09-01",
+			"endDate": "2016-06-01",
+			"gpa": "3.0",
+			"courses": [
+				"集成电路设计与集成系统"
+			]
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
+			]
+		}
+	],
+	"publications": [
+		{
+			"name": "Publication",
+			"publisher": "Company",
+			"releaseDate": "2014-10-01",
+			"website": "http://publication.com",
+			"summary": "Description..."
+		}
+	],
+	"skills": [
+		[
+			{
+				"name": "iOS 开发",
+				"level": "熟练",
+				"keywords": [
+					"Objective-C",
+					"Swift",
+					"SwiftUI",
+					"Combine",
+					"GCD",
+					"Runtime",
+					"Runloop",
+					"CocoaPods",
+					"SourceTree",
+					"Charles",
+					"Postman"
+				]
+			},
+			{
+				"name": "第三方库",
+				"level": "熟练",
+				"keywords": [
+					"熟练使用知名三方库",
+					"离散型二次封装",
+					"集约型二次封装"
+				]
+			},
+			{
+				"name": "设计模式",
+				"level": "熟练",
+				"keywords": [
+					"工厂模式",
+					"策略模式",
+					"状态模式",
+					"命令模式"
+				]
+			},
+			{
+				"name": "自动化脚本",
+				"level": "熟练",
+				"keywords": [
+					"Python",
+					"shell",
+					"Go",
+					"自动化重复工作"
+				]
+			}
+		]
+	],
+	"volunteer": [
+		{
+			"organization": "Organization",
+			"position": "Volunteer",
+			"website": "http://organization.com/",
+			"startDate": "2012-01-01",
+			"endDate": "2013-01-01",
+			"summary": "Description...",
+			"highlights": [
+				"Awarded 'Volunteer of the Month'"
+			]
+		}
+	],
+	"work": [
+		{
+			"company": "涂鸦智能(杭州涂鸦信息技术有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2019-04-30",
+			"endDate": "至今",
+			"summary": "IoT物联网公司",
+			"highlights": [
+				"参与 Honda RoadSync 研发"
+			]
+		},
+		{
+			"company": "滴滴出行(杭州快迪科技有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2018-03-16",
+			"endDate": "2019-03-16",
+			"summary": "打车软件",
+			"highlights": [
+				"职责：滴滴出行乘客端代驾业务线，黎明项目(内部)及DoraemonKit(滴滴开源)服务端。"
+			]
+		},
+		{
+			"company": "同花顺(浙江核新同花顺网络信息股份有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"summary": "炒股软件",
+			"highlights": [
+				"职责：同花顺客户端行情业务组，金融大师客户端(企业版)及UI自动化测试"
+			]
+		}
+	],
+	"projects": [
+		{
+			"name": "Honda RoadSync",
+			"startDate": "2024-08-01T00:00:00.000Z",
+			"endDate": "2024-12-31T00:00:00.000Z",
+			"description": "本田项目",
+			"highlights": [
+				"Won award at AIHacks 2016"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "滴滴出行(乘客端)",
+			"startDate": "2018-03-29T00:00:00.000Z",
+			"endDate": "2019-04-16T00:00:00.000Z",
+			"description": null,
+			"highlights": [
+				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
+				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
+				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "同花顺",
+			"startDate": "2016-03-01T00:00:00.000Z",
+			"endDate": "2018-03-01T00:00:00.000Z",
+			"description": "描述",
+			"highlights": [
+				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
+				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
+				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
+				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
+				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
+			],
+			"url": "https://project.com/"
+		}
+	]
+}
