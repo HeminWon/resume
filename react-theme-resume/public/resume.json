@@ -19,6 +19,11 @@
 				"network": "Twitter",
 				"username": "heminwon",
 				"url": "http://twitter.com/heminwon"
+			},
+			{
+				"network": "Github",
+				"username": "HeminWon",
+				"url": "http://twitter.com/heminwon"
 			}
 		]
 	},
@@ -175,7 +180,7 @@
 			]
 		}
 	],
-	"projects": [
+	"project": [
 		{
 			"name": "Honda RoadSync",
 			"startDate": "2024-08-01T00:00:00.000Z",

@@ -32,6 +32,14 @@ interface ResumeData {
         summary: string;
         highlights: string[];
     }[];
+    project: {
+        name: string;
+        startDate: string;
+        endDate: string;
+        description: string;
+        highlights: string[];
+        url: string;
+    }[];
     education: {
         institution: string;
         area: string;
@@ -78,6 +86,7 @@ const Resume: React.FC = () => {
             </div>
             <div className="main">
                 <WorkExperience work={data.work} />
+                <ProjectExperience project={data.project}/>
             </div>
         </div>
     );
@@ -129,7 +138,7 @@ const Skills: React.FC<{ skills: ResumeData['skills'] }> = ({ skills }) => (
 
 const WorkExperience: React.FC<{ work: ResumeData['work'] }> = ({ work }) => (
     <div className="work info-unit right-list">
-        <h2 className="info-header">工作履历</h2>
+        <h2 className="info-header">工作经历</h2>
         <hr />
         <ul className="experience-list">
             {work.map((job, index) => (
@@ -138,6 +147,26 @@ const WorkExperience: React.FC<{ work: ResumeData['work'] }> = ({ work }) => (
                     <p>{job.summary}</p>
                     <ul>
                         {job.highlights.map((highlight, hiIndex) => (
+                            <li key={hiIndex}>{highlight}</li>
+                        ))}
+                    </ul>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
+
+const ProjectExperience: React.FC<{ project: ResumeData['project'] }> = ({ project }) => (
+    <div className="project info-unit right-list">
+        <h2 className="info-header">项目经历</h2>
+        <hr />
+        <ul className="project-list">
+            {project.map((proj, index) => (
+                <li key={index}>
+                    <h3>{proj.name} ({proj.startDate} - {proj.endDate}) </h3>
+                    <p>{proj.description}</p>
+                    <ul>
+                        {proj.highlights.map((highlight, hiIndex) => (
                             <li key={hiIndex}>{highlight}</li>
                         ))}
                     </ul>
