@@ -86,30 +86,37 @@ const Resume: React.FC = () => {
                 </ul>
             </div>
             <div className="page">
-                <h2 id="教育经历">教育经历</h2>
+                <h2 className="sectionTitle">教育经历</h2>
                 {data.education.map((edu, index) => (
                     <p key={index}>
                         {edu.institution} {edu.area} {edu.studyType} <span className="right">{edu.startDate} - {edu.endDate}</span>
                     </p>
                 ))}
-                <h2 id="工作经历">工作经历</h2>
+                <h2 className="sectionTitle">工作经历</h2>
                 {data.work.map((job, index) => (
-                    <div key={index}>
-                        <p><strong>{job.company}</strong> - {job.position} <span className="right">{job.startDate} - {job.endDate}</span></p>
-                        <ul>
+                    <div key={index} className="workItemContainer">
+                        <div  className="workItemInfo">
+                            <div className="workItemInfoTitle">
+                                {job.company} - <span className="workItemInfoTitleDesc">{job.position}</span>
+                            </div>
+                            <div className="workItemInfoDate">
+                             {job.startDate} ～ {job.endDate}
+                            </div>
+                        </div>
+                        <ul className="workItemDesc">
                             {job.highlights.map((highlight, hiIndex) => (
                                 <li key={hiIndex}>{highlight}</li>
                             ))}
                         </ul>
                     </div>
                 ))}
-                <h2 id="项目经验">项目经验</h2>
+                <h2 className="sectionTitle">项目经验</h2>
                 {/* 项目经验部分 */}
                 {/* 根据项目数据结构进行渲染 */}
-                <h2 id="技能描述">技能描述</h2>
+                <h2 className="sectionTitle">技能描述</h2>
                 {/* 技能描述部分 */}
                 {/* 根据技能数据结构进行渲染 */}
-                <h2 id="工作期待-自我评价">工作期待&自我评价</h2>
+                <h2 className="sectionTitle">工作期待&自我评价</h2>
                 {/* 自我评价部分 */}
             </div>
         </div>

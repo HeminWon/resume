@@ -96,3 +96,32 @@ hr {
     border: 1px solid #e0e0e0;
     margin: 20px 0;
 }
+
+.sectionTitle {
+    text-align: left;
+}
+
+.workItemContainer {
+    margin-bottom: 30px;
+}
+
+.workItemInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.workItemInfoDate {
+    font-size: 14px;
+}
+
+.workItemInfoTitle {
+    font-weight: bold;
+}
+.workItemInfoTitleDesc {
+    font-weight: normal;
+}
+
+.workItemDesc {
+  text-align: left;
+}
