@@ -76,72 +76,11 @@ const Resume: React.FC = () => {
     return (
         <div className="container">
             <div className="page">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px', borderBottom: '2px dashed #ccc' }}>
-                    {/* 左侧部分 */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                        <h1 style={{ margin: '0', fontSize: '24px' }}>王明海</h1>
-                        <span style={{ fontSize: '18px', color: '#555' }}>iOS开发工程师</span>
-                    </div>
-
-                    {/* 右侧部分 */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                        <span>邮箱：<a href="mailto:heminwmh@gmail.com">heminwmh@gmail.com</a></span>
-                        <span>手机：<a href="tel:15957130984">159-5713-0984</a></span>
-                        <span>Github：<a href="https://github.com/HeminWon" target="_blank" rel="noopener noreferrer">HeminWon</a></span>
-                        <span>工作经验：三年</span>
-                    </div>
-                </div>
-                <h2 className="sectionTitle">教育经历</h2>
-                {data.education.map((edu, index) => (
-                    <p key={index}>
-                        {edu.institution} {edu.area} {edu.studyType} <span className="right">{edu.startDate} - {edu.endDate}</span>
-                    </p>
-                ))}
-                <h2 className="sectionTitle">工作经历</h2>
-                {data.work.map((job, index) => (
-                    <div key={index} className="workItemContainer">
-                        <div className="workItemInfo">
-                            <div className="workItemInfoTitle">
-                                {job.company} - <span className="workItemInfoTitleDesc">{job.position}</span>
-                            </div>
-                            <div className="workItemInfoDate">
-                                {job.startDate} ～ {job.endDate}
-                            </div>
-                        </div>
-                        <ul className="workItemDesc">
-                            {job.highlights.map((highlight, hiIndex) => (
-                                <li key={hiIndex}>{highlight}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-                <h2 className="sectionTitle">项目经验</h2>
-                {data.project.map((proj, index) => (
-                    <div key={index} className="workItemContainer">
-                        <div className="workItemInfo">
-                            <div className="workItemInfoTitle">
-                                {proj.name}
-                            </div>
-                            <div className="workItemInfoDate">
-                                {proj.startDate} ～ {proj.endDate}
-                            </div>
-                        </div>
-                        <ul className="workItemDesc">
-                            {proj.highlights.map((highlight, hiIndex) => (
-                                <li key={hiIndex}>{highlight}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-                {/* 项目经验部分 */}
-                {/* 根据项目数据结构进行渲染 */}
-                <h2 className="sectionTitle">技能描述</h2>
-                {data.skills.map((skill, index) => (
-                    <div className='workItemInfo'>
-                        <div className='workItemInfoTitle'>
-                        </div>
-                    </div>
-                ))}
+                <HeaderComponent basics={data.basics} />
+                <EducationComponent educations={data.education} />
+                <WorkComponent works={data.work} />
+                <ProjectComponent projects={data.project}/>
+                <SkillComponent skills={data.skills} />
                 {/* 技能描述部分 */}
                 {/* 根据技能数据结构进行渲染 */}
                 <h2 className="sectionTitle">工作期待&自我评价</h2>
@@ -150,5 +89,102 @@ const Resume: React.FC = () => {
         </div>
     );
 };
+
+function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
+    return (
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px', borderBottom: '2px dashed #ccc' }}>
+            {/* 左侧部分 */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <h1 style={{ margin: '0', fontSize: '24px' }}>{basics.name}</h1>
+                <span style={{ fontSize: '18px', color: '#555' }}>{basics.label}</span>
+            </div>
+
+            {/* 右侧部分 */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                <span>邮箱：<a href="mailto:heminwmh@gmail.com">{basics.email}</a></span>
+                <span>手机：<a href="tel:15957130984">{basics.phone}</a></span>
+                <span>Github：<a href="https://github.com/HeminWon" target="_blank" rel="noopener noreferrer">HeminWon</a></span>
+                <span>工作经验：三年</span>
+            </div>
+        </div>
+    );
+}
+
+function EducationComponent({ educations }: { educations: ResumeData["education"] }) {
+    return (
+        <div>
+            <h2 className="sectionTitle">教育经历</h2>
+            {educations.map((edu, index) => (
+                <p key={index}>
+                    {edu.institution} {edu.area} {edu.studyType} <span className="right">{edu.startDate} - {edu.endDate}</span>
+                </p>
+            ))}
+        </div>
+    );
+}
+
+function WorkComponent({ works }: { works: ResumeData["work"] }) {
+    return (
+        <div>
+            <h2 className="sectionTitle">工作经历</h2>
+            {works.map((work, index) => (
+                <div key={index} className="workItemContainer">
+                    <div className="workItemInfo">
+                        <div className="workItemInfoTitle">
+                            {work.company} - <span className="workItemInfoTitleDesc">{work.position}</span>
+                        </div>
+                        <div className="workItemInfoDate">
+                            {work.startDate} ～ {work.endDate}
+                        </div>
+                    </div>
+                    <ul className="workItemDesc">
+                        {work.highlights.map((highlight, hiIndex) => (
+                            <li key={hiIndex}>{highlight}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+function ProjectComponent({ projects }: { projects: ResumeData["project"] }) {
+    return (
+        <div>
+            <h2 className="sectionTitle">项目经验</h2>
+            {projects.map((project, index) => (
+                <div key={index} className="workItemContainer">
+                    <div className="workItemInfo">
+                        <div className="workItemInfoTitle">
+                            {project.name}
+                        </div>
+                        <div className="workItemInfoDate">
+                            {project.startDate} ～ {project.endDate}
+                        </div>
+                    </div>
+                    <ul className="workItemDesc">
+                        {project.highlights.map((highlight, hiIndex) => (
+                            <li key={hiIndex}>{highlight}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
+    return (
+        <div>
+            <h2 className="sectionTitle">技能描述</h2>
+            {skills.map((skill, index) => (
+                <div className='workItemInfo'>
+                    <div className='workItemInfoTitle'>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+}
 
 export default Resume;
