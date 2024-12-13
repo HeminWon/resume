@@ -53,7 +53,7 @@ interface ResumeData {
         name: string;
         level: string;
         keywords: string[];
-    }[][];
+    }[];
     about: {
         me: string[];
     };
@@ -94,17 +94,17 @@ function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px', borderBottom: '2px dashed #ccc' }}>
             {/* 左侧部分 */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <h1 style={{ margin: '0', fontSize: '24px' }}>{basics.name}</h1>
+            <div className='headerInfo'>
+                <h1 style={{ margin: '0', fontSize: '24px', marginRight: '10px' }}>{basics.name}</h1>
                 <span style={{ fontSize: '18px', color: '#555' }}>{basics.label}</span>
             </div>
 
             {/* 右侧部分 */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                <span>邮箱：<a href="mailto:heminwmh@gmail.com">{basics.email}</a></span>
-                <span>手机：<a href="tel:15957130984">{basics.phone}</a></span>
-                <span>Github：<a href="https://github.com/HeminWon" target="_blank" rel="noopener noreferrer">HeminWon</a></span>
-                <span>工作经验：三年</span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'space-between' }}>
+                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">邮箱：</span><a href={`mailto:${basics.email}`} className="headerInfoItemDesc">{basics.email}</a></div>
+                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">手机：</span><a href="mailto:heminwmh@gmail.com" className="headerInfoItemDesc">{basics.phone}</a></div>
+                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">Github：</span><a href="mailto:heminwmh@gmail.com" className="headerInfoItemDesc">HeminWon</a></div>
+                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">工作经验：</span><span className="headerInfoItemDesc">三年</span></div>
             </div>
         </div>
     );
@@ -113,9 +113,9 @@ function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
 function EducationComponent({ educations }: { educations: ResumeData["education"] }) {
     return (
         <div>
-            <h2 className="sectionTitle">教育经历</h2>
+            <h2 className="sectionTitle">教育经历<span className="sectionLine"></span></h2>
             {educations.map((edu, index) => (
-                <p key={index}>
+                <p key={index} className="educationItemContainer">
                     {edu.institution} {edu.area} {edu.studyType} <span className="right">{edu.startDate} - {edu.endDate}</span>
                 </p>
             ))}
@@ -174,12 +174,17 @@ function ProjectComponent({ projects }: { projects: ResumeData["projects"] }) {
 }
 
 function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
+    console.log(skills)
     return (
         <div>
             <h2 className="sectionTitle">技能描述</h2>
-            {skills.map((skill, index) => (
-                <div className='workItemInfo'>
-                    <div className='workItemInfoTitle'>
+            {skills.map((item, index) => (
+                <div className='skillItemInfo'>
+                    <div className='skillItemInfoTitle'>
+                        {`${item.name}: `}
+                    </div>
+                    <div className='skillItemInfoDesc'>
+                       {item.keywords.join(',')} 
                     </div>
                 </div>
             ))}

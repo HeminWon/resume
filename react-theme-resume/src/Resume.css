@@ -38,7 +38,6 @@ body {
 }
 
 .page {
-    width: 70%;
     padding: 20px;
 }
 
@@ -97,8 +96,38 @@ hr {
     margin: 20px 0;
 }
 
+.headerInfo {
+    display: flex;
+    align-items: flex-end;
+}
+
+.headerInfoItemContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.headerInfoItemLabel {
+    text-align: right;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.headerInfoItemDesc {}
+
 .sectionTitle {
     text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.sectionLine {
+    flex: 1;
+    border-bottom: 1px dashed gray;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border-image: repeating-linear-gradient(to right, black 0, black 10px, transparent 10px, transparent 20px);
+    border-image-slice: 1;
 }
 
 .workItemContainer {
@@ -118,10 +147,39 @@ hr {
 .workItemInfoTitle {
     font-weight: bold;
 }
+
 .workItemInfoTitleDesc {
     font-weight: normal;
 }
 
 .workItemDesc {
-  text-align: left;
+    text-align: left;
+}
+
+.educationItemContainer {
+    justify-content: space-between;
+    display: flex;
+    font-weight: 600;
+}
+.skillItemInfo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.skillItemInfoTitle {
+    flex: 0 0 auto;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.skillItemInfoDesc {
+    flex: 1 1 0;
+    font-weight: normal;
+    text-align: left;
+    word-break: break-all;
+    line-height: 24px;
 }
