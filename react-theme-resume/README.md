@@ -1,3 +1,11 @@
+```sh
+npm cache clean --force
+rm -rf node_modules package-lock.json
+yarn install
+yarn add xxx
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
