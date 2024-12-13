@@ -32,7 +32,7 @@ interface ResumeData {
         summary: string;
         highlights: string[];
     }[];
-    project: {
+    projects: {
         name: string;
         startDate: string;
         endDate: string;
@@ -82,12 +82,9 @@ const Resume: React.FC = () => {
                 <HeaderComponent basics={data.basics} />
                 <EducationComponent educations={data.education} />
                 <WorkComponent works={data.work} />
-                <ProjectComponent projects={data.project}/>
+                <ProjectComponent projects={data.projects} />
                 <SkillComponent skills={data.skills} />
-                {/* 技能描述部分 */}
-                {/* 根据技能数据结构进行渲染 */}
-                <h2 className="sectionTitle">工作期待&自我评价</h2>
-                {/* 自我评价部分 */}
+                <EvaluationComponent about={data.about} />
             </div>
         </div>
     );
@@ -151,7 +148,7 @@ function WorkComponent({ works }: { works: ResumeData["work"] }) {
     );
 }
 
-function ProjectComponent({ projects }: { projects: ResumeData["project"] }) {
+function ProjectComponent({ projects }: { projects: ResumeData["projects"] }) {
     return (
         <div>
             <h2 className="sectionTitle">项目经验</h2>
@@ -190,4 +187,16 @@ function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
     );
 }
 
+function EvaluationComponent({ about }: { about: ResumeData["about"] }) {
+    return (
+        <div>
+            <h2 className="sectionTitle">工作期待&自我评价</h2>
+            <ul className="workItemDesc">
+                {about.me.map((evaluation, hiIndex) => (
+                    <li key={hiIndex}>{evaluation}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
 export default Resume;
