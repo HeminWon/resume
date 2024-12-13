@@ -27,12 +27,6 @@
 			}
 		]
 	},
-	"about": {
-		"me": [
-			"我是一名热爱编程的软件工程师，擅长解决简单问题并优化系统性能。具有良好的团队合作能力和沟通技巧。",
-			"作为一名设计师，我对视觉艺术和用户体验充满热情。擅长将创意转化为实际设计，能够通过细致的工作满足客户的需求并提升品牌形象。"
-		]
-	},
 	"languages": [
 		{
 			"language": "中文",
@@ -43,64 +37,63 @@
 			"fluency": "Beginner"
 		}
 	],
+	"about": {
+		"me": [
+			"我是一名热爱编程的软件工程师，擅长解决简单问题并优化系统性能。具有良好的团队合作能力和沟通技巧。",
+			"作为一名设计师，我对视觉艺术和用户体验充满热情。擅长将创意转化为实际设计，能够通过细致的工作满足客户的需求并提升品牌形象。"
+		]
+	},
 	"references": [
 		{
 			"name": "Jane Doe",
 			"reference": "Reference..."
 		}
 	],
-	"projects": [
+	"skills": [
 		{
-			"name": "Honda RoadSync",
-			"startDate": "2024-08-01",
-			"endDate": "2024-12-31",
-			"description": "本田项目",
-			"highlights": [
-				"Won award at AIHacks 2016"
-			],
-			"url": "https://project.com/"
-		},
-		{
-			"name": "滴滴出行(乘客端)",
-			"startDate": "2018-03-29",
-			"endDate": "2019-04-16",
-			"description": null,
-			"highlights": [
-				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
-				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
-				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
-			],
-			"url": "https://project.com/"
-		},
-		{
-			"name": "同花顺",
-			"startDate": "2016-03-01",
-			"endDate": "2018-03-01",
-			"description": "描述",
-			"highlights": [
-				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
-				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
-				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
-				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
-				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
-			],
-			"url": "https://project.com/"
-		}
-	],
-	"awards": [
-		{
-			"title": "Award",
-			"date": "2014-11-01",
-			"awarder": "Company",
-			"summary": "There is no spoon."
-		}
-	],
-	"interests": [
-		{
-			"name": "Wildlife",
+			"name": "iOS 开发",
+			"level": "熟练",
 			"keywords": [
-				"Ferrets",
-				"Unicorns"
+				"Objective-C",
+				"Swift",
+				"SwiftUI",
+				"Combine",
+				"GCD",
+				"Runtime",
+				"Runloop",
+				"CocoaPods",
+				"SourceTree",
+				"Charles",
+				"Postman"
+			]
+		},
+		{
+			"name": "第三方库",
+			"level": "熟练",
+			"keywords": [
+				"熟练使用知名三方库",
+				"离散型二次封装",
+				"集约型二次封装"
+			]
+		},
+		{
+			"name": "设计模式",
+			"level": "熟练",
+			"keywords": [
+				"工厂模式",
+				"策略模式",
+				"状态模式",
+				"命令模式"
+			]
+		},
+		{
+			"name": "自动化脚本",
+			"level": "熟练",
+			"keywords": [
+				"Python",
+				"shell",
+				"Go",
+				"自动化重复工作"
 			]
 		}
 	],
@@ -117,6 +110,14 @@
 			]
 		}
 	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
+		}
+	],
 	"publications": [
 		{
 			"name": "Publication",
@@ -126,16 +127,78 @@
 			"summary": "Description..."
 		}
 	],
-	"volunteer": [
+	"projects": [
 		{
-			"organization": "Organization",
-			"position": "Volunteer",
-			"website": "http://organization.com/",
-			"startDate": "2012-01-01",
-			"endDate": "2013-01-01",
-			"summary": "Description...",
+			"name": "Honda RoadSync",
+			"startDate": "2024-08-01",
+			"endDate": "2024-12-31",
+			"description": "本田项目",
 			"highlights": [
-				"Awarded 'Volunteer of the Month'"
+				"Won award at AIHacks 2016"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "涂鸦智能",
+			"startDate": "2024-08-01",
+			"endDate": "2024-12-31",
+			"description": "IoT物联网 APP",
+			"duties": [
+				"参与公版业务需求迭代、对外SDK维护、技术方案优化、文档编写等工作；",
+				"参与客户端CI平台开发,负责其后端二期开发,为CI平台增加项目和组件构建选项能力,方便构建功能进行业务化定制。"
+			],
+			"highlights": [
+				"OEM开发模式,工程提供配置文件,支持客户在iot平台进行配置后按需构建生成应用,且支持裁剪不必要代码;",
+				"EZ(一键配置/WIFI快连)、AP(热点)、ZigBee、NB-IoT、蓝牙、GPRS、二维码等多种配网方式支持;",
+				"短链平台统一管理跳转路由,提供协议注册方式实现组件解耦."
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "滴滴出行(乘客端)",
+			"startDate": "2018-03-29",
+			"endDate": "2019-04-16",
+			"description": "打车软件",
+			"duties": [
+				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
+				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
+				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
+			],
+			"highlights": [
+				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
+				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
+				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "同花顺",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"description": "描述",
+			"duties": [
+				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
+				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
+				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
+				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
+				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
+			],
+			"highlights": [
+				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
+				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
+				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
+				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
+				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
+			],
+			"url": "https://project.com/"
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
 			]
 		}
 	],
@@ -173,53 +236,5 @@
 				"职责：同花顺客户端行情业务组，金融大师客户端(企业版)及UI自动化测试"
 			]
 		}
-	],
-	"skills": [
-			{
-				"name": "iOS 开发",
-				"level": "熟练",
-				"keywords": [
-					"Objective-C",
-					"Swift",
-					"SwiftUI",
-					"Combine",
-					"GCD",
-					"Runtime",
-					"Runloop",
-					"CocoaPods",
-					"SourceTree",
-					"Charles",
-					"Postman"
-				]
-			},
-			{
-				"name": "第三方库",
-				"level": "熟练",
-				"keywords": [
-					"熟练使用知名三方库",
-					"离散型二次封装",
-					"集约型二次封装"
-				]
-			},
-			{
-				"name": "设计模式",
-				"level": "熟练",
-				"keywords": [
-					"工厂模式",
-					"策略模式",
-					"状态模式",
-					"命令模式"
-				]
-			},
-			{
-				"name": "自动化脚本",
-				"level": "熟练",
-				"keywords": [
-					"Python",
-					"shell",
-					"Go",
-					"自动化重复工作"
-				]
-			}
 	]
 }
