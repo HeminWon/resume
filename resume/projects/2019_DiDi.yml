@@ -1,6 +1,6 @@
 name: 滴滴出行(乘客端)
-startDate: 2018-03-29
-endDate: 2019-04-16
+startDate: "2018-03-29"
+endDate: "2019-04-16"
 description: 
 highlights:
   - 独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；

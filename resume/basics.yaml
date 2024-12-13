@@ -12,6 +12,9 @@ location:
     countryCode: CN
     region: 浙江省
 profiles:
+    - network: Github
+      username: HeminWon
+      url: "https://github.com/HeminWon"
     - network: Twitter
       username: heminwon
       url: "http://twitter.com/heminwon"

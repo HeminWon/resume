@@ -54,6 +54,9 @@ interface ResumeData {
         level: string;
         keywords: string[];
     }[][];
+    about: {
+        me: string[];
+    };
 }
 
 const Resume: React.FC = () => {

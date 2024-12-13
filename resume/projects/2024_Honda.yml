@@ -1,6 +1,6 @@
 name: Honda RoadSync
-startDate: 2024-08-01
-endDate: 2024-12-31
+startDate: "2024-08-01"
+endDate: "2024-12-31"
 description: 本田项目
 highlights:
   - Won award at AIHacks 2016

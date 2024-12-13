@@ -16,15 +16,21 @@
 		},
 		"profiles": [
 			{
+				"network": "Github",
+				"username": "HeminWon",
+				"url": "https://github.com/HeminWon"
+			},
+			{
 				"network": "Twitter",
 				"username": "heminwon",
 				"url": "http://twitter.com/heminwon"
-			},
-			{
-				"network": "Github",
-				"username": "HeminWon",
-				"url": "http://twitter.com/heminwon"
 			}
+		]
+	},
+	"about": {
+		"me": [
+			"我是一名热爱编程的软件工程师，擅长解决简单问题并优化系统性能。具有良好的团队合作能力和沟通技巧。",
+			"作为一名设计师，我对视觉艺术和用户体验充满热情。擅长将创意转化为实际设计，能够通过细致的工作满足客户的需求并提升品牌形象。"
 		]
 	},
 	"languages": [
@@ -43,12 +49,59 @@
 			"reference": "Reference..."
 		}
 	],
+	"projects": [
+		{
+			"name": "Honda RoadSync",
+			"startDate": "2024-08-01",
+			"endDate": "2024-12-31",
+			"description": "本田项目",
+			"highlights": [
+				"Won award at AIHacks 2016"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "滴滴出行(乘客端)",
+			"startDate": "2018-03-29",
+			"endDate": "2019-04-16",
+			"description": null,
+			"highlights": [
+				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
+				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
+				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "同花顺",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"description": "描述",
+			"highlights": [
+				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
+				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
+				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
+				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
+				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
+			],
+			"url": "https://project.com/"
+		}
+	],
 	"awards": [
 		{
 			"title": "Award",
 			"date": "2014-11-01",
 			"awarder": "Company",
 			"summary": "There is no spoon."
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
+			]
 		}
 	],
 	"education": [
@@ -64,15 +117,6 @@
 			]
 		}
 	],
-	"interests": [
-		{
-			"name": "Wildlife",
-			"keywords": [
-				"Ferrets",
-				"Unicorns"
-			]
-		}
-	],
 	"publications": [
 		{
 			"name": "Publication",
@@ -80,6 +124,54 @@
 			"releaseDate": "2014-10-01",
 			"website": "http://publication.com",
 			"summary": "Description..."
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Organization",
+			"position": "Volunteer",
+			"website": "http://organization.com/",
+			"startDate": "2012-01-01",
+			"endDate": "2013-01-01",
+			"summary": "Description...",
+			"highlights": [
+				"Awarded 'Volunteer of the Month'"
+			]
+		}
+	],
+	"work": [
+		{
+			"company": "涂鸦智能(杭州涂鸦信息技术有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2019-04-30",
+			"endDate": "至今",
+			"summary": "IoT 物联网公司",
+			"highlights": [
+				"职责:Honda RoadSync 测试"
+			]
+		},
+		{
+			"company": "滴滴出行(杭州快迪科技有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2018-03-16",
+			"endDate": "2019-03-16",
+			"summary": "打车软件",
+			"highlights": [
+				"职责：滴滴出行乘客端代驾业务线，黎明项目(内部)及DoraemonKit(滴滴开源)服务端。"
+			]
+		},
+		{
+			"company": "同花顺(浙江核新同花顺网络信息股份有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"summary": "炒股软件",
+			"highlights": [
+				"职责：同花顺客户端行情业务组，金融大师客户端(企业版)及UI自动化测试"
+			]
 		}
 	],
 	"skills": [
@@ -131,91 +223,5 @@
 				]
 			}
 		]
-	],
-	"volunteer": [
-		{
-			"organization": "Organization",
-			"position": "Volunteer",
-			"website": "http://organization.com/",
-			"startDate": "2012-01-01",
-			"endDate": "2013-01-01",
-			"summary": "Description...",
-			"highlights": [
-				"Awarded 'Volunteer of the Month'"
-			]
-		}
-	],
-	"work": [
-		{
-			"company": "涂鸦智能(杭州涂鸦信息技术有限公司)",
-			"position": "iOS 研发工程师",
-			"website": "https://www.tuya.com/cn/",
-			"startDate": "2019-04-30",
-			"endDate": "至今",
-			"summary": "IoT物联网公司",
-			"highlights": [
-				"参与 Honda RoadSync 研发"
-			]
-		},
-		{
-			"company": "滴滴出行(杭州快迪科技有限公司)",
-			"position": "iOS 研发工程师",
-			"website": "https://www.tuya.com/cn/",
-			"startDate": "2018-03-16",
-			"endDate": "2019-03-16",
-			"summary": "打车软件",
-			"highlights": [
-				"职责：滴滴出行乘客端代驾业务线，黎明项目(内部)及DoraemonKit(滴滴开源)服务端。"
-			]
-		},
-		{
-			"company": "同花顺(浙江核新同花顺网络信息股份有限公司)",
-			"position": "iOS 研发工程师",
-			"website": "https://www.tuya.com/cn/",
-			"startDate": "2016-03-01",
-			"endDate": "2018-03-01",
-			"summary": "炒股软件",
-			"highlights": [
-				"职责：同花顺客户端行情业务组，金融大师客户端(企业版)及UI自动化测试"
-			]
-		}
-	],
-	"project": [
-		{
-			"name": "Honda RoadSync",
-			"startDate": "2024-08-01T00:00:00.000Z",
-			"endDate": "2024-12-31T00:00:00.000Z",
-			"description": "本田项目",
-			"highlights": [
-				"Won award at AIHacks 2016"
-			],
-			"url": "https://project.com/"
-		},
-		{
-			"name": "滴滴出行(乘客端)",
-			"startDate": "2018-03-29T00:00:00.000Z",
-			"endDate": "2019-04-16T00:00:00.000Z",
-			"description": null,
-			"highlights": [
-				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
-				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
-				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
-			],
-			"url": "https://project.com/"
-		},
-		{
-			"name": "同花顺",
-			"startDate": "2016-03-01T00:00:00.000Z",
-			"endDate": "2018-03-01T00:00:00.000Z",
-			"description": "描述",
-			"highlights": [
-				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
-				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
-				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
-				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
-				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
-			],
-			"url": "https://project.com/"
-		}
 	]
 }

@@ -1,6 +1,6 @@
 name: 同花顺
-startDate: 2016-03-01
-endDate: 2018-03-01
+startDate: "2016-03-01"
+endDate: "2018-03-01"
 description: 描述
 highlights:
   - 使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；
