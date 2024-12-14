@@ -1,7 +1,7 @@
 {
 	"basics": {
-		"name": "王明海",
-		"label": "iOS研发工程师",
+		"name": "信天翁",
+		"label": "iOS测试工程师",
 		"picture": "",
 		"email": "heminwmh@gmail.com",
 		"phone": "(86)159-5713-0984",
@@ -133,8 +133,9 @@
 			"startDate": "2024-08-01",
 			"endDate": "2024-12-31",
 			"description": "本田项目",
-			"highlights": [
-				"Won award at AIHacks 2016"
+			"duties": [
+				"参与公版业务需求迭代、对外SDK维护、技术方案优化、文档编写等工作；",
+				"参与客户端CI平台开发,负责其后端二期开发,为CI平台增加项目和组件构建选项能力,方便构建功能进行业务化定制。"
 			],
 			"url": "https://project.com/"
 		},

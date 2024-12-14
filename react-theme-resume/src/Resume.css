@@ -106,10 +106,17 @@ hr {
     flex-direction: row;
 }
 
+.headerInfoRightContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
 .headerInfoItemLabel {
     text-align: right;
     width: 100px;
-    margin-right: 10px;
+    margin-right: 6px;
 }
 
 .headerInfoItemDesc {}
@@ -133,17 +140,18 @@ hr {
 }
 
 .workItemContainer {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .workItemInfo {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .workItemInfoDate {
     font-size: 14px;
+    font-style: italic;
 }
 
 .workItemInfoTitle {
@@ -157,6 +165,7 @@ hr {
 
 .workItemDesc {
     text-align: left;
+    margin: 0px;
 }
 
 .educationItemContainer {

@@ -37,6 +37,7 @@ interface ResumeData {
         startDate: string;
         endDate: string;
         description: string;
+        duties: string[];
         highlights: string[];
         url: string;
     }[];
@@ -57,6 +58,31 @@ interface ResumeData {
     about: {
         me: string[];
     };
+}
+
+const formatDate = (dateString: string): string => {
+    // 检查输入是否符合ISO 8601标准格式，尝试解析日期
+    const date = new Date(dateString);
+
+    // 如果不是有效日期（Date对象无法解析），返回原始输入
+    if (isNaN(date.getTime())) {
+        return dateString;
+    }
+
+    // 获取年份
+    const year = date.getFullYear();
+
+    // 获取月份，并确保为两位数
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+
+    // 返回格式化后的日期
+    return `${year}.${month}`;
+};
+
+const formattedTimePeriod = (startDate: string, endDate: string): string => {
+    const startStr = formatDate(startDate)
+    const endStr = formatDate(endDate)
+    return `${startStr} - ${endStr}`
 }
 
 const Resume: React.FC = () => {
@@ -90,21 +116,34 @@ const Resume: React.FC = () => {
     );
 };
 
+const HeaderInfoItem: React.FC<{ label: string; value: string; href?: string }> = ({ label, value, href }) => (
+    <div className="headerInfoItemContainer">
+        <span className="headerInfoItemLabel">{label} :                 </span>
+        {href ? (
+            <a href={href} className="headerInfoItemDesc">
+                {value}
+            </a>
+        ) : (
+            <span className="headerInfoItemDesc">{value}</span>
+        )}
+    </div>
+);
+
 function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '0px' }}>
             {/* 左侧部分 */}
             <div className='headerInfo'>
-                <h1 style={{ margin: '0', fontSize: '24px', marginRight: '10px' }}>{basics.name}</h1>
-                <span style={{ fontSize: '18px', color: '#555' }}>{basics.label}</span>
+                <h1 style={{ margin: '0', fontSize: '44px', marginRight: '10px' }}>{basics.name}</h1>
+                <span style={{ fontSize: '22px', color: '#555', marginBottom: '3px' }}>{basics.label}</span>
             </div>
 
             {/* 右侧部分 */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'space-between' }}>
-                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">邮箱：</span><a href={`mailto:${basics.email}`} className="headerInfoItemDesc">{basics.email}</a></div>
-                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">手机：</span><a href="tel:15957130984" className="headerInfoItemDesc">{basics.phone}</a></div>
-                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">Github：</span><a href="https://github.com/HeminWon" className="headerInfoItemDesc">HeminWon</a></div>
-                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">工作经验：</span><span className="headerInfoItemDesc">三年</span></div>
+            <div className='headerInfoRightContainer'>
+                <HeaderInfoItem label="邮箱" value={basics.email} href={`mailto:${basics.email}`} />
+                <HeaderInfoItem label="手机" value={basics.phone} href={`tel:${basics.phone}`} />
+                <HeaderInfoItem label="Github" value="HeminWon" href="https://github.com/HeminWon" />
+                <HeaderInfoItem label="工作经验" value="三年" />
             </div>
         </div>
     );
@@ -115,9 +154,16 @@ function EducationComponent({ educations }: { educations: ResumeData["education"
         <div>
             <h2 className="sectionTitle">教育经历<span className="sectionLine"></span></h2>
             {educations.map((edu, index) => (
-                <p key={index} className="educationItemContainer">
-                    {edu.institution} {edu.area} {edu.studyType} <span className="workItemInfoDate">{edu.startDate} - {edu.endDate}</span>
-                </p>
+                <div key={index} className="workItemContainer">
+                    <div className='workItemInfo'>
+                        <div className='workItemInfoTitle'>
+                            {edu.institution} {edu.area} {edu.studyType}
+                        </div>
+                        <div className="workItemInfoDate">
+                            {formattedTimePeriod(edu.startDate, edu.endDate)}
+                        </div>
+                    </div>
+                </div>
             ))}
         </div>
     );
@@ -134,7 +180,7 @@ function WorkComponent({ works }: { works: ResumeData["work"] }) {
                             {work.company} - <span className="workItemInfoTitleDesc">{work.position}</span>
                         </div>
                         <div className="workItemInfoDate">
-                            {work.startDate} ～ {work.endDate}
+                            {formattedTimePeriod(work.startDate, work.endDate)}
                         </div>
                     </div>
                     <ul className="workItemDesc">
@@ -159,14 +205,30 @@ function ProjectComponent({ projects }: { projects: ResumeData["projects"] }) {
                             {project.name}
                         </div>
                         <div className="workItemInfoDate">
-                            {project.startDate} ～ {project.endDate}
+                            {formattedTimePeriod(project.startDate, project.endDate)}
                         </div>
                     </div>
+                    <div className='workItemInfo'>
+                        主要职责:
+                    </div>
                     <ul className="workItemDesc">
-                        {project.highlights.map((highlight, hiIndex) => (
-                            <li key={hiIndex}>{highlight}</li>
+                        {project.duties.map((duty, dIndex) => (
+                            <li key={dIndex}>{duty}</li>
                         ))}
                     </ul>
+                    {/* 判断是否存在 project.highlights，只有存在时才渲染 "项目技术" */}
+                    {project.highlights && project.highlights.length > 0 && (
+                        <>
+                            <div className='workItemInfo'>
+                                项目技术:
+                            </div>
+                            <ul className="workItemDesc">
+                                {project.highlights.map((highlight, hiIndex) => (
+                                    <li key={hiIndex}>{highlight}</li>
+                                ))}
+                            </ul>
+                        </>
+                    )}
                 </div>
             ))}
         </div>
@@ -174,7 +236,6 @@ function ProjectComponent({ projects }: { projects: ResumeData["projects"] }) {
 }
 
 function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
-    console.log(skills)
     return (
         <div>
             <h2 className="sectionTitle">技能描述<span className="sectionLine"></span></h2>
@@ -184,7 +245,7 @@ function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
                         {`${item.name}: `}
                     </div>
                     <div className='skillItemInfoDesc'>
-                       {item.keywords.join(',')} 
+                        {item.keywords.join(',')}
                     </div>
                 </div>
             ))}
