@@ -92,7 +92,7 @@ const Resume: React.FC = () => {
 
 function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px', borderBottom: '2px dashed #ccc' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px' }}>
             {/* 左侧部分 */}
             <div className='headerInfo'>
                 <h1 style={{ margin: '0', fontSize: '24px', marginRight: '10px' }}>{basics.name}</h1>
@@ -102,8 +102,8 @@ function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
             {/* 右侧部分 */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'space-between' }}>
                 <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">邮箱：</span><a href={`mailto:${basics.email}`} className="headerInfoItemDesc">{basics.email}</a></div>
-                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">手机：</span><a href="mailto:heminwmh@gmail.com" className="headerInfoItemDesc">{basics.phone}</a></div>
-                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">Github：</span><a href="mailto:heminwmh@gmail.com" className="headerInfoItemDesc">HeminWon</a></div>
+                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">手机：</span><a href="tel:15957130984" className="headerInfoItemDesc">{basics.phone}</a></div>
+                <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">Github：</span><a href="https://github.com/HeminWon" className="headerInfoItemDesc">HeminWon</a></div>
                 <div className="headerInfoItemContainer"><span className="headerInfoItemLabel">工作经验：</span><span className="headerInfoItemDesc">三年</span></div>
             </div>
         </div>
@@ -116,7 +116,7 @@ function EducationComponent({ educations }: { educations: ResumeData["education"
             <h2 className="sectionTitle">教育经历<span className="sectionLine"></span></h2>
             {educations.map((edu, index) => (
                 <p key={index} className="educationItemContainer">
-                    {edu.institution} {edu.area} {edu.studyType} <span className="right">{edu.startDate} - {edu.endDate}</span>
+                    {edu.institution} {edu.area} {edu.studyType} <span className="workItemInfoDate">{edu.startDate} - {edu.endDate}</span>
                 </p>
             ))}
         </div>
@@ -126,7 +126,7 @@ function EducationComponent({ educations }: { educations: ResumeData["education"
 function WorkComponent({ works }: { works: ResumeData["work"] }) {
     return (
         <div>
-            <h2 className="sectionTitle">工作经历</h2>
+            <h2 className="sectionTitle">工作经历<span className="sectionLine"></span></h2>
             {works.map((work, index) => (
                 <div key={index} className="workItemContainer">
                     <div className="workItemInfo">
@@ -151,7 +151,7 @@ function WorkComponent({ works }: { works: ResumeData["work"] }) {
 function ProjectComponent({ projects }: { projects: ResumeData["projects"] }) {
     return (
         <div>
-            <h2 className="sectionTitle">项目经验</h2>
+            <h2 className="sectionTitle">项目经验<span className="sectionLine"></span></h2>
             {projects.map((project, index) => (
                 <div key={index} className="workItemContainer">
                     <div className="workItemInfo">
@@ -177,7 +177,7 @@ function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
     console.log(skills)
     return (
         <div>
-            <h2 className="sectionTitle">技能描述</h2>
+            <h2 className="sectionTitle">技能描述<span className="sectionLine"></span></h2>
             {skills.map((item, index) => (
                 <div className='skillItemInfo'>
                     <div className='skillItemInfoTitle'>
@@ -195,7 +195,7 @@ function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
 function EvaluationComponent({ about }: { about: ResumeData["about"] }) {
     return (
         <div>
-            <h2 className="sectionTitle">工作期待&自我评价</h2>
+            <h2 className="sectionTitle">工作期待&自我评价<span className="sectionLine"></span></h2>
             <ul className="workItemDesc">
                 {about.me.map((evaluation, hiIndex) => (
                     <li key={hiIndex}>{evaluation}</li>
