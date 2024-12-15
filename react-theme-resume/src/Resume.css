@@ -84,8 +84,10 @@ hr {
 /* 媒体查询用于小屏幕适配 */
 @media (max-width: 768px) {
     .headerInfoContainer {
-        flex-direction: column; /* 设置为上下布局 */
-        align-items: flex-end; /* 可根据需要调整对齐方式 */
+        flex-direction: column;
+        /* 设置为上下布局 */
+        align-items: flex-end;
+        /* 可根据需要调整对齐方式 */
     }
 
     .headerInfoItemLabel {
@@ -143,6 +145,7 @@ hr {
 .skillItemContainer {
     margin-bottom: 0px;
 }
+
 .workItemInfo {
     display: flex;
     justify-content: space-between;
@@ -185,6 +188,7 @@ hr {
     font-size: large;
     font-weight: 600;
 }
+
 .skillItemInfo {
     display: flex;
     align-items: flex-start;
