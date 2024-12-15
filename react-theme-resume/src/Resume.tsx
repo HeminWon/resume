@@ -131,9 +131,9 @@ const HeaderInfoItem: React.FC<{ label: string; value: string; href?: string }> 
 
 function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '0px' }}>
+        <div className='headerInfoContainer'>
             {/* 左侧部分 */}
-            <div className='headerInfo'>
+            <div className='headerInfoLeftContainer'>
                 <h1 style={{ margin: '0', fontSize: '44px', marginRight: '10px' }}>{basics.name}</h1>
                 <span style={{ fontSize: '22px', color: '#555', marginBottom: '3px' }}>{basics.label}</span>
             </div>
