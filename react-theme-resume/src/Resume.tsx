@@ -208,7 +208,10 @@ function ProjectComponent({ projects }: { projects: ResumeData["projects"] }) {
                             {formattedTimePeriod(project.startDate, project.endDate)}
                         </div>
                     </div>
-                    <div className='workItemInfo'>
+                    <div className='projectItemDesc'>
+                        {project.description}
+                    </div>
+                    <div className='projectItemTitle'>
                         主要职责:
                     </div>
                     <ul className="workItemDesc">
@@ -219,7 +222,7 @@ function ProjectComponent({ projects }: { projects: ResumeData["projects"] }) {
                     {/* 判断是否存在 project.highlights，只有存在时才渲染 "项目技术" */}
                     {project.highlights && project.highlights.length > 0 && (
                         <>
-                            <div className='workItemInfo'>
+                            <div className='projectItemTitle'>
                                 项目技术:
                             </div>
                             <ul className="workItemDesc">
@@ -240,12 +243,13 @@ function SkillComponent({ skills }: { skills: ResumeData["skills"] }) {
         <div>
             <h2 className="sectionTitle">技能描述<span className="sectionLine"></span></h2>
             {skills.map((item, index) => (
-                <div className='skillItemInfo'>
-                    <div className='skillItemInfoTitle'>
-                        {`${item.name}: `}
-                    </div>
-                    <div className='skillItemInfoDesc'>
-                        {item.keywords.join(',')}
+                <div key={index} className="skillItemContainer">
+                    <div className='skillItemInfo'>
+                        <ul className='workItemInfoTitle'>
+                            <li >
+                                {item.name}: <span className="workItemInfoTitleDesc">{item.keywords.join(' / ')}</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             ))}
