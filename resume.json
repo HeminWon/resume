@@ -1,0 +1,236 @@
+{
+	"about": {
+		"me": [
+			"希望新工作有成长空间，技术上有挑战性，重视代码质量，重视分享与学习;",
+			"更好的把握用户需求，让技术真正服务于产品，能够做出优秀的产品."
+		]
+	},
+	"basics": {
+		"name": "王明海",
+		"label": "iOS研发工程师",
+		"picture": "",
+		"email": "heminwmh@gmail.com",
+		"phone": "159-5713-0984",
+		"website": "https://github.com/HeminWon",
+		"summary": "A summary of John Doe...",
+		"location": {
+			"address": "西湖区",
+			"postalCode": 310013,
+			"city": "杭州市",
+			"countryCode": "CN",
+			"region": "浙江省"
+		},
+		"profiles": [
+			{
+				"network": "Github",
+				"username": "HeminWon",
+				"url": "https://github.com/HeminWon"
+			},
+			{
+				"network": "Twitter",
+				"username": "heminwon",
+				"url": "http://twitter.com/heminwon"
+			}
+		]
+	},
+	"languages": [
+		{
+			"language": "中文",
+			"fluency": "Native speaker"
+		},
+		{
+			"language": "English",
+			"fluency": "Beginner"
+		}
+	],
+	"references": [
+		{
+			"name": "Jane Doe",
+			"reference": "Reference..."
+		}
+	],
+	"skills": [
+		{
+			"name": "iOS",
+			"level": "熟练",
+			"keywords": [
+				"Objective-C",
+				"Swift",
+				"SwiftUI",
+				"Combine",
+				"CocoaPods & SwiftPM"
+			]
+		},
+		{
+			"name": "DevOps",
+			"level": "熟练",
+			"keywords": [
+				"Nix & flake",
+				"Justfile",
+				"Docker",
+				"Bash",
+				"Python",
+				"Go"
+			]
+		}
+	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "杭州电子科技大学",
+			"area": "电子信息学院",
+			"studyType": "本科",
+			"startDate": "2012-09-15",
+			"endDate": "2016-06-20",
+			"gpa": "3.1",
+			"courses": [
+				"集成电路设计与集成系统"
+			]
+		}
+	],
+	"publications": [
+		{
+			"name": "Publication",
+			"publisher": "Company",
+			"releaseDate": "2014-10-01",
+			"website": "http://publication.com",
+			"summary": "Description..."
+		}
+	],
+	"projects": [
+		{
+			"name": "Honda RoadSync",
+			"startDate": "2024-08-01",
+			"endDate": "2024-12-18",
+			"description": "Honda RoadSync 是本田公司为支持其摩托车系列而推出的智能出行应用，旨在为骑行用户提供便捷、安全的数字化服务。通过手机与摩托车的蓝牙连接，用户可以在骑行过程中轻松操作导航、接听电话、播放音乐及查看通知，同时保持专注驾驶.",
+			"duties": [
+				"与本田日本团队合作开发, 独立负责应用本地化, 支持微信、QQ、涂鸦账号体系登录, 高德摩托车导航搜索, 轨迹记录等."
+			],
+			"highlights": [
+				"利用经典蓝牙让仪表整合导航、VoIP、音乐、音量、天气等, 应用操作支持通过把手操作四向开关进行操作且播报相关功能.",
+				"项目基于 SwiftUI、Combine 进行开发, 采用 Redux 架构管理应用状态与事件分发."
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "智能生活 & 智慧出行 公版",
+			"startDate": "2019-05-01",
+			"endDate": "2024-08-31",
+			"description": "涂鸦提供一站式自有品牌 OEM App 构建及管理服务. 基于官方模板, OEM App 提供简单易用的 UI 定制. 客户可以个性化配置品牌等信息.",
+			"duties": [
+				"参与智能生活公版业务迭代, 维护家庭和家庭成员管理、设备和房间列表、设备配网、消息中心等.",
+				"独立负责智慧出行公版业务迭代, 主要涉及 BLE+X 设备控制、地理围栏、三方地图导航、感应解锁、Siri 控制等."
+			],
+			"highlights": [
+				"OEM 开发模式, 工程提供配置文件, 支持客户在 IoT 平台进行配置后按需构建生成应用, 且项目支持裁剪不必要代码.",
+				"应用提供 EZ (Wi-Fi 快连)、AP (热点)、NB-IoT、蓝牙、二维码等多种配网方式支持.",
+				"提供基于物模型对物理空间中的实体进行数字化的 SDK, 抽象出具有\"属性“、”动作事件“、\"服务“的设备实例, 采用标准 MQTT 通讯协议实现对设备的控制与状态监听",
+				"丰富的通讯设备协议支持, 如 Matter、Zigbee、BLE、Sigmesh、Beacon、Cat.1等",
+				"发起涂鸦设备支持 Home Assistant, 让用户在 Home Assistant 中使用涂鸦 IoT 智能设备"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "滴滴出行(乘客端)",
+			"startDate": "2018-03-29",
+			"endDate": "2019-04-16",
+			"description": "滴滴出行是全球领先的智能出行平台，乘客端是其核心业务的主要入口，旨在为用户提供便捷、高效的出行服务。",
+			"duties": [
+				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
+				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
+				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
+			],
+			"highlights": [
+				"采用 MVCS 和 MVVM 架构通过场景模板化、功能组件化、产品业务配置化的方式，抽象和统一专快车豪代驾等产品功能业务逻辑，建立统一类专车业务平台；",
+				"统一聚合收银 SDK，通过插件化管理各个业务插件，提供默认实现插件，支持接入方自定义插件实现，对各端差异化提供支持；",
+				"平台提供统一 ApolloSDK，为新功能提供灰度放量，ABTest 及快速开城功能。"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "同花顺",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"description": "提供沪深港美全球实时高速行情，精选股市热点资讯，支持90%券商在线实时交易的炒股软件。",
+			"duties": [
+				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
+				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
+				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
+				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
+				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
+			],
+			"highlights": [
+				"基于C++实现的Socket获取实时行情数据、增量同步自选股分组数据、Core Graphics绘制分时K线指标；",
+				"利用HttpDNS技术解决用户域名解析异常，有效防止传统 DNS 解析过程中出现的 DNS 劫持；",
+				"采用protocolBuffer配合云存储部门同步用户自选股数据，节省传输的数据流量；",
+				"使用WebViewJavascriptBridge以及JavaScriptCore与Web进行交互；",
+				"程序使用节点配置文件实现视图控制器的解耦，框架提供统一的路由跳转。"
+			],
+			"url": "https://project.com/"
+		}
+	],
+	"work": [
+		{
+			"company": "涂鸦智能(杭州涂鸦信息技术有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2019-04-30",
+			"endDate": "2024-12-18",
+			"summary": "涂鸦智能（纽交所代码：TUYA；港交所代码：2391）是全球领先的云平台服务提供商, 致力于构建智慧解决方案的开发者生态, 赋能万物智能.",
+			"highlights": [
+				"职责:Honda RoadSync 测试"
+			]
+		},
+		{
+			"company": "滴滴出行(杭州快迪科技有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2018-03-16",
+			"endDate": "2019-04-16",
+			"summary": "滴滴出行是全球卓越的移动出行平台, 为超过4.5亿用户提供出租车、专车、快车、顺风车、豪华车、公交、小巴、代驾、租车、企业级、共享单车等全面的出行服务.",
+			"highlights": [
+				"职责：滴滴出行乘客端代驾业务线，黎明项目(内部)及DoraemonKit(滴滴开源)服务端。"
+			]
+		},
+		{
+			"company": "同花顺(浙江核新同花顺网络信息股份有限公司)",
+			"position": "iOS 研发工程师",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"summary": "国内炒股软件领跑者, 公司成立于1994年, 并在2009年于深圳证券交易所挂牌交易. 从成立至今, 已累计服务用户超过3亿！",
+			"highlights": [
+				"职责：同花顺客户端行情业务组，金融大师客户端(企业版)及UI自动化测试"
+			]
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Organization",
+			"position": "Volunteer",
+			"website": "http://organization.com/",
+			"startDate": "2012-01-01",
+			"endDate": "2013-01-01",
+			"summary": "Description...",
+			"highlights": [
+				"Awarded 'Volunteer of the Month'"
+			]
+		}
+	]
+}
