@@ -43,12 +43,6 @@
 			"fluency": "Beginner"
 		}
 	],
-	"references": [
-		{
-			"name": "Jane Doe",
-			"reference": "Reference..."
-		}
-	],
 	"skills": [
 		{
 			"name": "iOS",
@@ -74,6 +68,12 @@
 			]
 		}
 	],
+	"references": [
+		{
+			"name": "Jane Doe",
+			"reference": "Reference..."
+		}
+	],
 	"awards": [
 		{
 			"title": "Award",
@@ -92,6 +92,15 @@
 			"gpa": "3.1",
 			"courses": [
 				"集成电路设计与集成系统"
+			]
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
 			]
 		}
 	],
@@ -116,7 +125,7 @@
 			"endDate": "2024-08-31",
 			"description": "涂鸦提供一站式自有品牌 OEM App 构建及管理服务. 基于官方模板, OEM App 提供简单易用的 UI 定制. 客户可以个性化配置品牌等信息.",
 			"duties": [
-				"参与智能生活公版业务迭代, 维护家庭和家庭成员管理、设备和房间列表、设备配网、消息中心等.",
+				"参与智能生活公版业务迭代, 维护家庭和家庭成员管理、设备和房间列表、设备配网、消息中心等;",
 				"独立负责智慧出行公版业务迭代, 主要涉及 BLE+X 设备控制、地理围栏、三方地图导航、感应解锁、Siri 控制等."
 			],
 			"highlights": [
@@ -155,17 +164,30 @@
 				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间;",
 				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能;",
 				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展;",
-				"负责UI自动化测试平台建设, 应用于回归测试的功能遍历环节, 降低BUG上线的概率, 同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计, 观察各个版本总体性能的变化."
+				"负责 UI 自动化测试平台建设, 应用于回归测试的功能遍历环节, 降低 BUG 上线的概率, 同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计, 观察各个版本总体性能的变化."
 			],
 			"url": "https://project.com/"
 		}
 	],
-	"interests": [
+	"publications": [
 		{
-			"name": "Wildlife",
-			"keywords": [
-				"Ferrets",
-				"Unicorns"
+			"name": "Publication",
+			"publisher": "Company",
+			"releaseDate": "2014-10-01",
+			"website": "http://publication.com",
+			"summary": "Description..."
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Organization",
+			"position": "Volunteer",
+			"website": "http://organization.com/",
+			"startDate": "2012-01-01",
+			"endDate": "2013-01-01",
+			"summary": "Description...",
+			"highlights": [
+				"Awarded 'Volunteer of the Month'"
 			]
 		}
 	],
@@ -178,7 +200,7 @@
 			"endDate": "2024-12-18",
 			"summary": "涂鸦智能（纽交所代码: TUYA; 港交所代码: 2391）是全球领先的云平台服务提供商, 致力于构建智慧解决方案的开发者生态, 赋能万物智能.",
 			"highlights": [
-				"职责:Honda RoadSync 测试"
+				"职责: 涂鸦智能 & 智能生活公版迭代及定制客户支持."
 			]
 		},
 		{
@@ -205,28 +227,6 @@
 				{
 					"职责": "同花顺客户端行情业务组，金融大师客户端(企业版)及UI自动化测试"
 				}
-			]
-		}
-	],
-	"publications": [
-		{
-			"name": "Publication",
-			"publisher": "Company",
-			"releaseDate": "2014-10-01",
-			"website": "http://publication.com",
-			"summary": "Description..."
-		}
-	],
-	"volunteer": [
-		{
-			"organization": "Organization",
-			"position": "Volunteer",
-			"website": "http://organization.com/",
-			"startDate": "2012-01-01",
-			"endDate": "2013-01-01",
-			"summary": "Description...",
-			"highlights": [
-				"Awarded 'Volunteer of the Month'"
 			]
 		}
 	]
