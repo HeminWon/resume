@@ -5,6 +5,31 @@
 			"更好的把握用户需求，让技术真正服务于产品，能够做出优秀的产品."
 		]
 	},
+	"skills": [
+		{
+			"name": "iOS",
+			"level": "熟练",
+			"keywords": [
+				"Objective-C",
+				"Swift",
+				"SwiftUI",
+				"Combine",
+				"CocoaPods & SwiftPM"
+			]
+		},
+		{
+			"name": "DevOps",
+			"level": "熟练",
+			"keywords": [
+				"Nix & flake",
+				"Justfile",
+				"Docker",
+				"Bash",
+				"Python",
+				"Go"
+			]
+		}
+	],
 	"basics": {
 		"name": "王明海",
 		"label": "iOS研发工程师",
@@ -49,70 +74,6 @@
 			"reference": "Reference..."
 		}
 	],
-	"skills": [
-		{
-			"name": "iOS",
-			"level": "熟练",
-			"keywords": [
-				"Objective-C",
-				"Swift",
-				"SwiftUI",
-				"Combine",
-				"CocoaPods & SwiftPM"
-			]
-		},
-		{
-			"name": "DevOps",
-			"level": "熟练",
-			"keywords": [
-				"Nix & flake",
-				"Justfile",
-				"Docker",
-				"Bash",
-				"Python",
-				"Go"
-			]
-		}
-	],
-	"awards": [
-		{
-			"title": "Award",
-			"date": "2014-11-01",
-			"awarder": "Company",
-			"summary": "There is no spoon."
-		}
-	],
-	"interests": [
-		{
-			"name": "Wildlife",
-			"keywords": [
-				"Ferrets",
-				"Unicorns"
-			]
-		}
-	],
-	"education": [
-		{
-			"institution": "杭州电子科技大学",
-			"area": "电子信息学院",
-			"studyType": "本科",
-			"startDate": "2012-09-15",
-			"endDate": "2016-06-20",
-			"gpa": "3.1",
-			"courses": [
-				"集成电路设计与集成系统"
-			]
-		}
-	],
-	"publications": [
-		{
-			"name": "Publication",
-			"publisher": "Company",
-			"releaseDate": "2014-10-01",
-			"website": "http://publication.com",
-			"summary": "Description..."
-		}
-	],
 	"projects": [
 		{
 			"name": "Honda RoadSync",
@@ -123,7 +84,7 @@
 				"与本田日本团队合作开发, 独立负责应用本地化, 支持微信、QQ、涂鸦账号体系登录, 高德摩托车导航搜索, 轨迹记录等."
 			],
 			"highlights": [
-				"利用经典蓝牙让仪表整合导航、VoIP、音乐、音量、天气等, 应用操作支持通过把手操作四向开关进行操作且播报相关功能.",
+				"利用经典蓝牙让仪表整合导航、VoIP、音乐、音量、天气等, 应用操作支持通过把手操作四向开关进行操作且播报相关功能;",
 				"项目基于 SwiftUI、Combine 进行开发, 采用 Redux 架构管理应用状态与事件分发."
 			],
 			"url": "https://project.com/"
@@ -138,11 +99,11 @@
 				"独立负责智慧出行公版业务迭代, 主要涉及 BLE+X 设备控制、地理围栏、三方地图导航、感应解锁、Siri 控制等."
 			],
 			"highlights": [
-				"OEM 开发模式, 工程提供配置文件, 支持客户在 IoT 平台进行配置后按需构建生成应用, 且项目支持裁剪不必要代码.",
-				"应用提供 EZ (Wi-Fi 快连)、AP (热点)、NB-IoT、蓝牙、二维码等多种配网方式支持.",
-				"提供基于物模型对物理空间中的实体进行数字化的 SDK, 抽象出具有\"属性“、”动作事件“、\"服务“的设备实例, 采用标准 MQTT 通讯协议实现对设备的控制与状态监听",
-				"丰富的通讯设备协议支持, 如 Matter、Zigbee、BLE、Sigmesh、Beacon、Cat.1等",
-				"发起涂鸦设备支持 Home Assistant, 让用户在 Home Assistant 中使用涂鸦 IoT 智能设备"
+				"OEM 开发模式, 工程提供配置文件, 支持客户在 IoT 平台进行配置后按需构建生成应用, 且项目支持裁剪不必要代码;",
+				"应用提供 EZ (Wi-Fi 快连)、AP (热点)、NB-IoT、蓝牙、二维码等多种配网方式支持;",
+				"提供基于物模型对物理空间中的实体进行数字化的 SDK, 抽象出具有\"属性“、”动作事件“、\"服务“的设备实例, 采用标准 MQTT 通讯协议实现对设备的控制与状态监听;",
+				"丰富的通讯设备协议支持, 如 Matter、Zigbee、BLE、Sigmesh、Beacon、Cat.1等;",
+				"发起涂鸦设备支持 Home Assistant, 让用户在 Home Assistant 中使用涂鸦 IoT 智能设备."
 			],
 			"url": "https://project.com/"
 		},
@@ -167,22 +128,67 @@
 			"name": "同花顺",
 			"startDate": "2016-03-01",
 			"endDate": "2018-03-01",
-			"description": "提供沪深港美全球实时高速行情，精选股市热点资讯，支持90%券商在线实时交易的炒股软件。",
+			"description": "提供沪深港美全球实时高速行情, 精选股市热点资讯, 支持90%券商在线实时交易的炒股软件.",
 			"duties": [
-				"使用jenkins工具为金融大师项目搭建自动打包平台，增加研发工作效率；",
-				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间；",
-				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能；",
-				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展；",
-				"负责UI自动化测试平台建设，应用于回归测试的功能遍历环节，降低BUG上线的概率，同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计，观察各个版本总体性能的变化。"
-			],
-			"highlights": [
-				"基于C++实现的Socket获取实时行情数据、增量同步自选股分组数据、Core Graphics绘制分时K线指标；",
-				"利用HttpDNS技术解决用户域名解析异常，有效防止传统 DNS 解析过程中出现的 DNS 劫持；",
-				"采用protocolBuffer配合云存储部门同步用户自选股数据，节省传输的数据流量；",
-				"使用WebViewJavascriptBridge以及JavaScriptCore与Web进行交互；",
-				"程序使用节点配置文件实现视图控制器的解耦，框架提供统一的路由跳转。"
+				"使用 jenkins 工具为金融大师项目搭建自动打包平台，增加研发工作效率;",
+				"主导调试菜单功能开发，方便测试切换各种测试和预发布环境，节省重新打包时间;",
+				"参与行情业务组需求迭代和其他模块功能维护，开发股价预警，截图编辑分享等功能;",
+				"理解离屏渲染的弊端,重构行情板块列表，整合及重构第三方分享使之能更好满足新业务的调用及功能扩展;",
+				"负责UI自动化测试平台建设, 应用于回归测试的功能遍历环节, 降低BUG上线的概率, 同时手机端性能检测工具利用每次回归测试用例的测试数据做一个长期的性能统计, 观察各个版本总体性能的变化."
 			],
 			"url": "https://project.com/"
+		}
+	],
+	"publications": [
+		{
+			"name": "Publication",
+			"publisher": "Company",
+			"releaseDate": "2014-10-01",
+			"website": "http://publication.com",
+			"summary": "Description..."
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
+			]
+		}
+	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
+		}
+	],
+	"education": [
+		{
+			"institution": "杭州电子科技大学",
+			"area": "电子信息学院",
+			"studyType": "本科",
+			"startDate": "2012-09-15",
+			"endDate": "2016-06-20",
+			"gpa": "3.1",
+			"courses": [
+				"集成电路设计与集成系统"
+			]
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Organization",
+			"position": "Volunteer",
+			"website": "http://organization.com/",
+			"startDate": "2012-01-01",
+			"endDate": "2013-01-01",
+			"summary": "Description...",
+			"highlights": [
+				"Awarded 'Volunteer of the Month'"
+			]
 		}
 	],
 	"work": [
@@ -217,19 +223,6 @@
 			"summary": "国内炒股软件领跑者, 公司成立于1994年, 并在2009年于深圳证券交易所挂牌交易. 从成立至今, 已累计服务用户超过3亿！",
 			"highlights": [
 				"职责：同花顺客户端行情业务组，金融大师客户端(企业版)及UI自动化测试"
-			]
-		}
-	],
-	"volunteer": [
-		{
-			"organization": "Organization",
-			"position": "Volunteer",
-			"website": "http://organization.com/",
-			"startDate": "2012-01-01",
-			"endDate": "2013-01-01",
-			"summary": "Description...",
-			"highlights": [
-				"Awarded 'Volunteer of the Month'"
 			]
 		}
 	]
