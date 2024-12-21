@@ -5,31 +5,6 @@
 			"更好的把握用户需求，让技术真正服务于产品，能够做出优秀的产品."
 		]
 	},
-	"skills": [
-		{
-			"name": "iOS",
-			"level": "熟练",
-			"keywords": [
-				"Objective-C",
-				"Swift",
-				"SwiftUI",
-				"Combine",
-				"CocoaPods & SwiftPM"
-			]
-		},
-		{
-			"name": "DevOps",
-			"level": "熟练",
-			"keywords": [
-				"Nix & flake",
-				"Justfile",
-				"Docker",
-				"Bash",
-				"Python",
-				"Go"
-			]
-		}
-	],
 	"basics": {
 		"name": "王明海",
 		"label": "iOS研发工程师",
@@ -74,6 +49,61 @@
 			"reference": "Reference..."
 		}
 	],
+	"skills": [
+		{
+			"name": "iOS",
+			"level": "熟练",
+			"keywords": [
+				"Objective-C",
+				"Swift",
+				"SwiftUI",
+				"Combine",
+				"CocoaPods & SwiftPM"
+			]
+		},
+		{
+			"name": "DevOps",
+			"level": "熟练",
+			"keywords": [
+				"Nix & flake",
+				"Justfile",
+				"Docker",
+				"Bash",
+				"Python",
+				"Go"
+			]
+		}
+	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "杭州电子科技大学",
+			"area": "电子信息学院",
+			"studyType": "本科",
+			"startDate": "2012-09-15",
+			"endDate": "2016-06-20",
+			"gpa": "3.1",
+			"courses": [
+				"集成电路设计与集成系统"
+			]
+		}
+	],
 	"projects": [
 		{
 			"name": "Honda RoadSync",
@@ -111,16 +141,16 @@
 			"name": "滴滴出行(乘客端)",
 			"startDate": "2018-03-29",
 			"endDate": "2019-04-16",
-			"description": "滴滴出行是全球领先的智能出行平台，乘客端是其核心业务的主要入口，旨在为用户提供便捷、高效的出行服务。",
+			"description": "滴滴出行是全球领先的智能出行平台, 乘客端是其核心业务的主要入口, 旨在为用户提供便捷、高效的出行服务。",
 			"duties": [
-				"独立负责乘客端代驾业务线需求迭代及功能维护，参与公共平台组件建设；",
-				"梳理代驾业务线功能，将分散各个下层组件的业务代码抽取整理独立成库，更好的实现业务线自治，同时提高日常开发工程的编译速度；",
-				"对代驾业务代码进行分层并独立出核心功能库，使代驾业务功能的具有可快速移植性。"
+				"独立负责乘客端代驾业务线需求迭代及功能维护, 参与公共平台组件建设;",
+				"梳理代驾业务线功能, 将分散各个下层组件的业务代码抽取整理独立成库, 更好的实现业务线自治, 同时提高日常开发工程的编译速度;",
+				"对代驾业务代码进行分层并独立出核心功能库, 使代驾业务功能的具有可快速移植性."
 			],
 			"highlights": [
-				"采用 MVCS 和 MVVM 架构通过场景模板化、功能组件化、产品业务配置化的方式，抽象和统一专快车豪代驾等产品功能业务逻辑，建立统一类专车业务平台；",
-				"统一聚合收银 SDK，通过插件化管理各个业务插件，提供默认实现插件，支持接入方自定义插件实现，对各端差异化提供支持；",
-				"平台提供统一 ApolloSDK，为新功能提供灰度放量，ABTest 及快速开城功能。"
+				"采用 MVCS 和 MVVM 架构通过场景模板化、功能组件化、产品业务配置化的方式, 抽象和统一专快车豪代驾等产品功能业务逻辑，建立统一类专车业务平台;",
+				"统一聚合收银 SDK, 通过插件化管理各个业务插件, 提供默认实现插件, 支持接入方自定义插件实现, 对各端差异化提供支持;",
+				"平台提供统一 ApolloSDK，为新功能提供灰度放量，ABTest 及快速开城功能."
 			],
 			"url": "https://project.com/"
 		},
@@ -146,36 +176,6 @@
 			"releaseDate": "2014-10-01",
 			"website": "http://publication.com",
 			"summary": "Description..."
-		}
-	],
-	"interests": [
-		{
-			"name": "Wildlife",
-			"keywords": [
-				"Ferrets",
-				"Unicorns"
-			]
-		}
-	],
-	"awards": [
-		{
-			"title": "Award",
-			"date": "2014-11-01",
-			"awarder": "Company",
-			"summary": "There is no spoon."
-		}
-	],
-	"education": [
-		{
-			"institution": "杭州电子科技大学",
-			"area": "电子信息学院",
-			"studyType": "本科",
-			"startDate": "2012-09-15",
-			"endDate": "2016-06-20",
-			"gpa": "3.1",
-			"courses": [
-				"集成电路设计与集成系统"
-			]
 		}
 	],
 	"volunteer": [
