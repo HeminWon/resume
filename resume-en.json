@@ -74,36 +74,6 @@
 			]
 		}
 	],
-	"awards": [
-		{
-			"title": "Award",
-			"date": "2014-11-01",
-			"awarder": "Company",
-			"summary": "There is no spoon."
-		}
-	],
-	"interests": [
-		{
-			"name": "Wildlife",
-			"keywords": [
-				"Ferrets",
-				"Unicorns"
-			]
-		}
-	],
-	"education": [
-		{
-			"institution": "Hangzhou Dianzi University",
-			"area": "College of Electronic Information",
-			"studyType": "B.Eng.",
-			"startDate": "2012-09-15",
-			"endDate": "2016-06-20",
-			"gpa": "3.1",
-			"courses": [
-				"Integrated Circuit Design and Integrated System"
-			]
-		}
-	],
 	"projects": [
 		{
 			"name": "Honda RoadSync",
@@ -125,23 +95,15 @@
 			"endDate": "2024-08-31",
 			"description": "Tuya provides white-label OEM app development and management services. Based on official templates, the OEM apps offer easy UI customization, enabling clients to personalize branding elements and configurations.",
 			"duties": [
-				{
-					"Developed core modules for Smart Life Standard Edition": "Household/family member management, device/room lists, network provisioning, message center"
-				},
-				{
-					"Solely owned Smart Mobility Standard Edition development": "BLE+ device control, geofencing, third-party map navigation integrations, auto-unlock sensing, Siri voice controls"
-				}
+				"Participated in Smart Life Standard Edition business iterations, maintained household and family member management, device and room lists, device network provisioning, message center, etc.",
+				"Independently responsible for Smart Mobility Standard Edition business iterations, mainly involving BLE+X device control, geofencing, third-party map navigation, proximity-based auto-unlock, Siri controls, etc."
 			],
 			"highlights": [
-				"Implemented config-driven OEM development model allowing code pruning and on-demand app generation via IoT platform configurations",
-				{
-					"Supported multiple network provisioning methods": "EZ (Wi-Fi Fast Connect), AP (Hotspot), NB-IoT, Bluetooth, QR code pairing"
-				},
-				"Built Thing Model SDK digitizing physical entities with \"property-action-event-service\" abstraction using MQTT protocol",
-				{
-					"Integrated 20+ IoT protocols": "Matter, Zigbee, BLE Mesh, Sigmesh, Beacon, Cat.1, etc"
-				},
-				"Pioneered Tuya-Home Assistant integration enabling smart device control in open-source HA ecosystems"
+				"OEM development model, providing configuration files in the project to enable customers to configure via IoT platform and build applications on-demand, with code pruning support for unnecessary functionalities;",
+				"Supported multiple network provisioning methods including EZ (Wi-Fi Quick Connect), AP (Hotspot), NB-IoT, Bluetooth, QR code pairing;",
+				"Developed Thing Model SDK for physical entity digitization, abstracting device instances with \"properties\", \"actions/events\", and \"services\", enabling device control/status monitoring via standard MQTT protocol;",
+				"Supported extensive IoT protocols, Matter, Zigbee, BLE, Sigmesh, Beacon, Cat.1, etc.;",
+				"Initiated Tuya device compatibility with Home Assistant, enabling Tuya IoT device integration in Home Assistant ecosystems."
 			],
 			"url": "https://project.com/"
 		},
@@ -177,6 +139,36 @@
 			"url": "https://project.com/"
 		}
 	],
+	"education": [
+		{
+			"institution": "Hangzhou Dianzi University",
+			"area": "College of Electronic Information",
+			"studyType": "B.Eng.",
+			"startDate": "2012-09-15",
+			"endDate": "2016-06-20",
+			"gpa": "3.1",
+			"courses": [
+				"Integrated Circuit Design and Integrated System"
+			]
+		}
+	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
+			]
+		}
+	],
 	"publications": [
 		{
 			"name": "Publication",
@@ -184,19 +176,6 @@
 			"releaseDate": "2014-10-01",
 			"website": "http://publication.com",
 			"summary": "Description..."
-		}
-	],
-	"volunteer": [
-		{
-			"organization": "Organization",
-			"position": "Volunteer",
-			"website": "http://organization.com/",
-			"startDate": "2012-01-01",
-			"endDate": "2013-01-01",
-			"summary": "Description...",
-			"highlights": [
-				"Awarded 'Volunteer of the Month'"
-			]
 		}
 	],
 	"work": [
@@ -225,7 +204,7 @@
 			]
 		},
 		{
-			"company": "同花顺(Zhejiang Hexin Flush Network Information Co., Ltd.)",
+			"company": "同花顺 (Zhejiang Hexin Flush Network Information Co., Ltd.)",
 			"position": "iOS Software Engineer",
 			"website": "https://www.tuya.com/cn/",
 			"startDate": "2016-03-01",
@@ -235,6 +214,19 @@
 				{
 					"duties": "Built UI automation testing framework reducing regression testing time by 35%"
 				}
+			]
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Organization",
+			"position": "Volunteer",
+			"website": "http://organization.com/",
+			"startDate": "2012-01-01",
+			"endDate": "2013-01-01",
+			"summary": "Description...",
+			"highlights": [
+				"Awarded 'Volunteer of the Month'"
 			]
 		}
 	]
