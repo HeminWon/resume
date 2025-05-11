@@ -1,0 +1,241 @@
+{
+	"about": {
+		"me": [
+			"Seeks a role with growth opportunities, technical challenges, and emphasis on code quality, knowledge sharing, and continuous learning.",
+			"Focuses on deeply understanding user needs to ensure technology effectively serves product goals, ultimately delivering exceptional products."
+		]
+	},
+	"basics": {
+		"name": "Minghai Wang",
+		"label": "iOS Software Engineer",
+		"picture": "",
+		"email": "heminwmh@gmail.com",
+		"phone": "159-5713-0984",
+		"website": "https://github.com/HeminWon",
+		"summary": "A summary of John Doe...",
+		"location": {
+			"address": "西湖区",
+			"postalCode": 310013,
+			"city": "杭州市",
+			"countryCode": "CN",
+			"region": "浙江省"
+		},
+		"profiles": [
+			{
+				"network": "Github",
+				"username": "HeminWon",
+				"url": "https://github.com/HeminWon"
+			},
+			{
+				"network": "Twitter",
+				"username": "heminwon",
+				"url": "http://twitter.com/heminwon"
+			}
+		]
+	},
+	"languages": [
+		{
+			"language": "Chinese",
+			"fluency": "Native speaker"
+		},
+		{
+			"language": "English",
+			"fluency": "Beginner"
+		}
+	],
+	"references": [
+		{
+			"name": "Jane Doe",
+			"reference": "Reference..."
+		}
+	],
+	"skills": [
+		{
+			"name": "iOS",
+			"level": "熟练",
+			"keywords": [
+				"Objective-C",
+				"Swift",
+				"SwiftUI",
+				"Combine",
+				"CocoaPods & SwiftPM"
+			]
+		},
+		{
+			"name": "DevOps",
+			"level": "熟练",
+			"keywords": [
+				"Nix & flake",
+				"Justfile",
+				"Docker",
+				"Bash",
+				"Python",
+				"Go"
+			]
+		}
+	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
+		}
+	],
+	"interests": [
+		{
+			"name": "Wildlife",
+			"keywords": [
+				"Ferrets",
+				"Unicorns"
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "Hangzhou Dianzi University",
+			"area": "College of Electronic Information",
+			"studyType": "B.Eng.",
+			"startDate": "2012-09-15",
+			"endDate": "2016-06-20",
+			"gpa": "3.1",
+			"courses": [
+				"Integrated Circuit Design and Integrated System"
+			]
+		}
+	],
+	"projects": [
+		{
+			"name": "Honda RoadSync",
+			"startDate": "2024-08-01",
+			"endDate": "2024-12-18",
+			"description": "RoadSync is Honda's smart mobility solution for motorcycle ecosystems, enabling safe in-ride access to navigation, calls, music, and notifications via Bluetooth connectivity between smartphones and motorcycles while maintaining riding focus.",
+			"duties": [
+				"Delivered fully localized iOS solution to Honda Japan R&D team within 6-month timeframe."
+			],
+			"highlights": [
+				"Integrated Classic Bluetooth protocols to sync instrument cluster with navigation/VoIP/music/weather data, enabling handlebar-mounted 4-way switch control with voice-guided interactions",
+				"Architected iOS app using SwiftUI+Combine with Redux pattern for state management (event-driven design)"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "Tuya Smart (Smart Life & Smart Mobility Standard Edition)",
+			"startDate": "2019-05-01",
+			"endDate": "2024-08-31",
+			"description": "Tuya provides white-label OEM app development and management services. Based on official templates, the OEM apps offer easy UI customization, enabling clients to personalize branding elements and configurations.",
+			"duties": [
+				{
+					"Developed core modules for Smart Life Standard Edition": "Household/family member management, device/room lists, network provisioning, message center"
+				},
+				{
+					"Solely owned Smart Mobility Standard Edition development": "BLE+ device control, geofencing, third-party map navigation integrations, auto-unlock sensing, Siri voice controls"
+				}
+			],
+			"highlights": [
+				"Implemented config-driven OEM development model allowing code pruning and on-demand app generation via IoT platform configurations",
+				{
+					"Supported multiple network provisioning methods": "EZ (Wi-Fi Fast Connect), AP (Hotspot), NB-IoT, Bluetooth, QR code pairing"
+				},
+				"Built Thing Model SDK digitizing physical entities with \"property-action-event-service\" abstraction using MQTT protocol",
+				{
+					"Integrated 20+ IoT protocols": "Matter, Zigbee, BLE Mesh, Sigmesh, Beacon, Cat.1, etc"
+				},
+				"Pioneered Tuya-Home Assistant integration enabling smart device control in open-source HA ecosystems"
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "DIDI Global Inc. (Passenger App)",
+			"startDate": "2018-03-29",
+			"endDate": "2019-04-16",
+			"description": "Didi is the world's leading mobility platform. The Passenger App serves as the core entry point for its primary business, delivering convenient and efficient transportation services to 550M+ users globally.",
+			"duties": [
+				"Independently led feature iterations and maintenance for the Designated Driving service line, contributing to public platform component development.",
+				"Modularized scattered business logic across sub-components into standalone libraries, achieving business line autonomy and improving compilation speed by 30%.",
+				"Refactored codebase into layered architecture with core functionality libraries, enhancing cross-platform portability efficiency by 50%."
+			],
+			"highlights": [
+				"Architected unified ride-hailing platform using MVCS/MVVM patterns through template-driven scenarios, componentized features, and configurable business rules, consolidating premium/express/designated driving services.",
+				"Developed unified payment SDK with plugin-based management, enabling default implementations and custom plugin extensions for multi-platform compatibility.",
+				"Created ApolloSDK framework implementing gray release capabilities, AB testing frameworks, and rapid city deployment for new features."
+			],
+			"url": "https://project.com/"
+		},
+		{
+			"name": "Zhejiang Hexin Flush Network Services Ltd",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"description": "A stock trading software providing global real-time market data (Shanghai/Shenzhen/HK/US markets), curated financial news, and online trading integration with 90% of Chinese securities brokers.",
+			"duties": [
+				"Built an automated packaging platform using Jenkins for the \"Financial Master\" project, improving R&D efficiency.",
+				"Spearheaded the development of a debug menu for environment switching (test/staging), reducing repackaging time by 70%.",
+				"Contributed to iterative feature development in the market data team, implementing stock price alerts, screenshot editing/sharing functionalities.",
+				"Optimized market sector lists by eliminating off-screen rendering issues, and refactored third-party sharing modules for better extensibility.",
+				"Established UI automation testing framework for regression testing, reducing production bugs by 40%. Developed mobile performance monitoring tools tracking metrics across versions."
+			],
+			"url": "https://project.com/"
+		}
+	],
+	"publications": [
+		{
+			"name": "Publication",
+			"publisher": "Company",
+			"releaseDate": "2014-10-01",
+			"website": "http://publication.com",
+			"summary": "Description..."
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Organization",
+			"position": "Volunteer",
+			"website": "http://organization.com/",
+			"startDate": "2012-01-01",
+			"endDate": "2013-01-01",
+			"summary": "Description...",
+			"highlights": [
+				"Awarded 'Volunteer of the Month'"
+			]
+		}
+	],
+	"work": [
+		{
+			"company": "Tuya Smart (Hangzhou Tuya Information Technology Co., Ltd.)",
+			"position": "iOS Software Engineer",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2019-04-30",
+			"endDate": "2024-12-18",
+			"summary": "Tuya Smart (NYSE: TUYA; HKEX: 2391), a global leading cloud platform service provider, dedicated to building a developer ecosystem for smart solutions and enabling IoT intelligence.",
+			"highlights": [
+				"Responsibilities: Maintained Tuya Smart & Smart Life Standard Edition iterations, provided customized client support."
+			]
+		},
+		{
+			"company": "Didi Global Inc. (Hangzhou Kuaidi Technology Co., Ltd.)",
+			"position": "iOS Software Engineer",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2018-03-16",
+			"endDate": "2019-04-16",
+			"summary": "As the world's leading mobility platform serving 450 million users, providing comprehensive transportation services including taxi, premium ride, express ride, carpooling, luxury car, bus, shuttle, designated driving, car rental, enterprise solutions, and bike-sharing.",
+			"highlights": [
+				{
+					"职责": "滴滴出行乘客端代驾业务线，黎明项目 (内部) 及 DoraemonKit (滴滴开源) 服务端。"
+				}
+			]
+		},
+		{
+			"company": "同花顺(Zhejiang Hexin Flush Network Information Co., Ltd.)",
+			"position": "iOS Software Engineer",
+			"website": "https://www.tuya.com/cn/",
+			"startDate": "2016-03-01",
+			"endDate": "2018-03-01",
+			"summary": "China's leading stock trading software provider (established 1994, listed on Shenzhen Stock Exchange in 2009), serving over 300 million users with real-time market data and trading solutions.",
+			"highlights": [
+				{
+					"duties": "Built UI automation testing framework reducing regression testing time by 35%"
+				}
+			]
+		}
+	]
+}
