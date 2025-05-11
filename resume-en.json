@@ -43,12 +43,6 @@
 			"fluency": "Beginner"
 		}
 	],
-	"references": [
-		{
-			"name": "Jane Doe",
-			"reference": "Reference..."
-		}
-	],
 	"skills": [
 		{
 			"name": "iOS",
@@ -72,6 +66,20 @@
 				"Python",
 				"Go"
 			]
+		}
+	],
+	"references": [
+		{
+			"name": "Jane Doe",
+			"reference": "Reference..."
+		}
+	],
+	"awards": [
+		{
+			"title": "Award",
+			"date": "2014-11-01",
+			"awarder": "Company",
+			"summary": "There is no spoon."
 		}
 	],
 	"projects": [
@@ -125,7 +133,7 @@
 			"url": "https://project.com/"
 		},
 		{
-			"name": "Zhejiang Hexin Flush Network Services Ltd",
+			"name": "同花顺",
 			"startDate": "2016-03-01",
 			"endDate": "2018-03-01",
 			"description": "A stock trading software providing global real-time market data (Shanghai/Shenzhen/HK/US markets), curated financial news, and online trading integration with 90% of Chinese securities brokers.",
@@ -150,14 +158,6 @@
 			"courses": [
 				"Integrated Circuit Design and Integrated System"
 			]
-		}
-	],
-	"awards": [
-		{
-			"title": "Award",
-			"date": "2014-11-01",
-			"awarder": "Company",
-			"summary": "There is no spoon."
 		}
 	],
 	"interests": [
