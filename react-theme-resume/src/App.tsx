@@ -2,7 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Resume from './Resume';
-import PDFGenerator from './PDFGenerator';
 
 function App() {
   // return (
@@ -25,7 +24,6 @@ function App() {
   // );
   return (
     <div className="App">
-      <PDFGenerator />
       <Resume />
     </div>
   );
