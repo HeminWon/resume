@@ -1,0 +1,30 @@
+.item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  column-gap: 12px;
+  align-items: baseline;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.label {
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+
+.value {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.value:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .item {
+    grid-template-columns: 70px 1fr;
+  }
+}

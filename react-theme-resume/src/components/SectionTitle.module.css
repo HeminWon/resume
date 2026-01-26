@@ -1,0 +1,45 @@
+.titleRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 20px 0 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.line {
+  flex: 1;
+  border-bottom: 1px dashed var(--color-line);
+  transform: translateY(-4px);
+}
+
+@media print {
+  .titleRow {
+    margin: 14px 0 6px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .line {
+    transform: translateY(-2px);
+  }
+}

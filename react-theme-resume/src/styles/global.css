@@ -1,0 +1,40 @@
+:root {
+  --color-page-bg: #f3f2ee;
+  --color-surface: #ffffff;
+  --color-text: #1c1f2a;
+  --color-muted: #5f6672;
+  --color-primary: #1f3a5f;
+  --color-on-primary: #ffffff;
+  --color-border: #dcdfe6;
+  --color-line: #9aa0ad;
+  --shadow-elevated: 0 20px 60px rgba(12, 18, 30, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Serif SC', 'Noto Serif', 'Times New Roman', serif;
+  background: var(--color-page-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm 10mm;
+  }
+
+  body {
+    background: white;
+    font-size: 12px;
+  }
+}

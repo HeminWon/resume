@@ -1,3 +1,18 @@
+## 本地启动
+
+```sh
+yarn install
+yarn start
+```
+
+静态服务预览（用于直接访问 build 产物）：
+
+```sh
+yarn serve:static
+```
+
+简历数据文件位于 `public/resume.zh.json` 与 `public/resume.en.json`。
+
 ```sh
 npm cache clean --force
 rm -rf node_modules package-lock.json

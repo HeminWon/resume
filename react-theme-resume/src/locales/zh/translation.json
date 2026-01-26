@@ -1,7 +1,32 @@
 {
+  "sections": {
     "work": "工作经历",
-    "project": "项目经历",
-    "education": "教育经历经历",
+    "workSubtitle": "Experience",
+    "project": "项目经验",
+    "projectSubtitle": "Projects",
+    "education": "教育经历",
+    "educationSubtitle": "Education",
     "skill": "技能描述",
-    "evaluation": "自我评价"
+    "skillSubtitle": "Skills",
+    "evaluation": "自我评价",
+    "evaluationSubtitle": "About"
+  },
+  "labels": {
+    "email": "邮箱",
+    "phone": "电话",
+    "website": "主页",
+    "present": "至今",
+    "duties": "主要职责",
+    "technologies": "项目技术"
+  },
+  "actions": {
+    "print": "导出 PDF",
+    "retry": "重试",
+    "toEnglish": "English",
+    "toChinese": "中文"
+  },
+  "status": {
+    "loading": "加载中...",
+    "error": "加载失败，请重试"
+  }
 }
