@@ -247,7 +247,7 @@
 
   .entryCard,
   .skillItem {
-    break-inside: avoid;
+    break-inside: auto;
   }
 
   .headerSection {
