@@ -1,0 +1,241 @@
+{
+  "basics": {
+    "name": "Albatross",
+    "label": "iOS Test Engineer",
+    "picture": "",
+    "email": "heminwmh@gmail.com",
+    "phone": "(86)159-5713-0984",
+    "website": "https://github.com/HeminWon",
+    "summary": "A summary of John Doe...",
+    "location": {
+      "address": "West Lake District",
+      "postalCode": 310013,
+      "city": "Hangzhou",
+      "countryCode": "CN",
+      "region": "Zhejiang"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "HeminWon",
+        "url": "https://github.com/HeminWon"
+      },
+      {
+        "network": "Twitter",
+        "username": "heminwon",
+        "url": "http://twitter.com/heminwon"
+      }
+    ]
+  },
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Beginner"
+    }
+  ],
+  "about": {
+    "me": [
+      "I am a software engineer passionate about programming, skilled at solving straightforward problems and optimizing system performance, with strong teamwork and communication skills.",
+      "As a designer, I am passionate about visual art and user experience. I excel at turning ideas into practical designs and deliver refined work that meets client needs and elevates brand image."
+    ]
+  },
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference..."
+    }
+  ],
+  "skills": [
+    {
+      "name": "iOS Development",
+      "level": "Proficient",
+      "keywords": [
+        "Objective-C",
+        "Swift",
+        "SwiftUI",
+        "Combine",
+        "GCD",
+        "Runtime",
+        "Runloop",
+        "CocoaPods",
+        "SourceTree",
+        "Charles",
+        "Postman"
+      ]
+    },
+    {
+      "name": "Third-party Libraries",
+      "level": "Proficient",
+      "keywords": [
+        "Proficient with mainstream third-party libraries",
+        "Discrete secondary encapsulation",
+        "Centralized secondary encapsulation"
+      ]
+    },
+    {
+      "name": "Design Patterns",
+      "level": "Proficient",
+      "keywords": [
+        "Factory Pattern",
+        "Strategy Pattern",
+        "State Pattern",
+        "Command Pattern"
+      ]
+    },
+    {
+      "name": "Automation Scripting",
+      "level": "Proficient",
+      "keywords": [
+        "Python",
+        "Shell",
+        "Go",
+        "Automate repetitive work"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University",
+      "area": "School of Electronic Information",
+      "studyType": "Bachelor",
+      "startDate": "2012-09-01",
+      "endDate": "2016-06-01",
+      "gpa": "3.0",
+      "courses": [
+        "Integrated Circuit Design and Integration Systems"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "website": "http://publication.com",
+      "summary": "Description..."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Honda RoadSync",
+      "startDate": "2024-08-01",
+      "endDate": "2024-12-31",
+      "description": "Honda project",
+      "duties": [
+        "Participated in public-version business iteration, external SDK maintenance, technical solution optimization, and documentation.",
+        "Participated in the client CI platform development, responsible for phase-two backend work, adding project/component build options for business-oriented customization."
+      ],
+      "url": "https://project.com/"
+    },
+    {
+      "name": "Tuya Smart",
+      "startDate": "2024-08-01",
+      "endDate": "2024-12-31",
+      "description": "Tuya Smart (NYSE: TUYA; HKEX: 2391) is a global leading cloud platform service provider dedicated to building a developer ecosystem for smart solutions and enabling the intelligence of everything.",
+      "duties": [
+        "Participated in public-version business iteration, external SDK maintenance, technical solution optimization, and documentation.",
+        "Participated in the client CI platform development, responsible for phase-two backend work, adding project/component build options for business-oriented customization."
+      ],
+      "highlights": [
+        "OEM development model: projects are generated on demand after configuration on the IoT platform, with support for trimming unnecessary code.",
+        "Supports multiple onboarding methods: EZ (one-click/Wi-Fi fast connect), AP (hotspot), ZigBee, NB-IoT, Bluetooth, GPRS, QR code, etc.",
+        "Unified short-link platform for route jumps, enabling component decoupling via protocol registration."
+      ],
+      "url": "https://project.com/"
+    },
+    {
+      "name": "DiDi Chuxing (Passenger App)",
+      "startDate": "2018-03-29",
+      "endDate": "2019-04-16",
+      "description": "DiDi is a leading global mobility platform serving over 450 million users with comprehensive services including taxi, ride-hailing, carpool, premium rides, bus, 代驾, car rental, enterprise mobility, and bike sharing.",
+      "duties": [
+        "Independently responsible for demand iterations and maintenance of the passenger-side 代驾 business line, and participated in shared platform component construction.",
+        "Extracted and organized distributed business code into an independent library to improve business autonomy and reduce daily build time.",
+        "Refactored the 代驾 business into layered architecture and separated core libraries to improve portability."
+      ],
+      "highlights": [
+        "Independently responsible for demand iterations and maintenance of the passenger-side 代驾 business line, and participated in shared platform component construction.",
+        "Extracted and organized distributed business code into an independent library to improve business autonomy and reduce daily build time.",
+        "Refactored the 代驾 business into layered architecture and separated core libraries to improve portability."
+      ],
+      "url": "https://project.com/"
+    },
+    {
+      "name": "Tonghuashun",
+      "startDate": "2016-03-01",
+      "endDate": "2018-03-01",
+      "description": "Tonghuashun (300033) is a popular mobile stock trading app providing real-time market data, comprehensive stock information, and broad broker support, with early support for stock index options and 沪港通.",
+      "duties": [
+        "Built a Jenkins-based automated packaging platform for the Finance Master project to improve R&D efficiency.",
+        "Led the development of a debug menu to switch test/pre-release environments, reducing rebuild time.",
+        "Participated in market data group iteration and maintenance; developed stock price alerts and screenshot editing/sharing.",
+        "Identified offscreen rendering drawbacks, refactored market list, and integrated/refactored third-party sharing to support new business needs.",
+        "Built a UI automation test platform for regression traversal; used performance test data from each regression to track long-term performance trends."
+      ],
+      "highlights": [
+        "Built a Jenkins-based automated packaging platform for the Finance Master project to improve R&D efficiency.",
+        "Led the development of a debug menu to switch test/pre-release environments, reducing rebuild time.",
+        "Participated in market data group iteration and maintenance; developed stock price alerts and screenshot editing/sharing.",
+        "Identified offscreen rendering drawbacks, refactored market list, and integrated/refactored third-party sharing to support new business needs.",
+        "Built a UI automation test platform for regression traversal; used performance test data from each regression to track long-term performance trends."
+      ],
+      "url": "https://project.com/"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "company": "Tuya Smart (Hangzhou Tuya Information Technology Co., Ltd.)",
+      "position": "iOS Developer",
+      "website": "https://www.tuya.com/cn/",
+      "startDate": "2019-04-30",
+      "endDate": "Present",
+      "summary": "IoT company",
+      "highlights": [
+        "Responsibilities: Honda RoadSync testing"
+      ]
+    },
+    {
+      "company": "DiDi Chuxing (Hangzhou Kuaidi Technology Co., Ltd.)",
+      "position": "iOS Developer",
+      "website": "https://www.tuya.com/cn/",
+      "startDate": "2018-03-16",
+      "endDate": "2019-03-16",
+      "summary": "Ride-hailing app",
+      "highlights": [
+        "Responsibilities: Passenger-side 代驾 business line; internal Dawn project and DoraemonKit (open source) backend services."
+      ]
+    },
+    {
+      "company": "Tonghuashun (Zhejiang Hithink RoyalFlush Information Network Co., Ltd.)",
+      "position": "iOS Developer",
+      "website": "https://www.tuya.com/cn/",
+      "startDate": "2016-03-01",
+      "endDate": "2018-03-01",
+      "summary": "Stock trading app",
+      "highlights": [
+        "Responsibilities: Market data group; Finance Master client (enterprise edition) and UI automation testing."
+      ]
+    }
+  ]
+}
