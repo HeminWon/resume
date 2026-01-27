@@ -1,4 +1,8 @@
-## 本地启动
+## 包管理器选择
+
+当前仓库包含 `yarn.lock`，默认且推荐使用 Yarn（可复现、团队一致性更好）。npm 仅作为兼容备选，不保证文档同步更新。
+
+## 本地启动（Yarn）
 
 ```sh
 yarn install
@@ -13,57 +17,47 @@ yarn serve:static
 
 简历数据文件位于 `public/resume.zh.json` 与 `public/resume.en.json`。
 
+## 本地验证 PDF 发布流程（Yarn）
+
+用于模拟「build + 生成 PDF + 静态预览」的完整链路（与部署一致）。
+
+1) 构建产物
 ```sh
-npm cache clean --force
-rm -rf node_modules package-lock.json
-yarn install
-yarn add xxx
+yarn build
+```
+
+2) 生成 PDF（选择语言）
+```sh
+yarn export:pdf --lang zh
+```
+
+3) 放入 build（保持路径为 /resume.pdf）
+```sh
+cp artifacts/resume-zh.pdf build/resume.pdf
+```
+
+4) 本地静态预览
+```sh
+yarn serve:static
+```
+
+## npm（可选）
+
+仅在无法使用 Yarn 时使用：
+
+```sh
+npm install
+npm start
 ```
 
 
-# Getting Started with Create React App
+## 常用脚本（Yarn）
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+yarn start
+yarn build
+yarn export:pdf -- --lang zh
+yarn export:pdf --lang en
+yarn export:pdf:build --lang zh
+yarn serve:static
+```

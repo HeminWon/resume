@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // 设置静态文件目录
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
 // 使用 morgan 记录请求日志
 app.use(morgan('combined')); // 'combined' 记录详细的请求日志

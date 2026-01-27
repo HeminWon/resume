@@ -17,6 +17,13 @@ const resolveLanguage = (value?: string): ResumeLanguage => {
   return 'zh';
 };
 
+const sanitizeFileName = (value: string): string =>
+  value
+    .trim()
+    .replace(/[\\/:*?"<>|]/g, '-')
+    .replace(/\s+/g, ' ')
+    .replace(/\.+$/g, '');
+
 const ResumePage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const lang = useMemo(
@@ -30,8 +37,33 @@ const ResumePage: React.FC = () => {
     i18n.changeLanguage(next);
   };
 
-  const handlePrint = () => {
-    window.print();
+  const resolvePdfName = () => {
+    const basics = state.data?.basics;
+    const name = basics?.name?.trim() ?? '';
+    const label = basics?.label?.trim() ?? '';
+    const title = name && label ? `${name}-${label}` : name || label;
+    const safeTitle = title ? sanitizeFileName(title) : '';
+    return `${safeTitle || `resume-${lang}`}.pdf`;
+  };
+
+  const handlePrint = async () => {
+    try {
+      const response = await fetch('/resume.pdf', { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`Failed to download resume.pdf (${response.status})`);
+      }
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = resolvePdfName();
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -58,7 +90,7 @@ const ResumePage: React.FC = () => {
           </div>
         ) : null}
         {state.data ? (
-          <div className={styles.content}>
+          <div className={styles.content} data-testid="resume-content">
             <HeaderSection basics={state.data.basics} />
             <EducationSection education={state.data.education ?? []} />
             <WorkSection work={state.data.work ?? []} />

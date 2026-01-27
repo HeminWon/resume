@@ -30,6 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "serve:static": "node scripts/service.cjs",
+    "export:pdf": "node scripts/export-pdf.cjs",
+    "export:pdf:build": "node scripts/export-pdf.cjs --build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -52,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "puppeteer": "^24.36.0"
   }
 }
