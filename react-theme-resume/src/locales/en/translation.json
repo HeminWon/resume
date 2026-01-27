@@ -28,5 +28,8 @@
   "status": {
     "loading": "Loading...",
     "error": "Failed to load. Please retry."
+  },
+  "alerts": {
+    "downloadFailed": "Download failed. Please try again later."
   }
 }

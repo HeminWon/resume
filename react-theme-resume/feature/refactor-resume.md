@@ -25,7 +25,7 @@
 - `service.js` 为独立静态服务脚本，位置与用途不明确
 
 ## 关键决策
-- **双语数据源**：使用两份本地 JSON（`public/resume.zh.json` / `public/resume.en.json`），后续可切换为 HTTPS 资源
+- **双语数据源**：使用两份本地 JSON（`public/resume-zh.json` / `public/resume-en.json`），后续可切换为 HTTPS 资源
 - **日期规则**：非 ISO 日期代表“未结束”；UI 决定显示“至今/Present”或隐藏结束日期
 - **PDF 导出**：采用 `@media print` + `window.print()`，以分页稳定为首要目标
 - **布局策略**：屏幕版自适应 + 导出版固定 A4

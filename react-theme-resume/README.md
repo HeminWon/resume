@@ -15,7 +15,7 @@ yarn start
 yarn serve:static
 ```
 
-简历数据文件位于 `public/resume.zh.json` 与 `public/resume.en.json`。
+简历数据文件位于 `public/resume-zh.json` 与 `public/resume-en.json`。
 
 ## 本地验证 PDF 发布流程（Yarn）
 

@@ -48,7 +48,8 @@ const ResumePage: React.FC = () => {
 
   const handlePrint = async () => {
     try {
-      const response = await fetch('/resume.pdf', { cache: 'no-store' });
+      const pdfPath = lang === 'zh' ? '/resume-zh.pdf' : '/resume-en.pdf';
+      const response = await fetch(pdfPath, { cache: 'no-store' });
       if (!response.ok) {
         throw new Error(`Failed to download resume.pdf (${response.status})`);
       }
@@ -63,6 +64,7 @@ const ResumePage: React.FC = () => {
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error(error);
+      alert(t('alerts.downloadFailed'));
     }
   };
 
