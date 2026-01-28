@@ -1,54 +1,59 @@
 ```sh
-npm cache clean --force
-rm -rf node_modules package-lock.json
+yarn cache clean
+rm -rf node_modules yarn.lock
 yarn install
 yarn add xxx
 ```
 
+# 使用说明（Create React App）
 
-# Getting Started with Create React App
+本项目由 Create React App 初始化。  
+参考文档：https://github.com/facebook/create-react-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 常用命令
 
-## Available Scripts
+在项目根目录执行：
 
-In the project directory, you can run:
+### `yarn start`
 
-### `npm start`
+以开发模式启动应用。  
+浏览器访问：`http://localhost:3000`  
+修改代码后页面会自动刷新，控制台会显示 lint 报错。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `yarn test`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+以交互模式启动测试。  
+更多说明：https://facebook.github.io/create-react-app/docs/running-tests
 
-### `npm test`
+### `yarn build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+生成生产构建，输出到 `build/`。  
+构建会进行压缩与优化，文件名包含 hash。  
+构建产物可直接部署。
 
-### `npm run build`
+### 产物验证（方式 B：本地静态服务）
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+使用 `serve` 启动本地静态服务验证 `build/`：
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+yarn build
+npx serve -s build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+终端会输出访问地址（通常是 `http://localhost:3000` 或 `http://localhost:5000`）。
 
-### `npm run eject`
+更多部署说明：https://facebook.github.io/create-react-app/docs/deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `yarn eject`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+注意：这是单向操作，`eject` 后无法回退。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`eject` 会移除 CRA 的单一构建依赖，并把 webpack、Babel、ESLint 等配置复制到项目中。  
+除 `eject` 之外的命令仍可使用，但会改为指向本地配置。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+一般不需要 `eject`。仅当你确认需要深度定制构建体系时再使用。
 
-## Learn More
+## 了解更多
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- CRA 文档：https://facebook.github.io/create-react-app/docs/getting-started
+- React 文档：https://reactjs.org/
