@@ -1,0 +1,137 @@
+basics:
+  name: Minghai Wang
+  label: iOS Engineer
+  email: heminwmh@gmail.com
+  phone: 159-5713-0984
+  website: 'https://github.com/HeminWon'
+  summary: 8 years of iOS development experience, leading product delivery and continuous iteration in smart living and mobility domains, covering Bluetooth/BLE, IoT device control, map navigation, and voice assistants; proficient in Swift/SwiftUI, Combine, and modular architectures, with strong cross-team collaboration and project execution.
+  location:
+    address: Xihu District
+    postalCode: "310013"
+    city: Hangzhou
+    countryCode: CN
+    region: Zhejiang
+  profiles:
+    - network: GitHub
+      username: HeminWon
+      url: 'https://github.com/HeminWon'
+    - network: Twitter
+      username: heminwon
+      url: 'https://twitter.com/heminwon'
+education:
+  - institution: Hangzhou Dianzi University
+    area: School of Electronics and Information
+    studyType: Bachelor's
+    startDate: '2012-09-15'
+    endDate: '2016-06-20'
+    gpa: '3.1'
+    courses:
+      - IC Design and Integrated Systems
+projects:
+  - name: Honda RoadSync
+    startDate: '2024-08-01'
+    endDate: '2024-12-18'
+    description: >-
+      Honda RoadSync is a smart mobility app launched by Honda to support its
+      motorcycle lineup, providing convenient and safe digital services for riders.
+      Via Bluetooth connection between phone and motorcycle, users can operate
+      navigation, calls, music playback, and notifications while staying focused
+      on riding.
+    duties:
+      - Led localization delivery of Honda RoadSync as the technical PM and handed over to Honda Japan R&D.
+    highlights:
+      - 'Used classic Bluetooth to integrate cluster features like navigation, VoIP, music, volume, and weather; supported handlebar four-way switch control and voice prompts.'
+      - 'Built with SwiftUI and Combine; used Redux for state management and event dispatch.'
+  - name: Smart Living & Smart Mobility OEM Suite
+    startDate: '2019-05-01'
+    endDate: '2024-08-31'
+    description: Tuya provides one-stop OEM app building and management. Based on official templates, OEM apps offer easy UI customization and allow clients to configure brand settings.
+    duties:
+      - 'Iterated on Smart Living OEM features, maintaining home/member management, device/room lists, pairing, and message center.'
+      - 'Independently led Smart Mobility OEM iterations, including BLE+X device control, geofencing, third-party map navigation, passive unlocking, and Siri control.'
+    highlights:
+      - 'OEM development model with configuration files; apps generated on demand after IoT platform configuration, with code pruning support.'
+      - 'Supported multiple pairing methods: EZ (Wi-Fi quick connect), AP (hotspot), NB-IoT, Bluetooth, QR code, etc.'
+      - >-
+        Delivered an SDK that digitizes physical entities via a Thing Model,
+        abstracting device instances with attributes, action events, and services,
+        using MQTT for control and state monitoring.
+      - 'Wide protocol support: Matter, Zigbee, BLE, Sigmesh, Beacon, Cat.1, etc.'
+      - 'Enabled Tuya devices for Home Assistant so users can control Tuya IoT devices within Home Assistant.'
+  - name: DiDi Chuxing (Passenger)
+    startDate: '2018-03-29'
+    endDate: '2019-04-16'
+    description: DiDi Chuxing is a global smart mobility platform. The passenger app is a core entry point providing convenient, efficient transportation services.
+    duties:
+      - 'Owned feature iterations and maintenance for the designated driver line; contributed to shared platform components.'
+      - 'Refactored business logic into independent libraries to improve autonomy and speed up daily builds.'
+      - 'Layered the designated driver domain and extracted a core module to enable rapid reuse.'
+    highlights:
+      - >-
+        Used MVCS and MVVM with scenario templating, componentization, and product configuration
+        to unify business logic across premium/express/specialized/driver services and build a unified
+        executive-car platform.
+      - 'Unified the payment SDK and managed business plugins via a plugin framework; provided default implementations and extensibility for client differences.'
+      - 'Provided a unified ApolloSDK for canary releases, AB testing, and fast city rollout.'
+  - name: Flush (Tonghuashun)
+    startDate: '2016-03-01'
+    endDate: '2018-03-01'
+    description: Real-time global market quotes for A/H/U.S. stocks, curated market news, and online trading for 90% of brokerages.
+    duties:
+      - Built a Jenkins-based auto-packaging platform for the Finance Master project, improving delivery efficiency.
+      - Led menu feature development to switch test and pre-release environments, reducing repackaging time.
+      - Maintained market modules and delivered features such as stock alerts and screenshot editing/sharing.
+      - 'Reworked the market list to mitigate offscreen rendering costs; refactored third-party sharing for better extensibility.'
+      - >-
+        Built a UI automation testing platform for regression traversal to reduce production bugs,
+        and created a mobile performance tracking tool to monitor version-level performance over time.
+work:
+  - company: Tuya Smart (Hangzhou Tuya Information Technology Co., Ltd.)
+    position: iOS Engineer
+    website: 'https://www.tuya.com/cn/'
+    startDate: '2019-04-30'
+    endDate: '2024-12-18'
+    summary: Tuya Smart (NYSE: TUYA; HKEX: 2391) is a leading global cloud platform provider, building a developer ecosystem to empower smart solutions.
+    highlights:
+      - 'Role: Smart Living & OEM iteration and customized client support.'
+  - company: DiDi Chuxing (Hangzhou Kuaidi Technology Co., Ltd.)
+    position: iOS Engineer
+    website: 'https://web.didiglobal.com/'
+    startDate: '2018-03-16'
+    endDate: '2019-04-16'
+    summary: >-
+      DiDi Chuxing is a leading global mobility platform serving more than 450 million users
+      across taxi, premium, express, rideshare, luxury, bus, shuttle, designated driver,
+      rentals, enterprise services, and bike sharing.
+    highlights:
+      - 'Role: Passenger app designated driver line, Project Dawn (internal) and DoraemonKit (open source) backend.'
+  - company: Flush (Zhejiang Hexin Tonghuashun Network Information Co., Ltd.)
+    position: iOS Engineer
+    website: 'https://www.10jqka.com.cn/'
+    startDate: '2016-03-01'
+    endDate: '2018-03-01'
+    summary: A leading Chinese stock-trading app, founded in 1994 and listed on the Shenzhen Stock Exchange in 2009, serving over 300 million users.
+    highlights:
+      - 'Role: Market business group, Finance Master (enterprise) client, and UI automation testing.'
+skills:
+  - name: iOS
+    level: Proficient
+    keywords:
+      - Objective-C
+      - Swift
+      - SwiftUI
+      - Combine
+      - CocoaPods & SwiftPM
+  - name: DevOps
+    level: Proficient
+    keywords:
+      - Nix & flake
+      - Justfile
+      - Docker
+      - Bash
+      - Python
+      - Go
+about:
+  me:
+    - I hope the next role offers growth opportunities and technical challenges, with strong emphasis on code quality and knowledge sharing.
+    - Better understand user needs so technology truly serves the product, and deliver outstanding products.
