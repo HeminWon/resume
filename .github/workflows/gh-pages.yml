@@ -41,11 +41,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Prepare resume data
-        run: node scripts/prepare-resume-data.cjs
-
-      - name: Build
-        run: yarn build
+      - name: Build (with PDFs)
+        run: scripts/build.sh
 
       - name: Configure git
         run: |
