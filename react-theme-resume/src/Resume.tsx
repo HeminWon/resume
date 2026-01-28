@@ -90,7 +90,7 @@ const Resume: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/resume.json');
+            const response = await fetch('resume.json');
             const jsonData: ResumeData = await response.json();
             setData(jsonData);
         };
