@@ -15,6 +15,26 @@ yarn start
 yarn serve:static
 ```
 
+### 静态服务说明（给新手）
+
+本仓库默认使用 `yarn serve:static`，它会运行 `scripts/service.cjs`（基于 Express + morgan）：
+
+- 端口固定为 `8088`
+- 只提供 `build/` 目录的静态文件
+- 会输出详细请求日志（morgan `combined` 格式）
+- 不包含 SPA 的 fallback 路由（例如直接访问 `/foo` 会 404，除非 `build/foo` 存在）
+
+如果你想用最简单的通用静态服务，也可以使用 `npx serve -s build`（会临时下载 `serve` 工具）：
+
+- 通常默认端口是 `3000`（可通过参数改）
+- 自带 SPA fallback（`-s` 会把未知路由回退到 `index.html`）
+- 不提供自定义日志和额外中间件能力
+
+简单理解：
+
+- `yarn serve:static`：可控、可扩展、日志更完整，适合模拟真实部署或需要自定义行为
+- `npx serve -s build`：零配置、即用即走，适合快速预览
+
 简历数据文件位于 `public/resume-zh.json` 与 `public/resume-en.json`。
 
 ## 本地验证 PDF 发布流程（Yarn）
