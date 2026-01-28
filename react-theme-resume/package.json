@@ -2,6 +2,7 @@
   "name": "react-theme-resume",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "type": "module",
   "dependencies": {
     "@react-pdf/renderer": "^4.1.5",
