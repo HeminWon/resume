@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "work": "Work Experience",
+    "workSubtitle": "Experience",
+    "project": "Project Experience",
+    "projectSubtitle": "Projects",
+    "education": "Education",
+    "educationSubtitle": "Education",
+    "skill": "Skills",
+    "skillSubtitle": "Skills",
+    "evaluation": "Self Evaluation",
+    "evaluationSubtitle": "About"
+  },
+  "labels": {
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website",
+    "present": "Present",
+    "duties": "Responsibilities",
+    "technologies": "Technologies"
+  },
+  "actions": {
+    "print": "Export PDF",
+    "retry": "Retry",
+    "toEnglish": "English",
+    "toChinese": "中文"
+  },
+  "status": {
+    "loading": "Loading...",
+    "error": "Failed to load. Please retry."
+  },
+  "alerts": {
+    "downloadFailed": "Download failed. Please try again later."
+  }
+}
