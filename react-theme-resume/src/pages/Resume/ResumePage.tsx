@@ -9,6 +9,7 @@ import EducationSection from './sections/EducationSection';
 import SkillSection from './sections/SkillSection';
 import AboutSection from './sections/AboutSection';
 import styles from './ResumePage.module.css';
+import { withPublicUrl } from '../../utils/publicUrl';
 
 const resolveLanguage = (value?: string): ResumeLanguage => {
   if (value && value.toLowerCase().startsWith('en')) {
@@ -48,7 +49,7 @@ const ResumePage: React.FC = () => {
 
   const handlePrint = async () => {
     try {
-      const pdfPath = lang === 'zh' ? '/resume-zh.pdf' : '/resume-en.pdf';
+      const pdfPath = withPublicUrl(lang === 'zh' ? 'resume-zh.pdf' : 'resume-en.pdf');
       const response = await fetch(pdfPath, { cache: 'no-store' });
       if (!response.ok) {
         throw new Error(`Failed to download resume.pdf (${response.status})`);

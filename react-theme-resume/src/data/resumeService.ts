@@ -1,5 +1,6 @@
 import { ResumeData } from '../models/resume';
 import { normalizeResumeData } from '../transformers/resume';
+import { withPublicUrl } from '../utils/publicUrl';
 
 export type ResumeLanguage = 'zh' | 'en';
 
@@ -16,9 +17,9 @@ const getCacheKey = (lang: ResumeLanguage): string => `${CACHE_KEY_PREFIX}${lang
 
 const getSourcePath = (lang: ResumeLanguage): string => {
   if (lang === 'en') {
-    return '/resume-en.json';
+    return withPublicUrl('resume-en.json');
   }
-  return '/resume-zh.json';
+  return withPublicUrl('resume-zh.json');
 };
 
 const readLocalCache = (lang: ResumeLanguage): ResumeData | null => {
