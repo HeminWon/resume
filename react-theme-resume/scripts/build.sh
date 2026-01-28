@@ -15,18 +15,21 @@ else
   RUN_BUILD=(npm run build)
 fi
 
-echo "[build] 1/4 构建前端产物"
+echo "[build] 1/5 更新简历数据（YAML -> JSON）"
+node scripts/prepare-resume-data.cjs
+
+echo "[build] 2/5 构建前端产物"
 ${RUN_BUILD[@]}
 
 mkdir -p "${ARTIFACTS_DIR}"
 
-echo "[build] 2/4 导出 PDF（中文）"
+echo "[build] 3/5 导出 PDF（中文）"
 node scripts/export-pdf.cjs --lang zh
 
-echo "[build] 3/4 导出 PDF（英文）"
+echo "[build] 4/5 导出 PDF（英文）"
 node scripts/export-pdf.cjs --lang en
 
-echo "[build] 4/4 整理发布目录"
+echo "[build] 5/5 整理发布目录"
 mv -f "${ARTIFACTS_DIR}/resume-zh.pdf" "${BUILD_DIR}/resume-zh.pdf"
 mv -f "${ARTIFACTS_DIR}/resume-en.pdf" "${BUILD_DIR}/resume-en.pdf"
 

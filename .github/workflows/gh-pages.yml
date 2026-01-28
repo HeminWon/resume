@@ -1,0 +1,59 @@
+name: Publish gh-pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      year:
+        description: "Publish year directory (default: current UTC year)"
+        required: false
+        type: string
+      sync_latest:
+        description: "Also sync to latest/"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: react-theme-resume
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: yarn
+          cache-dependency-path: react-theme-resume/yarn.lock
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Prepare resume data
+        run: node scripts/prepare-resume-data.cjs
+
+      - name: Build
+        run: yarn build
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish to gh-pages
+        env:
+          PUBLISH_YEAR: ${{ inputs.year }}
+          SYNC_LATEST: ${{ inputs.sync_latest }}
+        run: scripts/publish-gh-pages.sh
