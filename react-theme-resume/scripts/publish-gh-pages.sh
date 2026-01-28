@@ -2,11 +2,12 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+REPO_ROOT="$(git -C "${PROJECT_DIR}" rev-parse --show-toplevel)"
 
-cd "${ROOT_DIR}"
+cd "${PROJECT_DIR}"
 
-BUILD_DIR="${ROOT_DIR}/build"
+BUILD_DIR="${PROJECT_DIR}/build"
 PUBLISH_YEAR="${PUBLISH_YEAR:-${YEAR:-}}"
 SYNC_LATEST="${SYNC_LATEST:-${SYNC_LATEST_INPUT:-false}}"
 
@@ -38,6 +39,8 @@ trap 'rm -rf "${TMP_DIR}"' EXIT
 
 rsync -a "${BUILD_DIR}/" "${TMP_DIR}/"
 
+cd "${REPO_ROOT}"
+
 if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
   git fetch origin gh-pages:gh-pages
   git checkout gh-pages
@@ -48,13 +51,17 @@ fi
 
 touch .nojekyll
 
-TARGET_DIR="${ROOT_DIR}/${PUBLISH_YEAR}"
+if [[ -d "${REPO_ROOT}/react-theme-resume" ]]; then
+  rm -rf "${REPO_ROOT}/react-theme-resume"
+fi
+
+TARGET_DIR="${REPO_ROOT}/${PUBLISH_YEAR}"
 mkdir -p "${TARGET_DIR}"
 rsync -a --delete "${TMP_DIR}/" "${TARGET_DIR}/"
 touch "${TARGET_DIR}/.nojekyll"
 
 if [[ "${SYNC_LATEST}" == "true" ]]; then
-  LATEST_DIR="${ROOT_DIR}/latest"
+  LATEST_DIR="${REPO_ROOT}/latest"
   mkdir -p "${LATEST_DIR}"
   rsync -a --delete "${TMP_DIR}/" "${LATEST_DIR}/"
   touch "${LATEST_DIR}/.nojekyll"
