@@ -79,6 +79,61 @@ const formatDate = (dateString: string): string => {
     return `${year}.${month}`;
 };
 
+const parseDateSafely = (dateString: string): Date | null => {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+        return null;
+    }
+    return date;
+};
+
+const getLatestEducationEndDate = (educations: ResumeData["education"]): Date | null => {
+    let latest: Date | null = null;
+    educations.forEach((edu) => {
+        const date = parseDateSafely(edu.endDate);
+        if (!date) {
+            return;
+        }
+        if (!latest || date.getTime() > latest.getTime()) {
+            latest = date;
+        }
+    });
+    return latest;
+};
+
+const calcWorkExperienceYears = (educations: ResumeData["education"]): number => {
+    const latestEndDate = getLatestEducationEndDate(educations);
+    if (!latestEndDate) {
+        return 0;
+    }
+    const now = new Date();
+    const diffMs = now.getTime() - latestEndDate.getTime();
+    if (diffMs <= 0) {
+        return 0;
+    }
+    const years = diffMs / (365.25 * 24 * 60 * 60 * 1000);
+    return Math.floor(years);
+};
+
+const numberToChinese = (num: number): string => {
+    const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+    if (num < 0) {
+        return digits[0];
+    }
+    if (num < 10) {
+        return digits[num];
+    }
+    if (num < 20) {
+        return `十${num === 10 ? '' : digits[num % 10]}`;
+    }
+    if (num < 100) {
+        const tens = Math.floor(num / 10);
+        const ones = num % 10;
+        return `${digits[tens]}十${ones === 0 ? '' : digits[ones]}`;
+    }
+    return `${num}`;
+};
+
 const formattedTimePeriod = (startDate: string, endDate: string): string => {
     const startStr = formatDate(startDate)
     const endStr = formatDate(endDate)
@@ -102,10 +157,12 @@ const Resume: React.FC = () => {
         return <div>Loading...</div>;
     }
 
+    const workExperienceYears = calcWorkExperienceYears(data.education);
+
     return (
         <div className="container">
             <div className="page">
-                <HeaderComponent basics={data.basics} />
+                <HeaderComponent basics={data.basics} workExperienceYears={workExperienceYears} />
                 <EducationComponent educations={data.education} />
                 <WorkComponent works={data.work} />
                 <ProjectComponent projects={data.projects} />
@@ -129,7 +186,7 @@ const HeaderInfoItem: React.FC<{ label: string; value: string; href?: string }> 
     </div>
 );
 
-function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
+function HeaderComponent({ basics, workExperienceYears }: { basics: ResumeData["basics"]; workExperienceYears: number }) {
     return (
         <div className='headerInfoContainer'>
             {/* 左侧部分 */}
@@ -143,7 +200,7 @@ function HeaderComponent({ basics }: { basics: ResumeData["basics"] }) {
                 <HeaderInfoItem label="邮箱" value={basics.email} href={`mailto:${basics.email}`} />
                 <HeaderInfoItem label="手机" value={basics.phone} href={`tel:${basics.phone}`} />
                 <HeaderInfoItem label="Github" value="HeminWon" href="https://github.com/HeminWon" />
-                <HeaderInfoItem label="工作经验" value="三年" />
+                <HeaderInfoItem label="工作经验" value={`${numberToChinese(workExperienceYears)}年`} />
             </div>
         </div>
     );
