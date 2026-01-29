@@ -14,7 +14,8 @@ if ! git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
   exit 1
 fi
 
-git fetch origin gh-pages:gh-pages
+echo "[prepare] syncing local gh-pages with origin"
+git fetch origin +gh-pages:gh-pages
 git worktree add "${WORKTREE_DIR}" gh-pages
 
 cd "${WORKTREE_DIR}"
