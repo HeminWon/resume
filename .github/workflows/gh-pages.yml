@@ -44,13 +44,24 @@ jobs:
       - name: Build (with PDFs)
         run: scripts/build.sh
 
+      - name: Stage build output
+        id: stage
+        run: |
+          TMP_DIR="$(mktemp -d)"
+          rsync -a build/ "${TMP_DIR}/"
+          echo "publish_source=${TMP_DIR}" >> "${GITHUB_OUTPUT}"
+
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Prepare gh-pages branch
+        run: scripts/prepare-gh-pages.sh
+
       - name: Publish to gh-pages
         env:
           PUBLISH_YEAR: ${{ inputs.year }}
           SYNC_LATEST: ${{ inputs.sync_latest }}
+          PUBLISH_SOURCE: ${{ steps.stage.outputs.publish_source }}
         run: scripts/publish-gh-pages.sh

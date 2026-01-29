@@ -5,15 +5,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 REPO_ROOT="$(git -C "${PROJECT_DIR}" rev-parse --show-toplevel)"
 
-cd "${PROJECT_DIR}"
-
 BUILD_DIR="${PROJECT_DIR}/build"
+PUBLISH_SOURCE="${PUBLISH_SOURCE:-${BUILD_DIR}}"
 PUBLISH_YEAR="${PUBLISH_YEAR:-${YEAR:-}}"
 SYNC_LATEST="${SYNC_LATEST:-${SYNC_LATEST_INPUT:-false}}"
-
-if [[ -z "${PUBLISH_YEAR}" ]]; then
-  PUBLISH_YEAR="$(date -u +%Y)"
-fi
 
 normalize_bool() {
   case "${1,,}" in
@@ -22,55 +17,52 @@ normalize_bool() {
   esac
 }
 
-SYNC_LATEST="$(normalize_bool "${SYNC_LATEST}")"
+ensure_publish_inputs() {
+  if [[ -z "${PUBLISH_YEAR}" ]]; then
+    PUBLISH_YEAR="$(date -u +%Y)"
+  fi
 
-if [[ ! -d "${BUILD_DIR}" ]]; then
-  echo "[publish] build directory not found: ${BUILD_DIR}" >&2
-  exit 1
-fi
+  SYNC_LATEST="$(normalize_bool "${SYNC_LATEST}")"
 
-if [[ ! -f "${BUILD_DIR}/index.html" ]]; then
-  echo "[publish] build output missing index.html" >&2
-  exit 1
-fi
+  if [[ ! -d "${PUBLISH_SOURCE}" ]] || [[ ! -f "${PUBLISH_SOURCE}/index.html" ]]; then
+    echo "[publish] publish source missing: ${PUBLISH_SOURCE}" >&2
+    exit 1
+  fi
+}
 
-TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "${TMP_DIR}"' EXIT
+sync_publish_dirs() {
+  echo "[publish] syncing build to publish directories"
+  TARGET_DIR="${REPO_ROOT}/${PUBLISH_YEAR}"
+  mkdir -p "${TARGET_DIR}"
+  rsync -a --delete "${PUBLISH_SOURCE}/" "${TARGET_DIR}/"
+  touch "${TARGET_DIR}/.nojekyll"
 
-rsync -a "${BUILD_DIR}/" "${TMP_DIR}/"
+  if [[ "${SYNC_LATEST}" == "true" ]]; then
+    LATEST_DIR="${REPO_ROOT}/latest"
+    mkdir -p "${LATEST_DIR}"
+    rsync -a --delete "${PUBLISH_SOURCE}/" "${LATEST_DIR}/"
+    touch "${LATEST_DIR}/.nojekyll"
+  fi
+}
 
-cd "${REPO_ROOT}"
+commit_and_push() {
+  echo "[publish] staging publish files"
+  git add .nojekyll "${PUBLISH_YEAR}"
+  if [[ "${SYNC_LATEST}" == "true" ]]; then
+    git add latest
+  fi
+  if git diff --cached --quiet; then
+    echo "[publish] no changes to publish"
+    exit 0
+  fi
 
-if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
-  git fetch origin gh-pages:gh-pages
-  git checkout gh-pages
-else
-  git checkout --orphan gh-pages
-  git rm -rf . >/dev/null 2>&1 || true
-fi
+  echo "[publish] committing changes"
+  git commit -m "chore: publish gh-pages ${PUBLISH_YEAR}"
+  echo "[publish] pushing gh-pages"
+  git push origin gh-pages
+  echo "[publish] gh-pages updated (${PUBLISH_YEAR}, latest=${SYNC_LATEST})"
+}
 
-touch .nojekyll
-
-TARGET_DIR="${REPO_ROOT}/${PUBLISH_YEAR}"
-mkdir -p "${TARGET_DIR}"
-rsync -a --delete "${TMP_DIR}/" "${TARGET_DIR}/"
-touch "${TARGET_DIR}/.nojekyll"
-
-if [[ "${SYNC_LATEST}" == "true" ]]; then
-  LATEST_DIR="${REPO_ROOT}/latest"
-  mkdir -p "${LATEST_DIR}"
-  rsync -a --delete "${TMP_DIR}/" "${LATEST_DIR}/"
-  touch "${LATEST_DIR}/.nojekyll"
-fi
-
-git add -A
-if git diff --cached --quiet; then
-  echo "[publish] no changes to publish"
-  exit 0
-fi
-
-git commit -m "chore: publish gh-pages ${PUBLISH_YEAR}"
-
-git push origin gh-pages
-
-echo "[publish] gh-pages updated (${PUBLISH_YEAR}, latest=${SYNC_LATEST})"
+ensure_publish_inputs
+sync_publish_dirs
+commit_and_push
