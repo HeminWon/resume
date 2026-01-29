@@ -20,7 +20,7 @@ jobs:
       contents: write
     defaults:
       run:
-        working-directory: react-theme-resume
+        working-directory: .
         shell: bash
     steps:
       - name: Checkout
@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: '20'
           cache: yarn
-          cache-dependency-path: react-theme-resume/yarn.lock
+          cache-dependency-path: yarn.lock
 
       - name: Enable Corepack
         run: corepack enable

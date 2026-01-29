@@ -51,10 +51,6 @@ fi
 
 touch .nojekyll
 
-if [[ -d "${REPO_ROOT}/react-theme-resume" ]]; then
-  rm -rf "${REPO_ROOT}/react-theme-resume"
-fi
-
 TARGET_DIR="${REPO_ROOT}/${PUBLISH_YEAR}"
 mkdir -p "${TARGET_DIR}"
 rsync -a --delete "${TMP_DIR}/" "${TARGET_DIR}/"
