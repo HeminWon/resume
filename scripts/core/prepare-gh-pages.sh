@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+PROJECT_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 REPO_ROOT="$(git -C "${PROJECT_DIR}" rev-parse --show-toplevel)"
 
 WORKTREE_DIR="$(mktemp -d)"
@@ -18,8 +18,6 @@ git fetch origin gh-pages:gh-pages
 git worktree add "${WORKTREE_DIR}" gh-pages
 
 cd "${WORKTREE_DIR}"
-git rm -rf . >/dev/null 2>&1 || true
-git clean -fdx >/dev/null 2>&1 || true
 touch .nojekyll
 
 echo "${WORKTREE_DIR}"
