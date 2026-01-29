@@ -44,24 +44,25 @@ jobs:
       - name: Build (with PDFs)
         run: scripts/build.sh
 
-      - name: Stage build output
-        id: stage
-        run: |
-          TMP_DIR="$(mktemp -d)"
-          rsync -a build/ "${TMP_DIR}/"
-          echo "publish_source=${TMP_DIR}" >> "${GITHUB_OUTPUT}"
-
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Prepare gh-pages branch
-        run: scripts/prepare-gh-pages.sh
+        id: prepare
+        run: scripts/core/prepare-gh-pages.sh
 
       - name: Publish to gh-pages
         env:
           PUBLISH_YEAR: ${{ inputs.year }}
           SYNC_LATEST: ${{ inputs.sync_latest }}
-          PUBLISH_SOURCE: ${{ steps.stage.outputs.publish_source }}
-        run: scripts/publish-gh-pages.sh
+          WORKTREE_DIR: ${{ steps.prepare.outputs.worktree_dir }}
+        run: scripts/core/publish-gh-pages.sh
+
+      - name: Cleanup gh-pages worktree
+        if: ${{ always() }}
+        run: |
+          if [[ -n "${{ steps.prepare.outputs.worktree_dir }}" ]]; then
+            git worktree remove "${{ steps.prepare.outputs.worktree_dir }}"
+          fi

@@ -9,6 +9,8 @@ BUILD_DIR="${PROJECT_DIR}/build"
 PUBLISH_SOURCE="${PUBLISH_SOURCE:-${BUILD_DIR}}"
 PUBLISH_YEAR="${PUBLISH_YEAR:-${YEAR:-}}"
 SYNC_LATEST="${SYNC_LATEST:-${SYNC_LATEST_INPUT:-false}}"
+WORKTREE_DIR="${WORKTREE_DIR:-${PUBLISH_WORKTREE:-}}"
+TARGET_ROOT="${WORKTREE_DIR}"
 
 normalize_bool() {
   case "${1,,}" in
@@ -28,17 +30,22 @@ ensure_publish_inputs() {
     echo "[publish] publish source missing: ${PUBLISH_SOURCE}" >&2
     exit 1
   fi
+
+  if [[ -z "${TARGET_ROOT}" ]] || [[ ! -d "${TARGET_ROOT}" ]]; then
+    echo "[publish] worktree directory missing; set WORKTREE_DIR" >&2
+    exit 1
+  fi
 }
 
 sync_publish_dirs() {
   echo "[publish] syncing build to publish directories"
-  TARGET_DIR="${REPO_ROOT}/${PUBLISH_YEAR}"
+  TARGET_DIR="${TARGET_ROOT}/${PUBLISH_YEAR}"
   mkdir -p "${TARGET_DIR}"
   rsync -a --delete "${PUBLISH_SOURCE}/" "${TARGET_DIR}/"
   touch "${TARGET_DIR}/.nojekyll"
 
   if [[ "${SYNC_LATEST}" == "true" ]]; then
-    LATEST_DIR="${REPO_ROOT}/latest"
+    LATEST_DIR="${TARGET_ROOT}/latest"
     mkdir -p "${LATEST_DIR}"
     rsync -a --delete "${PUBLISH_SOURCE}/" "${LATEST_DIR}/"
     touch "${LATEST_DIR}/.nojekyll"
@@ -47,6 +54,8 @@ sync_publish_dirs() {
 
 commit_and_push() {
   echo "[publish] staging publish files"
+  cd "${TARGET_ROOT}"
+  touch .nojekyll
   git add .nojekyll "${PUBLISH_YEAR}"
   if [[ "${SYNC_LATEST}" == "true" ]]; then
     git add latest
