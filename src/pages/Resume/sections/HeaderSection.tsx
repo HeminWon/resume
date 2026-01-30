@@ -2,19 +2,24 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import InfoItem from '../../../components/InfoItem';
 import { ResumeBasics } from '../../../models/resume';
-import styles from '../ResumePage.module.css';
+import { ResumeStyles } from '../../../themes/shared/ResumeStyles';
 
 type HeaderSectionProps = {
   basics: ResumeBasics;
+  styles: ResumeStyles;
 };
 
-const HeaderSection: React.FC<HeaderSectionProps> = ({ basics }) => {
+const HeaderSection: React.FC<HeaderSectionProps> = ({ basics, styles }) => {
   const { t } = useTranslation();
   return (
-    <section className={styles.headerSection}>
+    <section className={styles.headerSection} data-ui="resume-header">
       <div className={styles.headerIntro}>
-        <h1 className={styles.name}>{basics.name}</h1>
-        <p className={styles.label}>{basics.label}</p>
+        <h1 className={styles.name} data-slot="name">
+          {basics.name}
+        </h1>
+        <p className={styles.label} data-slot="label">
+          {basics.label}
+        </p>
         {basics.summary ? <p className={styles.summary}>{basics.summary}</p> : null}
       </div>
       <div className={styles.headerInfo}>

@@ -2,13 +2,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/SectionTitle';
 import { ResumeAbout } from '../../../models/resume';
-import styles from '../ResumePage.module.css';
+import { ResumeStyles } from '../../../themes/shared/ResumeStyles';
 
 type AboutSectionProps = {
   about: ResumeAbout | undefined;
+  styles: ResumeStyles;
 };
 
-const AboutSection: React.FC<AboutSectionProps> = ({ about }) => {
+const AboutSection: React.FC<AboutSectionProps> = ({ about, styles }) => {
   const { t } = useTranslation();
   if (!about?.me?.length) {
     return null;

@@ -12,14 +12,18 @@ const InfoItem: React.FC<InfoItemProps> = ({ label, value, href }) => {
     return null;
   }
   return (
-    <div className={styles.item}>
-      <span className={styles.label}>{label}</span>
+    <div className={styles.item} data-ui="info-item">
+      <span className={styles.label} data-slot="label">
+        {label}
+      </span>
       {href ? (
-        <a className={styles.value} href={href} target="_blank" rel="noreferrer">
+        <a className={styles.value} href={href} target="_blank" rel="noreferrer" data-slot="value">
           {value}
         </a>
       ) : (
-        <span className={styles.value}>{value}</span>
+        <span className={styles.value} data-slot="value">
+          {value}
+        </span>
       )}
     </div>
   );

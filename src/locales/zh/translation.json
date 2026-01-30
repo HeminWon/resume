@@ -22,8 +22,18 @@
   "actions": {
     "print": "导出 PDF",
     "retry": "重试",
+    "theme": "主题",
     "toEnglish": "English",
     "toChinese": "中文"
+  },
+  "themes": {
+    "classic": "经典",
+    "vuepress": "VuePress"
+  },
+  "pdf": {
+    "footer": {
+      "page": "第 {{page}} 页（共 {{total}} 页）"
+    }
   },
   "status": {
     "loading": "加载中...",

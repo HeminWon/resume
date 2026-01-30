@@ -11,10 +11,8 @@ BUILD_DIR="${ROOT_DIR}/build"
 
 mkdir -p "${ARTIFACTS_DIR}" "${BUILD_DIR}"
 
-if [[ -f "${ARTIFACTS_DIR}/resume-zh.pdf" ]]; then
-  mv -f "${ARTIFACTS_DIR}/resume-zh.pdf" "${BUILD_DIR}/resume-zh.pdf"
-fi
-
-if [[ -f "${ARTIFACTS_DIR}/resume-en.pdf" ]]; then
-  mv -f "${ARTIFACTS_DIR}/resume-en.pdf" "${BUILD_DIR}/resume-en.pdf"
-fi
+shopt -s nullglob
+for pdf in "${ARTIFACTS_DIR}"/resume-*.pdf; do
+  mv -f "${pdf}" "${BUILD_DIR}/"
+done
+shopt -u nullglob

@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/SectionTitle';
 import { ResumeProjectItem } from '../../../models/resume';
 import { formatPeriod } from '../../../transformers/resume';
-import styles from '../ResumePage.module.css';
+import { ResumeStyles } from '../../../themes/shared/ResumeStyles';
 
 type ProjectSectionProps = {
   projects: ResumeProjectItem[];
+  styles: ResumeStyles;
 };
 
-const ProjectSection: React.FC<ProjectSectionProps> = ({ projects }) => {
+const ProjectSection: React.FC<ProjectSectionProps> = ({ projects, styles }) => {
   const { t } = useTranslation();
   if (!projects.length) {
     return null;

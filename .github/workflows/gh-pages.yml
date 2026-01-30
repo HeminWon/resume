@@ -3,14 +3,19 @@ name: Publish gh-pages
 on:
   workflow_dispatch:
     inputs:
-      year:
-        description: "Publish year directory (default: current UTC year)"
+      path:
+        description: "Publish path directory (default: current UTC year when empty)"
         required: false
         type: string
       sync_latest:
         description: "Also sync to latest/"
         required: false
         default: false
+        type: boolean
+      with_footer:
+        description: "Include PDF footer"
+        required: false
+        default: true
         type: boolean
 
 jobs:
@@ -42,6 +47,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build (with PDFs)
+        env:
+          PDF_FOOTER: ${{ inputs.with_footer }}
         run: scripts/build.sh
 
       - name: Configure git
@@ -55,7 +62,7 @@ jobs:
 
       - name: Publish to gh-pages
         env:
-          PUBLISH_YEAR: ${{ inputs.year }}
+          PUBLISH_PATH: ${{ inputs.path }}
           SYNC_LATEST: ${{ inputs.sync_latest }}
           WORKTREE_DIR: ${{ steps.prepare.outputs.worktree_dir }}
         run: scripts/core/publish-gh-pages.sh

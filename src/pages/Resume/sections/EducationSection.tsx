@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/SectionTitle';
 import { ResumeEducationItem } from '../../../models/resume';
 import { formatPeriod } from '../../../transformers/resume';
-import styles from '../ResumePage.module.css';
+import { ResumeStyles } from '../../../themes/shared/ResumeStyles';
 
 type EducationSectionProps = {
   education: ResumeEducationItem[];
+  styles: ResumeStyles;
 };
 
-const EducationSection: React.FC<EducationSectionProps> = ({ education }) => {
+const EducationSection: React.FC<EducationSectionProps> = ({ education, styles }) => {
   const { t } = useTranslation();
   if (!education.length) {
     return null;

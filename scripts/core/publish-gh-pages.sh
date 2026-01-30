@@ -7,7 +7,7 @@ REPO_ROOT="$(git -C "${PROJECT_DIR}" rev-parse --show-toplevel)"
 
 BUILD_DIR="${PROJECT_DIR}/build"
 PUBLISH_SOURCE="${PUBLISH_SOURCE:-${BUILD_DIR}}"
-PUBLISH_YEAR="${PUBLISH_YEAR:-${YEAR:-}}"
+PUBLISH_PATH="${PUBLISH_PATH:-}"
 SYNC_LATEST="${SYNC_LATEST:-${SYNC_LATEST_INPUT:-false}}"
 WORKTREE_DIR="${WORKTREE_DIR:-${PUBLISH_WORKTREE:-}}"
 TARGET_ROOT="${WORKTREE_DIR}"
@@ -16,7 +16,9 @@ PAGES_URL=""
 PUBLISH_ID=""
 
 normalize_bool() {
-  case "${1,,}" in
+  local value
+  value="$(printf '%s' "${1}" | tr '[:upper:]' '[:lower:]')"
+  case "${value}" in
     1|true|yes|y|on) echo "true";;
     *) echo "false";;
   esac
@@ -61,11 +63,11 @@ write_step_summary() {
   {
     echo "## ✅ 发布成功"
     echo ""
-    echo "- 年份: ${PUBLISH_YEAR}"
+    echo "- 路径: ${PUBLISH_PATH}"
     echo "- 发布 ID: ${PUBLISH_ID}"
     echo "- 源代码: ${SOURCE_SHA}"
     if [[ -n "${PAGES_URL}" ]]; then
-      echo "- 站点: ${PAGES_URL}/${PUBLISH_YEAR}/"
+      echo "- 站点: ${PAGES_URL}/${PUBLISH_PATH}/"
       if [[ "${SYNC_LATEST}" == "true" ]]; then
         echo "- 最新版: ${PAGES_URL}/latest/"
       fi
@@ -78,11 +80,11 @@ print_local_summary() {
   echo "===================="
   echo "Publish Summary"
   echo "--------------------"
-  echo "Year: ${PUBLISH_YEAR}"
+  echo "Path: ${PUBLISH_PATH}"
   echo "Publish ID: ${PUBLISH_ID}"
   echo "Source SHA: ${SOURCE_SHA}"
   if [[ -n "${PAGES_URL}" ]]; then
-    echo "Site: ${PAGES_URL}/${PUBLISH_YEAR}/"
+    echo "Site: ${PAGES_URL}/${PUBLISH_PATH}/"
     if [[ "${SYNC_LATEST}" == "true" ]]; then
       echo "Latest: ${PAGES_URL}/latest/"
     fi
@@ -97,16 +99,29 @@ ensure_publish_inputs() {
   echo "[publish] build dir: ${BUILD_DIR}"
   echo "[publish] publish source: ${PUBLISH_SOURCE}"
 
-  if [[ -z "${PUBLISH_YEAR}" ]]; then
-    PUBLISH_YEAR="$(date -u +%Y)"
+  if [[ -z "${PUBLISH_PATH}" ]]; then
+    PUBLISH_PATH="$(date -u +%Y)"
   fi
+  if [[ "${PUBLISH_PATH}" == /* ]] || [[ ! "${PUBLISH_PATH}" =~ ^[A-Za-z0-9._/-]+$ ]]; then
+    echo "[publish] invalid publish path: ${PUBLISH_PATH}" >&2
+    exit 1
+  fi
+  local normalized_path="${PUBLISH_PATH%/}"
+  IFS='/' read -r -a path_parts <<< "${normalized_path}"
+  for part in "${path_parts[@]}"; do
+    if [[ -z "${part}" || "${part}" == "." || "${part}" == ".." ]]; then
+      echo "[publish] invalid publish path: ${PUBLISH_PATH}" >&2
+      exit 1
+    fi
+  done
+  unset IFS
 
   SYNC_LATEST="$(normalize_bool "${SYNC_LATEST}")"
   SOURCE_SHA="$(get_source_sha)"
   PAGES_URL="$(get_pages_url)"
   PUBLISH_ID="$(get_publish_id)"
 
-  echo "[publish] publish year: ${PUBLISH_YEAR}"
+  echo "[publish] publish path: ${PUBLISH_PATH}"
   echo "[publish] sync latest: ${SYNC_LATEST}"
   echo "[publish] worktree dir: ${TARGET_ROOT}"
   echo "[publish] source sha: ${SOURCE_SHA}"
@@ -128,8 +143,8 @@ ensure_publish_inputs() {
 
 sync_publish_dirs() {
   echo "[publish] syncing build to publish directories"
-  TARGET_DIR="${TARGET_ROOT}/${PUBLISH_YEAR}"
-  echo "[publish] target year dir: ${TARGET_DIR}"
+  TARGET_DIR="${TARGET_ROOT}/${PUBLISH_PATH}"
+  echo "[publish] target path dir: ${TARGET_DIR}"
   mkdir -p "${TARGET_DIR}"
   rsync -a --delete "${PUBLISH_SOURCE}/" "${TARGET_DIR}/"
   touch "${TARGET_DIR}/.nojekyll"
@@ -148,7 +163,7 @@ commit_and_push() {
   cd "${TARGET_ROOT}"
   git status -sb
   touch .nojekyll
-  git add .nojekyll "${PUBLISH_YEAR}"
+  git add .nojekyll "${PUBLISH_PATH}"
   if [[ "${SYNC_LATEST}" == "true" ]]; then
     git add latest
   fi
@@ -158,11 +173,11 @@ commit_and_push() {
   fi
 
   echo "[publish] committing changes"
-  git commit -m "📦 chore(gh-pages): publish ${PUBLISH_YEAR} (${PUBLISH_ID})" \
+  git commit -m "📦 chore(gh-pages): publish ${PUBLISH_PATH} (${PUBLISH_ID})" \
              -m "source: ${SOURCE_SHA}"
   echo "[publish] pushing gh-pages"
   git push origin gh-pages
-  echo "[publish] gh-pages updated (${PUBLISH_YEAR}, latest=${SYNC_LATEST})"
+  echo "[publish] gh-pages updated (${PUBLISH_PATH}, latest=${SYNC_LATEST})"
 }
 
 ensure_publish_inputs

@@ -2,13 +2,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/SectionTitle';
 import { ResumeSkillItem } from '../../../models/resume';
-import styles from '../ResumePage.module.css';
+import { ResumeStyles } from '../../../themes/shared/ResumeStyles';
 
 type SkillSectionProps = {
   skills: ResumeSkillItem[];
+  styles: ResumeStyles;
 };
 
-const SkillSection: React.FC<SkillSectionProps> = ({ skills }) => {
+const SkillSection: React.FC<SkillSectionProps> = ({ skills, styles }) => {
   const { t } = useTranslation();
   if (!skills.length) {
     return null;

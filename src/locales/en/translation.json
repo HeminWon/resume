@@ -22,8 +22,18 @@
   "actions": {
     "print": "Export PDF",
     "retry": "Retry",
+    "theme": "Theme",
     "toEnglish": "English",
     "toChinese": "中文"
+  },
+  "themes": {
+    "classic": "Classic",
+    "vuepress": "VuePress"
+  },
+  "pdf": {
+    "footer": {
+      "page": "Page {{page}} of {{total}}"
+    }
   },
   "status": {
     "loading": "Loading...",

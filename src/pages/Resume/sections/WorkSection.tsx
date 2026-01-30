@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/SectionTitle';
 import { ResumeWorkItem } from '../../../models/resume';
 import { formatPeriod } from '../../../transformers/resume';
-import styles from '../ResumePage.module.css';
+import { ResumeStyles } from '../../../themes/shared/ResumeStyles';
 
 type WorkSectionProps = {
   work: ResumeWorkItem[];
+  styles: ResumeStyles;
 };
 
-const WorkSection: React.FC<WorkSectionProps> = ({ work }) => {
+const WorkSection: React.FC<WorkSectionProps> = ({ work, styles }) => {
   const { t } = useTranslation();
   if (!work.length) {
     return null;

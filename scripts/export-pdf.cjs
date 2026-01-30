@@ -7,17 +7,44 @@ const puppeteer = require('puppeteer');
 const DEFAULT_PORT = 4173;
 const DEFAULT_TIMEOUT = 30000;
 const LANG_STORAGE_KEY = 'resume_lang';
+const THEME_STORAGE_KEY = 'resume_theme';
 const DEFAULT_OUT = path.resolve(process.cwd(), 'artifacts', 'resume.pdf');
+const LOCALES_DIR = path.resolve(__dirname, '..', 'src', 'locales');
+
+const readJson = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+const loadTranslations = () => {
+  const files = [
+    { lang: 'zh', file: path.join(LOCALES_DIR, 'zh', 'translation.json') },
+    { lang: 'en', file: path.join(LOCALES_DIR, 'en', 'translation.json') },
+  ];
+
+  const result = {};
+  files.forEach(({ lang, file }) => {
+    try {
+      if (!fs.existsSync(file)) {
+        throw new Error(`missing translation file: ${file}`);
+      }
+      result[lang] = readJson(file);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      throw new Error(`[export-pdf] failed to load ${lang} translations: ${message}`);
+    }
+  });
+  return result;
+};
 
 const parseArgs = () => {
   const args = process.argv.slice(2);
   const options = {
     out: DEFAULT_OUT,
     lang: 'zh',
+    theme: 'classic',
     port: DEFAULT_PORT,
     timeout: DEFAULT_TIMEOUT,
     build: false,
     noSandbox: false,
+    footer: true,
     url: '',
     dir: path.resolve(process.cwd(), 'build'),
   };
@@ -30,6 +57,9 @@ const parseArgs = () => {
       i += 1;
     } else if (arg === '--lang' && next) {
       options.lang = next;
+      i += 1;
+    } else if (arg === '--theme' && next) {
+      options.theme = next;
       i += 1;
     } else if (arg === '--port' && next) {
       options.port = Number(next);
@@ -47,6 +77,8 @@ const parseArgs = () => {
       options.build = true;
     } else if (arg === '--no-sandbox') {
       options.noSandbox = true;
+    } else if (arg === '--no-footer') {
+      options.footer = false;
     }
   }
 
@@ -92,8 +124,98 @@ const waitForFonts = (page) =>
     return Promise.resolve();
   });
 
+const escapeHtml = (value) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const getFooterPageTemplate = (translations, lang) =>
+  translations[lang]?.pdf?.footer?.page ||
+  translations.zh?.pdf?.footer?.page ||
+  'Page {{page}} (of {{total}})';
+
+const buildPageLabelHtml = (translations, lang) => {
+  const template = getFooterPageTemplate(translations, lang);
+  return template
+    .replace('{{page}}', '<span class="pageNumber"></span>')
+    .replace('{{total}}', '<span class="totalPages"></span>');
+};
+
+const getFooterPrefix = async (page) =>
+  page.evaluate(() => {
+    const nameEl = document.querySelector("[data-ui='resume-header'] [data-slot='name']");
+    const labelEl = document.querySelector("[data-ui='resume-header'] [data-slot='label']");
+    const name = nameEl?.textContent?.trim() ?? '';
+    const label = labelEl?.textContent?.trim() ?? '';
+    return { name, label };
+  });
+
+const getFooterStyle = async (page) =>
+  page.evaluate(() => {
+    const root = getComputedStyle(document.documentElement);
+    const body = document.body ? getComputedStyle(document.body) : null;
+    const resolveVar = (value) => {
+      const trimmed = value.trim();
+      const match = trimmed.match(/^var\((--[^,\s)]+)\s*(?:,\s*([^)]+))?\)$/);
+      if (!match) {
+        return trimmed;
+      }
+      const resolved = root.getPropertyValue(match[1]).trim();
+      if (resolved) {
+        return resolved;
+      }
+      return match[2]?.trim() ?? '';
+    };
+    const read = (name, fallback) => {
+      const raw = root.getPropertyValue(name).trim();
+      const value = raw ? resolveVar(raw) : '';
+      return value || fallback;
+    };
+    return {
+      fontFamily: read('--pdf-footer-font-family', body?.fontFamily ?? ''),
+      fontSize: read('--pdf-footer-font-size', '9px'),
+      color: read('--pdf-footer-color', '#c0c4cc'),
+      align: read('--pdf-footer-align', 'right'),
+      paddingX: read('--pdf-footer-padding-x', '18mm'),
+      letterSpacing: read('--pdf-footer-letter-spacing', '0'),
+      fontStyle: body?.fontStyle ?? 'normal',
+      fontWeight: body?.fontWeight ?? 'normal',
+    };
+  });
+
+const buildFooterStyle = (style) => {
+  const safe = (value) => (value ? String(value).trim() : '');
+  const normalizeFontFamily = (value) =>
+    value.replace(/\s+/g, ' ').replace(/\s*,\s*/g, ', ').trim();
+  const fontFamily = normalizeFontFamily(safe(style.fontFamily));
+  const fontSize = safe(style.fontSize) || '9px';
+  const color = safe(style.color) || '#9aa0a6';
+  const align = safe(style.align) || 'right';
+  const paddingX = safe(style.paddingX) || '18mm';
+  const letterSpacing = safe(style.letterSpacing) || '0';
+  const fontStyle = safe(style.fontStyle) || 'normal';
+  const fontWeight = safe(style.fontWeight) || 'normal';
+  return [
+    'width: 100%',
+    `font-size: ${fontSize}`,
+    `color: ${color}`,
+    `padding: 0 ${paddingX}`,
+    `text-align: ${align}`,
+    fontFamily ? `font-family: ${fontFamily}` : '',
+    `font-style: ${fontStyle}`,
+    `font-weight: ${fontWeight}`,
+    `letter-spacing: ${letterSpacing}`,
+  ]
+    .filter(Boolean)
+    .join('; ');
+};
+
 const main = async () => {
   const options = parseArgs();
+  const translations = loadTranslations();
 
   if (options.build) {
     await runBuild();
@@ -112,7 +234,11 @@ const main = async () => {
   }
 
   if (options.out === DEFAULT_OUT) {
-    options.out = path.resolve(process.cwd(), 'artifacts', `resume-${options.lang}.pdf`);
+    options.out = path.resolve(
+      process.cwd(),
+      'artifacts',
+      `resume-${options.lang}-${options.theme}.pdf`
+    );
   }
 
   ensureDir(options.out);
@@ -128,19 +254,59 @@ const main = async () => {
 
   try {
     const page = await browser.newPage();
-    await page.evaluateOnNewDocument((key, value) => {
-      localStorage.setItem(key, value);
-    }, LANG_STORAGE_KEY, options.lang);
+    await page.evaluateOnNewDocument(
+      (langKey, langValue, themeKey, themeValue) => {
+        localStorage.setItem(langKey, langValue);
+        localStorage.setItem(themeKey, themeValue);
+      },
+      LANG_STORAGE_KEY,
+      options.lang,
+      THEME_STORAGE_KEY,
+      options.theme
+    );
 
     await page.goto(targetUrl, { waitUntil: 'networkidle0', timeout: options.timeout });
     await page.waitForSelector('[data-testid="resume-content"]', { timeout: options.timeout });
     await waitForFonts(page);
+
+    let displayHeaderFooter = false;
+    let headerTemplate = '<div></div>';
+    let footerTemplate = '<div></div>';
+    let marginBottom = '12mm';
+
+    if (options.footer) {
+      const footerMeta = await getFooterPrefix(page);
+      const footerStyle = await getFooterStyle(page);
+      const footerInlineStyle = buildFooterStyle(footerStyle);
+      const footerPrefix = [footerMeta.name, footerMeta.label].filter(Boolean).join(' · ');
+      const footerPrefixHtml = footerPrefix
+        ? `${escapeHtml(footerPrefix)}&nbsp;&nbsp;&nbsp;&nbsp;`
+        : '';
+      const footerPageHtml = buildPageLabelHtml(translations, options.lang);
+
+      displayHeaderFooter = true;
+      footerTemplate =
+        `<div style="${footerInlineStyle}">` +
+        footerPrefixHtml +
+        footerPageHtml +
+        '</div>';
+      marginBottom = '14mm';
+    }
 
     await page.pdf({
       path: options.out,
       format: 'A4',
       printBackground: true,
       preferCSSPageSize: true,
+      displayHeaderFooter,
+      headerTemplate,
+      footerTemplate,
+      margin: {
+        top: '12mm',
+        bottom: marginBottom,
+        left: '12mm',
+        right: '12mm',
+      },
     });
   } finally {
     await browser.close();
