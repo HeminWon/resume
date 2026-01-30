@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       path:
-        description: "Publish path directory (default: current UTC year when empty)"
-        required: false
+        description: "Publish path directory (default: preview)"
+        required: true
+        default: "preview"
         type: string
       sync_latest:
         description: "Also sync to latest/"

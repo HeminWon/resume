@@ -100,7 +100,8 @@ ensure_publish_inputs() {
   echo "[publish] publish source: ${PUBLISH_SOURCE}"
 
   if [[ -z "${PUBLISH_PATH}" ]]; then
-    PUBLISH_PATH="$(date -u +%Y)"
+    echo "[publish] publish path required: set PUBLISH_PATH" >&2
+    exit 1
   fi
   if [[ "${PUBLISH_PATH}" == /* ]] || [[ ! "${PUBLISH_PATH}" =~ ^[A-Za-z0-9._/-]+$ ]]; then
     echo "[publish] invalid publish path: ${PUBLISH_PATH}" >&2
