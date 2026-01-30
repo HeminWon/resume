@@ -21,6 +21,66 @@ const sanitizeFileName = (value: string): string =>
     .replace(/\s+/g, ' ')
     .replace(/\.+$/g, '');
 
+const resolveGraduationDate = (education?: { endDate?: string }[]): Date | null => {
+  if (!education || education.length === 0) {
+    return null;
+  }
+  const dates = education
+    .map((item) => (item.endDate ? new Date(item.endDate) : null))
+    .filter((value): value is Date => value !== null && !Number.isNaN(value.getTime()));
+  if (dates.length === 0) {
+    return null;
+  }
+  dates.sort((a, b) => b.getTime() - a.getTime());
+  return dates[0];
+};
+
+const diffWholeYears = (from: Date, to: Date): number => {
+  let years = to.getFullYear() - from.getFullYear();
+  const fromMonth = from.getMonth();
+  const fromDate = from.getDate();
+  const toMonth = to.getMonth();
+  const toDate = to.getDate();
+  if (toMonth < fromMonth || (toMonth === fromMonth && toDate < fromDate)) {
+    years -= 1;
+  }
+  return years;
+};
+
+const toChineseNumber = (value: number): string => {
+  const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+  if (value < 10) {
+    return digits[value] ?? String(value);
+  }
+  if (value < 20) {
+    return `十${digits[value % 10] ?? ''}`.replace(/十零$/, '十');
+  }
+  if (value < 100) {
+    const tens = Math.floor(value / 10);
+    const ones = value % 10;
+    return `${digits[tens]}十${ones ? digits[ones] : ''}`;
+  }
+  return String(value);
+};
+
+const resolveExperienceLabel = (
+  lang: ResumeLanguage,
+  education?: { endDate?: string }[]
+): string => {
+  const graduationDate = resolveGraduationDate(education);
+  if (!graduationDate) {
+    return '';
+  }
+  const years = diffWholeYears(graduationDate, new Date());
+  if (years <= 0) {
+    return '';
+  }
+  if (lang === 'zh') {
+    return `${toChineseNumber(years)}年经验`;
+  }
+  return years === 1 ? '1 year' : `${years} years`;
+};
+
 const ResumePage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const lang = useMemo(
@@ -57,12 +117,14 @@ const ResumePage: React.FC = () => {
 
   const resolvePdfName = () => {
     const basics = state.data?.basics;
+    const experience = resolveExperienceLabel(lang, state.data?.education);
     const name = basics?.name?.trim() ?? '';
     const label = basics?.label?.trim() ?? '';
-    const title = name && label ? `${name}-${label}` : name || label;
+    const titleBase = name && label ? `${name}-${label}` : name || label;
+    const title = titleBase && experience ? `${titleBase}-${experience}` : titleBase || experience;
     const safeTitle = title ? sanitizeFileName(title) : '';
     const base = safeTitle || `resume-${lang}`;
-    return `${base}-${theme}.pdf`;
+    return `${base}.pdf`;
   };
 
   const handlePrint = async () => {
