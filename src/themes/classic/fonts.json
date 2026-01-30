@@ -1,0 +1,4 @@
+{
+  "id": "classic",
+  "aptPackages": ["fonts-noto-cjk"]
+}

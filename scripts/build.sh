@@ -12,7 +12,10 @@ scripts/core/prepare-data.sh
 echo "[build] 2/4 构建前端产物"
 scripts/core/build-app.sh
 
-echo "[build] 3/4 导出 PDF（多主题）"
+echo "[build] 3/5 安装 PDF 字体（如需）"
+scripts/core/install-theme-fonts.sh
+
+echo "[build] 4/5 导出 PDF（多主题）"
 themes=(classic vuepress)
 langs=(zh en)
 footer_args=()
@@ -30,7 +33,7 @@ for theme in "${themes[@]}"; do
   done
 done
 
-echo "[build] 4/4 整理发布目录"
+echo "[build] 5/5 整理发布目录"
 scripts/core/collect-build.sh
 
 echo "[build] 完成"
