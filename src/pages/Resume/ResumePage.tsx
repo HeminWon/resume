@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ResumeLanguage } from '../../data/resumeService';
 import { useResumeData } from '../../hooks/useResumeData';
@@ -12,6 +12,13 @@ const resolveLanguage = (value?: string): ResumeLanguage => {
     return 'en';
   }
   return 'zh';
+};
+
+const getQueryParams = (): URLSearchParams | null => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+  return new URLSearchParams(window.location.search);
 };
 
 const sanitizeFileName = (value: string): string =>
@@ -88,13 +95,45 @@ const ResumePage: React.FC = () => {
     [i18n.language, i18n.resolvedLanguage]
   );
   const [state, retry] = useResumeData(lang);
+  const hasAppliedQuery = useRef(false);
   const [theme, setTheme] = useState<ThemeId>(() => {
     if (typeof window === 'undefined') {
       return THEMES[0].id;
     }
+    const params = getQueryParams();
+    const queryTheme = params?.get('theme');
+    if (queryTheme) {
+      return resolveThemeId(queryTheme);
+    }
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY) as ThemeId | null;
     return resolveThemeId(stored ?? undefined);
   });
+
+  useEffect(() => {
+    if (hasAppliedQuery.current) {
+      return;
+    }
+    const params = getQueryParams();
+    if (!params) {
+      hasAppliedQuery.current = true;
+      return;
+    }
+    const queryLang = params.get('lang');
+    if (queryLang) {
+      const nextLang = resolveLanguage(queryLang);
+      if (nextLang !== lang) {
+        i18n.changeLanguage(nextLang);
+      }
+    }
+    const queryTheme = params.get('theme');
+    if (queryTheme) {
+      const nextTheme = resolveThemeId(queryTheme);
+      if (nextTheme !== theme) {
+        setTheme(nextTheme);
+      }
+    }
+    hasAppliedQuery.current = true;
+  }, [i18n, lang, theme]);
 
   useEffect(() => {
     if (typeof document === 'undefined') {
@@ -103,6 +142,20 @@ const ResumePage: React.FC = () => {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
   }, [theme]);
+
+  useEffect(() => {
+    if (!hasAppliedQuery.current || typeof window === 'undefined') {
+      return;
+    }
+    const params = new URLSearchParams(window.location.search);
+    const nextTheme = resolveThemeId(theme);
+    const nextLang = resolveLanguage(lang);
+    params.set('theme', nextTheme);
+    params.set('lang', nextLang);
+    const query = params.toString();
+    const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
+    window.history.replaceState(null, '', nextUrl);
+  }, [lang, theme]);
 
   const handleSwitchLanguage = () => {
     const next = lang === 'zh' ? 'en' : 'zh';
