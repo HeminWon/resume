@@ -8,6 +8,7 @@ import SkillSection from '../../pages/Resume/sections/SkillSection';
 import AboutSection from '../../pages/Resume/sections/AboutSection';
 import { ResumeStyles } from '../shared/ResumeStyles';
 import { ResumeLayoutProps } from '../types';
+import ToolDock from '../shared/ToolDock';
 import styles from './ResumeLayout.module.css';
 
 const ResumeLayout: React.FC<ResumeLayoutProps> = ({
@@ -24,17 +25,13 @@ const ResumeLayout: React.FC<ResumeLayoutProps> = ({
 
   return (
     <div className={resumeStyles.page}>
-      <div className={resumeStyles.toolbar}>
-        <button className={resumeStyles.primaryButton} onClick={onPrint} type="button">
-          {t('actions.print')}
-        </button>
-        <button className={resumeStyles.ghostButton} onClick={onSwitchTheme} type="button">
-          {`${t('actions.theme')}: ${t(`themes.${theme}`)}`}
-        </button>
-        <button className={resumeStyles.ghostButton} onClick={onSwitchLanguage} type="button">
-          {lang === 'zh' ? t('actions.toEnglish') : t('actions.toChinese')}
-        </button>
-      </div>
+      <ToolDock
+        lang={lang}
+        theme={theme}
+        onPrint={onPrint}
+        onSwitchTheme={onSwitchTheme}
+        onSwitchLanguage={onSwitchLanguage}
+      />
 
       <main className={resumeStyles.resumeCard}>
         {state.loading ? <div className={resumeStyles.status}>{t('status.loading')}</div> : null}

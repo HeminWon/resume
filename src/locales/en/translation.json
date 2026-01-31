@@ -23,6 +23,11 @@
     "print": "Export PDF",
     "retry": "Retry",
     "theme": "Theme",
+    "tools": "Tools",
+    "qr": "QR Code",
+    "copyLink": "Copy Link",
+    "copied": "Copied",
+    "close": "Close",
     "toEnglish": "English",
     "toChinese": "中文"
   },
