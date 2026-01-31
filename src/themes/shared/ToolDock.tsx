@@ -148,7 +148,11 @@ const ToolDock: React.FC<ToolDockProps> = ({
         aria-label={t('actions.tools')}
         onClick={handleToggle}
       >
-        <span className={styles.fabLabel}>{t('actions.tools')}</span>
+        <span className={styles.fabIcon} aria-hidden="true">
+          <span className={styles.fabBar} />
+          <span className={styles.fabBar} />
+          <span className={styles.fabBar} />
+        </span>
       </button>
 
       <button className={styles.backdrop} type="button" onClick={handleBackdrop} aria-hidden />
@@ -174,21 +178,6 @@ const ToolDock: React.FC<ToolDockProps> = ({
           >
             <span className={styles.sheetText}>{languageLabel}</span>
           </button>
-          <button className={styles.sheetAction} type="button" onClick={handleCopyLink}>
-            <span className={styles.sheetText}>
-              {copied ? t('actions.copied') : t('actions.copyLink')}
-            </span>
-          </button>
-          <div className={styles.sheetQr}>
-            <div className={styles.sheetQrHeader}>
-              <span className={styles.sheetText}>{t('actions.qr')}</span>
-            </div>
-            {qrImage ? (
-              <img className={styles.qrImage} src={qrImage} alt={t('actions.qr')} />
-            ) : (
-              <div className={styles.qrPlaceholder}>QR</div>
-            )}
-          </div>
         </div>
       </div>
     </div>
