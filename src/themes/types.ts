@@ -2,7 +2,7 @@ import type React from 'react';
 import type { ResumeLoadState } from '../hooks/useResumeData';
 import type { ResumeLanguage } from '../data/resumeService';
 
-export type ThemeId = 'classic' | 'vuepress';
+export type ThemeId = (typeof import('./index').THEMES)[number]['id'];
 
 export type ResumeLayoutProps = {
   state: ResumeLoadState;
