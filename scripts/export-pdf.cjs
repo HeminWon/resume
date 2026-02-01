@@ -297,7 +297,7 @@ const main = async () => {
       path: options.out,
       format: 'A4',
       printBackground: true,
-      preferCSSPageSize: true,
+      preferCSSPageSize: false,
       displayHeaderFooter,
       headerTemplate,
       footerTemplate,

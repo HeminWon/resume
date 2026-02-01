@@ -5,6 +5,15 @@
   color: var(--color-text);
 }
 
+:global([data-theme='vuepress']) {
+  --print-page-width: 210mm;
+  --print-page-margin-x: 12mm;
+  --print-content-width: 100%;
+  --print-content-padding-x: 0mm;
+  --print-list-indent: 16px;
+  --print-info-label-width: 6em;
+}
+
 .toolbar {
   max-width: 980px;
   margin: 0 auto 20px;
@@ -461,10 +470,14 @@
   .resumeCard {
     box-shadow: none;
     border-radius: 0;
-    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--print-content-padding-x);
     max-width: none;
-    margin: 0;
+    box-sizing: border-box;
+    position: relative;
   }
+
 
   .entryCard,
   .skillItem {
@@ -516,6 +529,10 @@
     line-height: 1.55;
   }
 
+  .entryList {
+    padding-left: var(--print-list-indent);
+  }
+
   .entryBlock {
     margin-top: 6px;
   }
@@ -543,5 +560,10 @@
 
   :global([data-theme='vuepress']) [data-ui='section-title'] [data-slot='title'] {
     font-size: 1.1em;
+  }
+
+  :global([data-theme='vuepress']) [data-ui='info-item'] {
+    grid-template-columns: var(--print-info-label-width) 1fr;
+    column-gap: 8px;
   }
 }

@@ -55,11 +55,6 @@ a {
 }
 
 @media print {
-  @page {
-    size: A4;
-    margin: 10mm 10mm;
-  }
-
   body {
     background: white;
     font-size: 12px;
