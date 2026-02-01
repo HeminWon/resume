@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-02-01T14:16:56.343Z",
+  "generatedAt": "2026-02-01T14:52:45.847Z",
   "versions": {
-    "zh": "sha256:d7af4db86c98d71f0557a6d83aa762e99e8353a752a2290c8c54fa4dc2a9a39a",
-    "en": "sha256:9bef0adb9bfa88253f13e9bdd34b43d51d754700f65b6c927ff73040cf87295a"
+    "zh": "sha256:0eba44cf6df1704921e1cc7e12674af67d607ece8fac49120f378e94826ff857",
+    "en": "sha256:f82dde000d684bca57d3c4eecd4912b881d848533a375ee9f3369318bf93d361"
   },
   "schemaVersion": 1
 }

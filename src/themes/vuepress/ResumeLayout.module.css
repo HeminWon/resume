@@ -326,7 +326,9 @@
 }
 
 .headerInfo {
-  align-items: flex-end;
+  align-items: stretch;
+  justify-self: end;
+  width: max-content;
 }
 
 .sectionBody {
@@ -444,11 +446,18 @@
   letter-spacing: 0;
   font-size: 12px;
   text-align: right;
+  display: block;
 }
 
 :global([data-theme='vuepress']) [data-ui='info-item'] [data-slot='label']::after {
   content: ':';
-  margin: 0 0.25em;
+  margin-left: 0.3em;
+}
+
+:global([data-theme='vuepress']) [data-ui='info-item'] {
+  grid-template-columns: 5.5em 1fr;
+  column-gap: 6px;
+  width: 100%;
 }
 
 @media (max-width: 720px) {

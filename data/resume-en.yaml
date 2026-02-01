@@ -3,7 +3,6 @@ basics:
   label: iOS Engineer
   email: heminwmh@gmail.com
   phone: 159-5713-0984
-  website: 'https://github.com/HeminWon'
   summary: 8 years of iOS development experience, leading product delivery and continuous iteration in smart living and mobility domains, covering Bluetooth/BLE, IoT device control, map navigation, and voice assistants; proficient in Swift/SwiftUI, Combine, and modular architectures, with strong cross-team collaboration and project execution.
   location:
     address: Xihu District
@@ -15,9 +14,6 @@ basics:
     - network: GitHub
       username: HeminWon
       url: 'https://github.com/HeminWon'
-    - network: Twitter
-      username: heminwon
-      url: 'https://twitter.com/heminwon'
 education:
   - institution: Hangzhou Dianzi University
     area: School of Electronics and Information
