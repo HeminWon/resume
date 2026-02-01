@@ -22,9 +22,11 @@ const WorkSection: React.FC<WorkSectionProps> = ({ work, styles }) => {
         {work.map((item) => (
           <article key={`${item.company}-${item.position}`} className={styles.entryCard}>
             <div className={styles.entryHeader}>
-              <div>
-                <div className={styles.entryTitle}>{item.company}</div>
-                <div className={styles.entrySubtitle}>{item.position}</div>
+              <div className={styles.entryHeading}>
+                <span className={styles.entryTitle}>{item.company}</span>
+                {item.position ? (
+                  <span className={styles.entrySubtitle}> · {item.position}</span>
+                ) : null}
               </div>
               <div className={styles.entryDate}>
                 {formatPeriod(item.startDate, item.endDate, t('labels.present'))}

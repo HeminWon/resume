@@ -19,24 +19,23 @@ const EducationSection: React.FC<EducationSectionProps> = ({ education, styles }
     <section className={styles.section}>
       <SectionTitle title={t('sections.education')} subtitle={t('sections.educationSubtitle')} />
       <div className={styles.sectionBody}>
-        {education.map((item) => (
-          <article key={`${item.institution}-${item.area}`} className={styles.entryCard}>
-            <div className={styles.entryHeader}>
-              <div>
-                <div className={styles.entryTitle}>{item.institution}</div>
-                <div className={styles.entrySubtitle}>
-                  {[item.area, item.studyType].filter(Boolean).join(' · ')}
+        {education.map((item) => {
+          const coursesText = item.courses?.filter(Boolean).join(' / ');
+          const meta = [item.area, coursesText, item.studyType].filter(Boolean).join(' · ');
+          return (
+            <article key={`${item.institution}-${item.area}`} className={styles.entryCard}>
+              <div className={styles.entryHeader}>
+                <div>
+                  <div className={styles.entryTitle}>{item.institution}</div>
+                  {meta ? <div className={`${styles.entrySubtitle} ${styles.entryMeta}`}>{meta}</div> : null}
+                </div>
+                <div className={styles.entryDate}>
+                  {formatPeriod(item.startDate, item.endDate, t('labels.present'))}
                 </div>
               </div>
-              <div className={styles.entryDate}>
-                {formatPeriod(item.startDate, item.endDate, t('labels.present'))}
-              </div>
-            </div>
-            {item.courses?.length ? (
-              <p className={styles.entrySummary}>{item.courses.join(' / ')}</p>
-            ) : null}
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </section>
   );

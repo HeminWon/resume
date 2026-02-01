@@ -16,8 +16,10 @@ export type ResumeStyles = {
   sectionBody: string;
   entryCard: string;
   entryHeader: string;
+  entryHeading: string;
   entryTitle: string;
   entrySubtitle: string;
+  entryMeta: string;
   entryDate: string;
   entryLink: string;
   entrySummary: string;
