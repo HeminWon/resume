@@ -46,7 +46,7 @@ export interface ResumeProjectItem {
 export interface ResumeEducationItem {
   institution: string;
   area?: string;
-  collage?: string;
+  college?: string;
   studyType?: string;
   startDate: string;
   endDate?: string;

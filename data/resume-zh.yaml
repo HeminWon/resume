@@ -3,7 +3,7 @@ basics:
   label: iOS 研发工程师
   email: heminwmh@gmail.com
   phone: 159-5713-0984
-  summary: 8 年 iOS 研发经验，长期负责智能生活/出行业务的产品落地与持续迭代，覆盖蓝牙/BLE、IoT 设备控制、地图导航、语音助手等场景；擅长 Swift/SwiftUI、Combine 与模块化架构，具备跨团队协作与项目推进能力。
+  summary: 近10年 iOS 研发，负责 IoT/出行/AI 产品落地与迭代，注重性能与稳定性。
   location:
     address: 西湖区
     postalCode: "310013"
@@ -16,7 +16,7 @@ basics:
       url: 'https://github.com/HeminWon'
 education:
   - institution: 杭州电子科技大学
-    collage: 电子信息学院
+    college: 电子信息学院
     area: 集成电路设计与集成系统
     studyType: 本科
     startDate: '2012-09-15'
@@ -24,7 +24,7 @@ education:
     gpa: '3.2'
 projects:
   - name: Seekee
-    startDate: '2024-07-03'
+    startDate: '2025-07-03'
     description: >-
       Seekee 是一款集智能搜索、AI创作和多媒体播放于一体的海外AI浏览器应用, 主要服务于墨西哥、巴西等拉美市场用户。 
     duties:
@@ -113,5 +113,5 @@ skills:
       - 具备 Crash 与性能日志分析经验，推动体验问题闭环。
 about:
   me:
-    - 希望新工作有成长空间，技术上有挑战性，重视代码质量，重视分享与学习；
-    - 更好的把握用户需求，让技术真正服务于产品，能够做出优秀的产品。
+    - 期望在复杂业务中承担架构与性能治理，提升交付质量与研发效率。
+    - 关注需求转化与产品体验，用工程方案推动业务目标。
