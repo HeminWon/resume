@@ -46,11 +46,11 @@ const ResumeLayout: React.FC<ResumeLayoutProps> = ({
         {state.data ? (
           <div className={resumeStyles.content} data-testid="resume-content">
             <HeaderSection basics={state.data.basics} styles={resumeStyles} />
-            <EducationSection education={state.data.education ?? []} styles={resumeStyles} />
-            <WorkSection work={state.data.work ?? []} styles={resumeStyles} />
-            <ProjectSection projects={state.data.projects ?? []} styles={resumeStyles} />
             <SkillSection skills={state.data.skills ?? []} styles={resumeStyles} />
+            <ProjectSection projects={state.data.projects ?? []} styles={resumeStyles} />
+            <WorkSection work={state.data.work ?? []} styles={resumeStyles} />
             <AboutSection about={state.data.about} styles={resumeStyles} />
+            <EducationSection education={state.data.education ?? []} styles={resumeStyles} />
           </div>
         ) : null}
       </main>
