@@ -161,6 +161,7 @@
 .entryMeta {
   display: block;
   margin-top: 2px;
+  text-align: left;
 }
 
 .entryDate {

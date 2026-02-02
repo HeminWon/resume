@@ -25,14 +25,14 @@ const EducationSection: React.FC<EducationSectionProps> = ({ education, styles }
           return (
             <article key={`${item.institution}-${item.area}`} className={styles.entryCard}>
               <div className={styles.entryHeader}>
-                <div>
-                  <div className={styles.entryTitle}>{item.institution}</div>
-                  {meta ? <div className={`${styles.entrySubtitle} ${styles.entryMeta}`}>{meta}</div> : null}
+                <div className={styles.entryHeading}>
+                  <span className={styles.entryTitle}>{item.institution}</span>
                 </div>
                 <div className={styles.entryDate}>
                   {formatPeriod(item.startDate, item.endDate, t('labels.present'))}
                 </div>
               </div>
+              {meta ? <div className={`${styles.entrySubtitle} ${styles.entryMeta}`}>{meta}</div> : null}
             </article>
           );
         })}
