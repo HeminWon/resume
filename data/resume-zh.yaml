@@ -58,13 +58,13 @@ projects:
       - '丰富的通讯设备协议支持, 如 Matter、Zigbee、BLE、Sigmesh、Beacon、Cat.1等；'
       - '发起涂鸦设备支持 Home Assistant, 让用户在 Home Assistant 中使用涂鸦 IoT 智能设备。'
 work:
-  - company: 人人视频 (莫璃(上海)信息技术有限公司)
+  - company: 人人视频 — 莫璃(上海)信息技术有限公司
     position: iOS 研发工程师
     startDate: '2025-07-03'
     summary: 人人视频是一个专注于海外华人市场的综合性视频平台，提供丰富的影视内容和优质的用户体验，致力于成为海外华人首选的视频娱乐平台。
     highlights:
       - '职责: 负责子公司 Seekee AI 浏览器应用的 iOS 端开发与维护。'
-  - company: 涂鸦智能 (杭州涂鸦信息技术有限公司)
+  - company: 涂鸦智能 — 杭州涂鸦信息技术有限公司
     position: iOS 研发工程师
     website: 'https://www.tuya.com/cn/'
     startDate: '2019-04-30'
@@ -72,7 +72,7 @@ work:
     summary: 涂鸦智能（纽交所代码：TUYA；港交所代码：2391）是全球领先的云平台服务提供商，致力于构建智慧解决方案的开发者生态，赋能万物智能。
     highlights:
       - '职责: 涂鸦智能 & 智能生活公版迭代及定制客户支持。'
-  - company: 滴滴出行 (杭州快迪科技有限公司)
+  - company: 滴滴出行 — 杭州快迪科技有限公司
     position: iOS 研发工程师
     website: 'https://web.didiglobal.com/'
     startDate: '2018-03-16'
@@ -82,7 +82,7 @@ work:
       亿用户提供出租车、专车、快车、顺风车、豪华车、公交、小巴、代驾、租车、企业级、共享单车等全面的出行服务。
     highlights:
       - '职责: 滴滴出行乘客端代驾业务线，黎明项目 (内部) 及 DoraemonKit (滴滴开源) 服务端。'
-  - company: 同花顺 (浙江核新同花顺网络信息股份有限公司)
+  - company: 同花顺 — 浙江核新同花顺网络信息股份有限公司
     position: iOS 研发工程师
     website: 'https://www.10jqka.com.cn/'
     startDate: '2016-03-01'
