@@ -7,17 +7,17 @@
 
 .title {
   margin: 0;
-  font-size: 18px;
-  letter-spacing: 0.08em;
+  font-size: 14px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-muted);
 }
 
 .subtitle {
-  font-size: 12px;
+  font-size: 10px;
   color: var(--color-muted);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
 }
 
 .line {
@@ -32,11 +32,11 @@
   }
 
   .title {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .subtitle {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .line {

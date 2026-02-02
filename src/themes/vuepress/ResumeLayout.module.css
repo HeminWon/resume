@@ -210,9 +210,9 @@
 }
 
 .skillGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .skillItem {
@@ -223,12 +223,20 @@
 
 .skillName {
   font-weight: 600;
+  color: var(--color-muted);
 }
 
 .skillKeywords {
   font-size: 13px;
-  color: var(--color-muted);
-  margin-top: 2px;
+  color: var(--color-text);
+  margin: 4px 0 0;
+  padding-left: 16px;
+  line-height: 1.5;
+  list-style: disc;
+}
+
+.skillKeywords li {
+  margin: 2px 0;
 }
 
 @media (max-width: 860px) {

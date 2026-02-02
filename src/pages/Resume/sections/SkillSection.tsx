@@ -22,7 +22,11 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skills, styles }) => {
           <div key={skill.name} className={styles.skillItem}>
             <div className={styles.skillName}>{skill.name}</div>
             {skill.keywords?.length ? (
-              <div className={styles.skillKeywords}>{skill.keywords.join(' / ')}</div>
+              <ul className={styles.skillKeywords}>
+                {skill.keywords.map((keyword) => (
+                  <li key={keyword}>{keyword}</li>
+                ))}
+              </ul>
             ) : null}
           </div>
         ))}
