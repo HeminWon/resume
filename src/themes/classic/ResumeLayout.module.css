@@ -125,18 +125,18 @@
 
 .entryHeader {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 16px;
   flex-wrap: wrap;
 }
 
 .entryHeading {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
   gap: 2px 8px;
-  min-width: 0;
+  white-space: nowrap;
+  flex: 0 0 max-content;
 }
 
 .entryTitle {
@@ -163,7 +163,7 @@
   letter-spacing: 0.08em;
   text-align: right;
   white-space: nowrap;
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   margin-left: auto;
 }
 

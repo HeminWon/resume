@@ -16,13 +16,12 @@ basics:
       url: 'https://github.com/HeminWon'
 education:
   - institution: 杭州电子科技大学
-    area: 电子信息学院
+    collage: 电子信息学院
+    area: 集成电路设计与集成系统
     studyType: 本科
     startDate: '2012-09-15'
     endDate: '2016-06-20'
-    gpa: '3.1'
-    courses:
-      - 集成电路设计与集成系统
+    gpa: '3.2'
 projects:
   - name: Honda RoadSync
     startDate: '2024-08-01'

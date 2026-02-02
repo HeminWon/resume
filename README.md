@@ -36,6 +36,11 @@ yarn serve:static
 - `npx serve -s build`：零配置、即用即走，适合快速预览
 
 简历数据文件位于 `public/resume-zh.json` 与 `public/resume-en.json`。
+源数据为 `data/*.yaml`，可通过脚本生成对应 JSON：
+
+```sh
+yarn prepare:resume-data
+```
 
 ## 本地验证 PDF 发布流程（Yarn）
 
@@ -79,5 +84,6 @@ yarn build
 yarn export:pdf -- --lang zh
 yarn export:pdf --lang en
 yarn export:pdf:build --lang zh
+yarn prepare:resume-data
 yarn serve:static
 ```

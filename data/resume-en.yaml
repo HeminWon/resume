@@ -16,13 +16,12 @@ basics:
       url: 'https://github.com/HeminWon'
 education:
   - institution: Hangzhou Dianzi University
-    area: School of Electronics and Information
+    collage: School of Electronics and Information
+    area: IC Design and Integrated Systems
     studyType: Bachelor's
     startDate: '2012-09-15'
     endDate: '2016-06-20'
-    gpa: '3.1'
-    courses:
-      - IC Design and Integrated Systems
+    gpa: '3.2'
 projects:
   - name: Honda RoadSync
     startDate: '2024-08-01'

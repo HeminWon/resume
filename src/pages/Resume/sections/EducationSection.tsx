@@ -20,8 +20,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ education, styles }
       <SectionTitle title={t('sections.education')} subtitle={t('sections.educationSubtitle')} />
       <div className={styles.sectionBody}>
         {education.map((item) => {
-          const coursesText = item.courses?.filter(Boolean).join(' / ');
-          const meta = [item.area, coursesText, item.studyType].filter(Boolean).join(' · ');
+          const meta = [item.collage, item.area, item.studyType].filter(Boolean).join(' · ');
           return (
             <article key={`${item.institution}-${item.area}`} className={styles.entryCard}>
               <div className={styles.entryHeader}>

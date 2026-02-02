@@ -133,18 +133,19 @@
 }
 
 .entryHeader {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) max-content;
+  display: flex;
   align-items: baseline;
-  column-gap: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .entryHeading {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
   gap: 2px 8px;
-  min-width: 0;
+  white-space: nowrap;
+  flex: 0 0 max-content;
 }
 
 .entryTitle {
@@ -171,6 +172,8 @@
   letter-spacing: 0.08em;
   text-align: right;
   white-space: nowrap;
+  flex: 1 0 auto;
+  margin-left: auto;
 }
 
 .entryLink {

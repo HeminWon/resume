@@ -46,11 +46,11 @@ export interface ResumeProjectItem {
 export interface ResumeEducationItem {
   institution: string;
   area?: string;
+  collage?: string;
   studyType?: string;
   startDate: string;
   endDate?: string;
   gpa?: string;
-  courses?: string[];
 }
 
 export interface ResumeSkillItem {
