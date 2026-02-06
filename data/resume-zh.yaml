@@ -26,11 +26,13 @@ projects:
   - name: Seekee
     startDate: '2025-07-03'
     description: >-
-      Seekee 是一款集智能搜索、AI创作和多媒体播放于一体的海外AI浏览器应用, 主要服务于墨西哥、巴西等拉美市场用户。 
+      面向拉美（墨西哥、巴西）及土耳其市场的 AI 浏览器，集搜索、创作、多媒体于一体。
     duties:
-      - 作为核心项目成员负责云端AI能力整合至 Seekee 应用, 主要包含超级搜索、文生图、图生图、语音识别、AI翻译等。
+      - 负责超级搜索 (意图识别、语音搜索、文生图/图生图、翻译与文档解析等) 模块的架构与体验落地，打通云端 AI 能力到端侧交互链路
     highlights:
-      - 从零开始搭建 Seekee 应用的 AI 能力, 并使用 SwiftUI、Combine 进行开发, 参考 TCA 架构模式进行状态管理与事件分发。
+      - 以 SwiftUI + Combine 构建超级搜索统一入口，采用 TCA Feature-based 方式拆分状态与业务逻辑，提升模块可扩展性与可测试性，降低维护成本。
+      - 对比多个 Markdown 库的流式输出支持与渲染机制，选型 swift-markdown-ui，并结合 SSE 完成 AI 总结流式输出体验优化。
+      - 主导搜索结果页交互体验精细化，覆盖骨架屏、各任务加载态与异常态，并优化生图进度条的算法与动效表现。 
   - name: Honda RoadSync
     startDate: '2024-08-01'
     endDate: '2024-12-18'
