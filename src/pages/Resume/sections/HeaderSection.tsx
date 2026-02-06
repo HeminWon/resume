@@ -20,7 +20,6 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ basics, styles }) => {
         <p className={styles.label} data-slot="label">
           {basics.label}
         </p>
-        {basics.summary ? <p className={styles.summary}>{basics.summary}</p> : null}
       </div>
       <div className={styles.headerInfo}>
         <InfoItem label={t('labels.email')} value={basics.email} href={basics.email ? `mailto:${basics.email}` : undefined} />
@@ -30,6 +29,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ basics, styles }) => {
           <InfoItem key={profile.url} label={profile.network} value={profile.username} href={profile.url} />
         ))}
       </div>
+      {basics.summary ? <p className={styles.summary}>{basics.summary}</p> : null}
     </section>
   );
 };
