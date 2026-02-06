@@ -8,8 +8,8 @@
   --color-border: #dcdfe6;
   --color-line: #9aa0ad;
   --shadow-elevated: 0 20px 60px rgba(12, 18, 30, 0.12);
-  --font-family: 'Noto Serif SC', 'Noto Serif', 'Times New Roman', serif;
-  --pdf-footer-font-family: Monaco, Menlo, 'Hiragino Sans GB', 'STHeiti Light', 'Helvetica Neue', Arial, sans-serif;
+  --font-family: 'Noto Serif CJK SC';
+  --pdf-footer-font-family: 'Noto Sans CJK SC';
   --pdf-footer-font-size: 9px;
   --pdf-footer-color: rgba(0, 0, 0, 0.2);
   --pdf-footer-align: right;
@@ -27,9 +27,8 @@
   --color-border: #eaecef;
   --color-line: #d3d3d3;
   --shadow-elevated: none;
-  --font-family: Menlo, 'PingFang SC', 'PingFang', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial,
-    sans-serif;
-  --pdf-footer-font-family: Monaco, Menlo, 'Hiragino Sans GB', 'STHeiti Light', 'Helvetica Neue', Arial, sans-serif;
+  --font-family: 'Noto Sans CJK SC';
+  --pdf-footer-font-family: 'Noto Sans CJK SC';
   --pdf-footer-font-size: 9px;
   --pdf-footer-color: rgba(0, 0, 0, 0.2);
   --pdf-footer-align: right;

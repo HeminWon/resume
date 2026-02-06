@@ -1,4 +1,4 @@
 {
   "id": "vuepress",
-  "aptPackages": ["fonts-noto-cjk"]
+  "aptPackages": ["fonts-noto-cjk", "fonts-noto-core"]
 }

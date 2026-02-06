@@ -124,6 +124,34 @@ const waitForFonts = (page) =>
     return Promise.resolve();
   });
 
+const checkFontsAvailability = (page) =>
+  page.evaluate(() => {
+    const normalizeFamily = (value) =>
+      value
+        .split(',')
+        .map((item) => item.trim().replace(/^['"]|['"]$/g, ''))
+        .filter(Boolean);
+
+    const bodyFontFamily = getComputedStyle(document.body).fontFamily || '';
+    const rootStyles = getComputedStyle(document.documentElement);
+    const footerFontFamily = rootStyles.getPropertyValue('--pdf-footer-font-family') || '';
+
+    const families = [
+      ...normalizeFamily(bodyFontFamily).slice(0, 1),
+      ...normalizeFamily(footerFontFamily).slice(0, 1),
+    ].filter(Boolean);
+
+    const missing = families.filter(
+      (family) => document.fonts && !document.fonts.check(`12px "${family}"`)
+    );
+
+    return {
+      bodyFontFamily,
+      footerFontFamily,
+      missing,
+    };
+  });
+
 const escapeHtml = (value) =>
   value
     .replace(/&/g, '&amp;')
@@ -268,6 +296,14 @@ const main = async () => {
     await page.goto(targetUrl, { waitUntil: 'networkidle0', timeout: options.timeout });
     await page.waitForSelector('[data-testid="resume-content"]', { timeout: options.timeout });
     await waitForFonts(page);
+    const fontCheck = await checkFontsAvailability(page);
+    if (fontCheck.missing.length > 0) {
+      const missingList = fontCheck.missing.join(', ');
+      throw new Error(
+        `[export-pdf] missing fonts: ${missingList}. ` +
+          `body="${fontCheck.bodyFontFamily}", footer="${fontCheck.footerFontFamily}"`
+      );
+    }
 
     let displayHeaderFooter = false;
     let headerTemplate = '<div></div>';
