@@ -16,7 +16,7 @@
   --print-page-width: 210mm;
   --print-page-margin-x: 12mm;
   --print-content-width: 100%;
-  --print-content-padding-x: 0mm;
+  --print-content-padding-x: var(--pdf-content-padding-x);
   --print-list-indent: 16px;
   --print-info-label-width: 6em;
 }
@@ -363,7 +363,7 @@
     width: 100%;
     margin: 0 auto;
     background: #fff;
-    padding: 0 var(--print-content-padding-x);
+    padding: 0 var(--pdf-content-padding-x);
     max-width: none;
     box-sizing: border-box;
     position: relative;
@@ -401,6 +401,23 @@
     padding: 6px 0;
   }
 
+  .entryHeader {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .entryHeading {
+    flex: 0 0 max-content;
+    white-space: nowrap;
+  }
+
+  .entryDate {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
   .entryTitle {
     font-size: 12px;
   }
@@ -415,6 +432,7 @@
 
   .entryDate {
     font-size: 10px;
+    font-style: normal;
   }
 
   .entrySummary,
@@ -423,8 +441,26 @@
     line-height: 1.55;
   }
 
-  .entryList {
-    padding-left: var(--print-list-indent);
+  .entryList,
+  .skillKeywords {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .entryList li,
+  .skillKeywords li {
+    position: relative;
+    padding-left: 1.05em;
+    overflow-wrap: anywhere;
+  }
+
+  .entryList li::before,
+  .skillKeywords li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: currentColor;
   }
 
   .entryBlock {

@@ -15,6 +15,12 @@
   --pdf-footer-align: right;
   --pdf-footer-padding-x: 18mm;
   --pdf-footer-letter-spacing: 0;
+  --pdf-page-margin-top: 12mm;
+  --pdf-page-margin-right: 12mm;
+  --pdf-page-margin-bottom: 12mm;
+  --pdf-page-margin-bottom-with-footer: 14mm;
+  --pdf-page-margin-left: 12mm;
+  --pdf-content-padding-x: 0mm;
 }
 
 :root[data-theme='vuepress'] {
@@ -34,6 +40,12 @@
   --pdf-footer-align: right;
   --pdf-footer-padding-x: 18mm;
   --pdf-footer-letter-spacing: 0;
+  --pdf-page-margin-top: 12mm;
+  --pdf-page-margin-right: 12mm;
+  --pdf-page-margin-bottom: 12mm;
+  --pdf-page-margin-bottom-with-footer: 14mm;
+  --pdf-page-margin-left: 12mm;
+  --pdf-content-padding-x: 0mm;
 }
 
 * {

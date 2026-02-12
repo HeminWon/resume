@@ -255,6 +255,35 @@ const getFooterStyle = async (page) =>
     };
   });
 
+const getPdfPageLayout = async (page) =>
+  page.evaluate(() => {
+    const root = getComputedStyle(document.documentElement);
+    const resolveVar = (value) => {
+      const trimmed = value.trim();
+      const match = trimmed.match(/^var\((--[^,\s)]+)\s*(?:,\s*([^)]+))?\)$/);
+      if (!match) {
+        return trimmed;
+      }
+      const resolved = root.getPropertyValue(match[1]).trim();
+      if (resolved) {
+        return resolved;
+      }
+      return match[2]?.trim() ?? '';
+    };
+    const read = (name, fallback) => {
+      const raw = root.getPropertyValue(name).trim();
+      const value = raw ? resolveVar(raw) : '';
+      return value || fallback;
+    };
+    return {
+      top: read('--pdf-page-margin-top', '12mm'),
+      right: read('--pdf-page-margin-right', '12mm'),
+      bottom: read('--pdf-page-margin-bottom', '12mm'),
+      bottomWithFooter: read('--pdf-page-margin-bottom-with-footer', '14mm'),
+      left: read('--pdf-page-margin-left', '12mm'),
+    };
+  });
+
 const buildFooterStyle = (style) => {
   const safe = (value) => (value ? String(value).trim() : '');
   const normalizeFontFamily = (value) =>
@@ -348,10 +377,11 @@ const main = async () => {
       );
     }
 
+    const pageLayout = await getPdfPageLayout(page);
     let displayHeaderFooter = false;
     let headerTemplate = '<div></div>';
     let footerTemplate = '<div></div>';
-    let marginBottom = '12mm';
+    let marginBottom = pageLayout.bottom;
 
     if (options.footer) {
       const footerMeta = await getFooterPrefix(page);
@@ -369,7 +399,7 @@ const main = async () => {
         footerPrefixHtml +
         footerPageHtml +
         '</div>';
-      marginBottom = '14mm';
+      marginBottom = pageLayout.bottomWithFooter;
     }
 
     await page.pdf({
@@ -381,10 +411,10 @@ const main = async () => {
       headerTemplate,
       footerTemplate,
       margin: {
-        top: '12mm',
+        top: pageLayout.top,
         bottom: marginBottom,
-        left: '12mm',
-        right: '12mm',
+        left: pageLayout.left,
+        right: pageLayout.right,
       },
     });
   } finally {
