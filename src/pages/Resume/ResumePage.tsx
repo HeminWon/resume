@@ -118,13 +118,6 @@ const ResumePage: React.FC = () => {
       hasAppliedQuery.current = true;
       return;
     }
-    const queryLang = params.get('lang');
-    if (queryLang) {
-      const nextLang = resolveLanguage(queryLang);
-      if (nextLang !== lang) {
-        i18n.changeLanguage(nextLang);
-      }
-    }
     const queryTheme = params.get('theme');
     if (queryTheme) {
       const nextTheme = resolveThemeId(queryTheme);
@@ -133,7 +126,7 @@ const ResumePage: React.FC = () => {
       }
     }
     hasAppliedQuery.current = true;
-  }, [i18n, lang, theme]);
+  }, [theme]);
 
   useEffect(() => {
     if (typeof document === 'undefined') {

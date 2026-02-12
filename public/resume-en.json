@@ -4,7 +4,7 @@
     "label": "iOS Engineer",
     "email": "heminwmh@gmail.com",
     "phone": "159-5713-0984",
-    "summary": "8 years of iOS development experience, leading product delivery and continuous iteration in smart living and mobility domains, covering Bluetooth/BLE, IoT device control, map navigation, and voice assistants; proficient in Swift/SwiftUI, Combine, and modular architectures, with strong cross-team collaboration and project execution.",
+    "summary": "Nearly 10 years of iOS development experience, responsible for delivering and iterating IoT, mobility, and AI products, with a strong focus on performance and stability.",
     "location": {
       "address": "Xihu District",
       "postalCode": "310013",
@@ -32,6 +32,19 @@
     }
   ],
   "projects": [
+    {
+      "name": "Seekee",
+      "startDate": "2025-07-03",
+      "description": "An AI browser for Latin America (Mexico, Brazil) and Turkey, integrating search, creation, and multimedia experiences.",
+      "duties": [
+        "Owned the architecture and UX delivery of the Super Search module (intent recognition, voice search, text-to-image/image-to-image, translation, and document parsing), bridging cloud AI capabilities to on-device interaction flows."
+      ],
+      "highlights": [
+        "Built a unified Super Search entry with SwiftUI + Combine, and split state/business logic using a TCA feature-based approach to improve extensibility, testability, and maintainability.",
+        "Evaluated multiple Markdown libraries for streaming output support and rendering behavior, selected swift-markdown-ui, and optimized AI summary streaming UX with SSE.",
+        "Led interaction refinements on the search results page, covering skeleton states, task-level loading/error states, and improving image-generation progress algorithms and animations."
+      ]
+    },
     {
       "name": "Honda RoadSync",
       "startDate": "2024-08-01",
@@ -61,38 +74,18 @@
         "Wide protocol support: Matter, Zigbee, BLE, Sigmesh, Beacon, Cat.1, etc.",
         "Enabled Tuya devices for Home Assistant so users can control Tuya IoT devices within Home Assistant."
       ]
-    },
-    {
-      "name": "DiDi Chuxing (Passenger)",
-      "startDate": "2018-03-29",
-      "endDate": "2019-04-16",
-      "description": "DiDi Chuxing is a global smart mobility platform. The passenger app is a core entry point providing convenient, efficient transportation services.",
-      "duties": [
-        "Owned feature iterations and maintenance for the designated driver line; contributed to shared platform components.",
-        "Refactored business logic into independent libraries to improve autonomy and speed up daily builds.",
-        "Layered the designated driver domain and extracted a core module to enable rapid reuse."
-      ],
-      "highlights": [
-        "Used MVCS and MVVM with scenario templating, componentization, and product configuration to unify business logic across premium/express/specialized/driver services and build a unified executive-car platform.",
-        "Unified the payment SDK and managed business plugins via a plugin framework; provided default implementations and extensibility for client differences.",
-        "Provided a unified ApolloSDK for canary releases, AB testing, and fast city rollout."
-      ]
-    },
-    {
-      "name": "Flush (Tonghuashun)",
-      "startDate": "2016-03-01",
-      "endDate": "2018-03-01",
-      "description": "Real-time global market quotes for A/H/U.S. stocks, curated market news, and online trading for 90% of brokerages.",
-      "duties": [
-        "Built a Jenkins-based auto-packaging platform for the Finance Master project, improving delivery efficiency.",
-        "Led menu feature development to switch test and pre-release environments, reducing repackaging time.",
-        "Maintained market modules and delivered features such as stock alerts and screenshot editing/sharing.",
-        "Reworked the market list to mitigate offscreen rendering costs; refactored third-party sharing for better extensibility.",
-        "Built a UI automation testing platform for regression traversal to reduce production bugs, and created a mobile performance tracking tool to monitor version-level performance over time."
-      ]
     }
   ],
   "work": [
+    {
+      "company": "Renren Video (Moli (Shanghai) Information Technology Co., Ltd.)",
+      "position": "iOS Engineer",
+      "startDate": "2025-07-03",
+      "summary": "Renren Video is a comprehensive video platform focused on overseas Chinese users, offering rich content and high-quality user experience, and aiming to be the preferred video entertainment platform for this audience.",
+      "highlights": [
+        "Role: Responsible for iOS development and maintenance of the subsidiary product, Seekee AI Browser."
+      ]
+    },
     {
       "company": "Tuya Smart (Hangzhou Tuya Information Technology Co., Ltd.)",
       "position": "iOS Engineer",
@@ -129,33 +122,39 @@
   ],
   "skills": [
     {
-      "name": "iOS",
+      "name": "AI Tools",
       "level": "Proficient",
       "keywords": [
-        "Objective-C",
-        "Swift",
-        "SwiftUI",
-        "Combine",
-        "CocoaPods & SwiftPM"
+        "Proficient in using Claude Code, Codex, and Cursor for code generation, refactoring, and issue diagnosis.",
+        "Proficient in custom Skill/Agent design and familiar with MCP workflows for documentation and code review assistance.",
+        "Able to design and iterate prompts, and improve delivery quality and feedback efficiency with SDD/TDD workflows."
       ]
     },
     {
-      "name": "DevOps",
+      "name": "iOS Fundamentals",
       "level": "Proficient",
       "keywords": [
-        "Nix & flake",
-        "Justfile",
-        "Docker",
-        "Bash",
-        "Python",
-        "Go"
+        "Familiar with Objective-C Runtime and RunLoop internals, with solid understanding of ARC, reference counting, and memory management practices.",
+        "Experienced with concurrency models including GCD/NSOperation and Task, and capable of startup, rendering, and app-size performance optimization.",
+        "Proficient in Objective-C, Swift, and SwiftUI/Combine for mainstream product development and maintenance.",
+        "Familiar with CocoaPods and SwiftPM dependency management and integration workflows.",
+        "Familiar with state management and architecture practices such as TCA/Redux."
+      ]
+    },
+    {
+      "name": "Architecture & Productivity",
+      "level": "Proficient",
+      "keywords": [
+        "Hands-on experience in core performance optimization across startup, rendering, scrolling, and page responsiveness.",
+        "Familiar with common Instruments toolchains (Time Profiler, Allocations, Leaks) for diagnostics.",
+        "Experienced in crash/performance log analysis and driving issue closure for user experience improvements."
       ]
     }
   ],
   "about": {
     "me": [
-      "I hope the next role offers growth opportunities and technical challenges, with strong emphasis on code quality and knowledge sharing.",
-      "Better understand user needs so technology truly serves the product, and deliver outstanding products."
+      "I hope to take ownership of architecture and performance governance in complex products, improving delivery quality and engineering efficiency.",
+      "I focus on translating requirements into strong product experiences and driving business outcomes with solid engineering solutions."
     ]
   }
 }
