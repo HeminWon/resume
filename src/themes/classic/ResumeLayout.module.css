@@ -214,8 +214,9 @@
 }
 
 .skillName {
+  font-size: 16px;
   font-weight: 600;
-  color: var(--color-muted);
+  color: var(--color-text);
 }
 
 .skillKeywords {
@@ -229,111 +230,6 @@
 
 .skillKeywords li {
   margin: 2px 0;
-}
-
-.qrLauncher {
-  position: fixed;
-  right: 28px;
-  bottom: 28px;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.qrButton {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: var(--color-primary);
-  box-shadow: 0 10px 24px rgba(30, 48, 80, 0.22);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.qrButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(30, 48, 80, 0.28);
-}
-
-.qrIcon {
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--color-on-primary);
-  border-radius: 3px;
-  position: relative;
-}
-
-.qrIcon::before,
-.qrIcon::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--color-on-primary);
-  border-radius: 1px;
-}
-
-.qrIcon::before {
-  top: 2px;
-  left: 2px;
-}
-
-.qrIcon::after {
-  right: 2px;
-  bottom: 2px;
-}
-
-.qrPopover {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 12px;
-  width: 180px;
-  box-shadow: 0 16px 36px rgba(20, 24, 34, 0.18);
-  border: 1px solid rgba(31, 58, 95, 0.12);
-}
-
-.qrLauncher:hover .qrPopover,
-.qrLauncher:focus-within .qrPopover {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.qrImage {
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-  background: #ffffff;
-}
-
-.qrPlaceholder {
-  width: 100%;
-  height: 140px;
-  border-radius: 8px;
-  background: #f3f3f3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  color: #9aa0ad;
-}
-
-.qrUrl {
-  margin-top: 8px;
-  font-size: 11px;
-  color: var(--color-muted);
-  word-break: break-all;
 }
 
 @media (max-width: 860px) {
@@ -358,11 +254,6 @@
 
   .name {
     font-size: 30px;
-  }
-
-  .qrLauncher {
-    right: 16px;
-    bottom: 16px;
   }
 }
 
@@ -429,6 +320,10 @@
     font-size: 14px;
   }
 
+  .skillName {
+    font-size: 14px;
+  }
+
   .entrySubtitle {
     display: inline;
     font-size: 12px;
@@ -471,9 +366,5 @@
 
   .skillKeywords {
     font-size: 12px;
-  }
-
-  .qrLauncher {
-    display: none;
   }
 }
