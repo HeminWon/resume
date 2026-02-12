@@ -2,7 +2,7 @@ import type React from 'react';
 import type { ResumeLoadState } from '../hooks/useResumeData';
 import type { ResumeLanguage } from '../data/resumeService';
 
-export type ThemeId = (typeof import('./index').THEMES)[number]['id'];
+export type ThemeId = keyof typeof import('./index').THEME_COMPONENTS;
 
 export type ResumeLayoutProps = {
   state: ResumeLoadState;

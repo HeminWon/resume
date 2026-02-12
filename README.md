@@ -19,7 +19,7 @@
 
 ## 快速开始
 
-仓库包含 `yarn.lock`，默认使用 Yarn。
+仓库包含 `yarn.lock`，默认使用 Yarn（建议先执行 `corepack enable`）。
 
 ```sh
 yarn install

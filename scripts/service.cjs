@@ -1,24 +1,31 @@
-const express = require('express');
-const morgan = require('morgan'); // 引入 morgan 中间件
+const fs = require('fs');
 const path = require('path');
+const express = require('express');
+const morgan = require('morgan');
+
+const PORT = Number(process.env.PORT || 8088);
+const BUILD_DIR = path.resolve(__dirname, '..', 'build');
+
+if (!Number.isInteger(PORT) || PORT <= 0) {
+  throw new Error(`[serve:static] invalid PORT: ${process.env.PORT}`);
+}
+
+if (!fs.existsSync(BUILD_DIR)) {
+  throw new Error(`[serve:static] build directory not found: ${BUILD_DIR}`);
+}
 
 const app = express();
 
-// 设置静态文件目录
-app.use(express.static(path.resolve(__dirname, '..', 'build')));
+app.use(morgan('combined'));
+app.use(express.static(BUILD_DIR));
 
-// 使用 morgan 记录请求日志
-app.use(morgan('combined')); // 'combined' 记录详细的请求日志
+const server = app.listen(PORT, () => {
+  const address = server.address();
+  const host = address && typeof address === 'object' && address.address === '::' ? 'localhost' : address.address;
+  console.log(`[${new Date().toISOString()}] Server is running at http://${host}:${PORT}`);
+});
 
-// 启动服务器
-const server = app.listen(8088, () => {
-    let host = server.address().address;
-    const port = server.address().port;
-    
-    // 如果是 IPv6 地址，使用 localhost 替换
-    if (host === '::') {
-        host = 'localhost';
-    }
-
-    console.log(`[${new Date().toISOString()}] Server is running at http://${host}:${port}`);
+server.on('error', (error) => {
+  console.error(`[serve:static] server error: ${error.message}`);
+  process.exit(1);
 });

@@ -21,11 +21,17 @@ existing_worktree="$(git worktree list --porcelain | awk '
 ')" || true
 
 echo "${LOG_PREFIX} syncing local gh-pages with origin" >&2
-# Avoid fetching into a checked-out branch in an existing worktree.
 if [[ -z "${existing_worktree}" ]]; then
   git fetch origin +gh-pages:gh-pages
 else
-  echo "${LOG_PREFIX} gh-pages already checked out at ${existing_worktree}; skip fetch" >&2
+  echo "${LOG_PREFIX} gh-pages already checked out at ${existing_worktree}; sync by fast-forward" >&2
+  if [[ -n "$(git -C "${existing_worktree}" status --porcelain)" ]]; then
+    echo "${LOG_PREFIX} existing gh-pages worktree is dirty: ${existing_worktree}" >&2
+    echo "${LOG_PREFIX} clean the worktree before publishing." >&2
+    exit 1
+  fi
+  git -C "${existing_worktree}" fetch origin gh-pages
+  git -C "${existing_worktree}" merge --ff-only origin/gh-pages
 fi
 
 if [[ -n "${existing_worktree}" ]]; then

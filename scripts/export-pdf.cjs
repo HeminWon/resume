@@ -10,6 +10,9 @@ const LANG_STORAGE_KEY = 'resume_lang';
 const THEME_STORAGE_KEY = 'resume_theme';
 const DEFAULT_OUT = path.resolve(process.cwd(), 'artifacts', 'resume.pdf');
 const LOCALES_DIR = path.resolve(__dirname, '..', 'src', 'locales');
+const THEME_IDS_FILE = path.resolve(__dirname, '..', 'src', 'themes', 'theme-ids.json');
+const RUN_PACKAGE_SCRIPT = path.resolve(__dirname, 'core', 'run-package-script.sh');
+const SUPPORTED_LANGS = new Set(['zh', 'en']);
 
 const readJson = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
@@ -33,6 +36,26 @@ const loadTranslations = () => {
   });
   return result;
 };
+
+const loadThemeIds = () => {
+  if (!fs.existsSync(THEME_IDS_FILE)) {
+    throw new Error(`theme ids file not found: ${THEME_IDS_FILE}`);
+  }
+  const source = fs.readFileSync(THEME_IDS_FILE, 'utf-8');
+  const parsed = JSON.parse(source);
+  if (!Array.isArray(parsed)) {
+    throw new Error('theme ids file must be a JSON array');
+  }
+  const themes = Array.from(
+    new Set(parsed.filter((item) => typeof item === 'string' && item.trim().length > 0))
+  );
+  if (themes.length === 0) {
+    throw new Error('failed to resolve theme ids from src/themes/theme-ids.json');
+  }
+  return themes;
+};
+
+const isPositiveInteger = (value) => Number.isInteger(value) && value > 0;
 
 const parseArgs = () => {
   const args = process.argv.slice(2);
@@ -87,7 +110,7 @@ const parseArgs = () => {
 
 const runBuild = () =>
   new Promise((resolve, reject) => {
-    const child = spawn('npm', ['run', 'build'], { stdio: 'inherit' });
+    const child = spawn(RUN_PACKAGE_SCRIPT, ['build'], { stdio: 'inherit' });
     child.on('close', (code) => {
       if (code === 0) {
         resolve();
@@ -96,6 +119,24 @@ const runBuild = () =>
       }
     });
   });
+
+const validateOptions = (options, themeIds) => {
+  if (!SUPPORTED_LANGS.has(options.lang)) {
+    throw new Error(`unsupported --lang "${options.lang}", expected: ${Array.from(SUPPORTED_LANGS).join(', ')}`);
+  }
+  if (!themeIds.includes(options.theme)) {
+    throw new Error(`unsupported --theme "${options.theme}", expected: ${themeIds.join(', ')}`);
+  }
+  if (!isPositiveInteger(options.port)) {
+    throw new Error(`invalid --port "${options.port}", expected a positive integer`);
+  }
+  if (!isPositiveInteger(options.timeout)) {
+    throw new Error(`invalid --timeout "${options.timeout}", expected a positive integer`);
+  }
+  if (options.url && !/^https?:\/\//.test(options.url)) {
+    throw new Error(`invalid --url "${options.url}", expected http(s) URL`);
+  }
+};
 
 const ensureDir = (filePath) => {
   const dir = path.dirname(filePath);
@@ -243,6 +284,8 @@ const buildFooterStyle = (style) => {
 
 const main = async () => {
   const options = parseArgs();
+  const themeIds = loadThemeIds();
+  validateOptions(options, themeIds);
   const translations = loadTranslations();
 
   if (options.build) {

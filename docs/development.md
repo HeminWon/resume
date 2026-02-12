@@ -35,7 +35,7 @@ yarn serve:static
 
 `yarn serve:static` 会运行 `scripts/service.cjs`（Express + morgan）：
 
-- 端口固定为 `8088`
+- 默认端口为 `8088`（可通过 `PORT=xxxx yarn serve:static` 覆盖）
 - 仅服务 `build/` 目录
 - 输出 `morgan combined` 请求日志
 - 不包含 SPA fallback 路由（例如 `/foo` 不存在时会 404）
