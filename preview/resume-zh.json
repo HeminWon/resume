@@ -122,32 +122,38 @@
   ],
   "skills": [
     {
-      "name": "AI 工具",
+      "name": "技术深度（iOS）",
       "level": "熟练",
       "keywords": [
-        "熟练使用 Claude Code、Codex 与 Cursor 进行代码生成、重构与问题定位。",
-        "熟练自定义 Skill / Agent，熟悉 MCP 工作流，用于文档生成与代码审查辅助。",
-        "能进行 Prompt 设计与迭代，并结合 SDD / TDD 流程提升交付质量与反馈效率。"
+        "具备 Objective-C / Swift 双栈开发能力，可独立负责 UIKit 与 SwiftUI / Combine 场景的设计、实现与维护；",
+        "系统掌握 Runtime、RunLoop、内存管理与并发模型（GCD / NSOperation / Swift Concurrency），可用于复杂问题定位与治理；",
+        "熟练使用 CocoaPods / SwiftPM 管理依赖与组件集成，保障多模块工程稳定迭代。"
       ]
     },
     {
-      "name": "iOS 基础",
+      "name": "架构能力",
       "level": "熟练",
       "keywords": [
-        "熟悉 Objective-C Runtime 与 RunLoop 原理，理解 ARC、引用计数与内存管理实践。",
-        "掌握 GCD/NSOperation 与 Task 等并发模型，并能进行启动、渲染与包体性能优化。",
-        "熟练掌握 Objective-C、Swift 与 SwiftUI / Combine，能够进行主流业务开发与维护。",
-        "熟悉 CocoaPods 与 SwiftPM 依赖管理与组件接入流程。",
-        "熟悉 TCA / Redux 等状态管理与架构实践。"
+        "能基于 TCA / Redux / MVVM 进行状态建模与模块边界拆分，支撑复杂业务长期演进；",
+        "具备业务组件化与配置化落地经验，支持跨项目能力复用并降低维护成本；",
+        "能从需求拆解、方案设计到风险识别推进完整交付链路。"
       ]
     },
     {
-      "name": "架构/效率",
+      "name": "工程效率与质量",
       "level": "熟练",
       "keywords": [
-        "具备启动、渲染、滑动与页面响应等基础性能优化实践。",
-        "熟悉 Instruments 常用工具链（Time Profiler / Allocations / Leaks）进行问题定位。",
-        "具备 Crash 与性能日志分析经验，推动体验问题闭环。"
+        "可主导启动、渲染、滑动、包体等性能治理，持续优化页面响应与用户体验；",
+        "熟练使用 Instruments（Time Profiler / Allocations / Leaks）与日志体系进行性能瓶颈定位和问题闭环；",
+        "具备 Crash 分析与线上稳定性治理经验，推动质量问题从发现到修复的持续改进。"
+      ]
+    },
+    {
+      "name": "AI 增效（工程场景）",
+      "level": "熟练",
+      "keywords": [
+        "使用 Claude Code、Codex、Cursor 辅助代码重构、问题定位与文档沉淀，提升需求交付效率与评审质量；",
+        "具备 Prompt 迭代与 Skill / Agent / MCP 工作流实践，服务于开发与代码审查流程。"
       ]
     }
   ],
