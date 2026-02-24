@@ -122,32 +122,38 @@
   ],
   "skills": [
     {
-      "name": "AI Tools",
+      "name": "Technical Depth (iOS)",
       "level": "Proficient",
       "keywords": [
-        "Proficient in using Claude Code, Codex, and Cursor for code generation, refactoring, and issue diagnosis.",
-        "Proficient in custom Skill/Agent design and familiar with MCP workflows for documentation and code review assistance.",
-        "Able to design and iterate prompts, and improve delivery quality and feedback efficiency with SDD/TDD workflows."
+        "Strong dual-stack development capability in Objective-C and Swift; able to independently design, implement, and maintain UIKit and SwiftUI/Combine scenarios.",
+        "Systematic understanding of Runtime, RunLoop, memory management, and concurrency models (GCD / NSOperation / Swift Concurrency) for complex issue diagnosis and governance.",
+        "Proficient in dependency management and component integration with CocoaPods and SwiftPM, ensuring stable iteration in multi-module projects."
       ]
     },
     {
-      "name": "iOS Fundamentals",
+      "name": "Architecture Capability",
       "level": "Proficient",
       "keywords": [
-        "Familiar with Objective-C Runtime and RunLoop internals, with solid understanding of ARC, reference counting, and memory management practices.",
-        "Experienced with concurrency models including GCD/NSOperation and Task, and capable of startup, rendering, and app-size performance optimization.",
-        "Proficient in Objective-C, Swift, and SwiftUI/Combine for mainstream product development and maintenance.",
-        "Familiar with CocoaPods and SwiftPM dependency management and integration workflows.",
-        "Familiar with state management and architecture practices such as TCA/Redux."
+        "Able to perform state modeling and module boundary decomposition based on TCA / Redux / MVVM to support long-term evolution of complex products.",
+        "Experienced in implementing business componentization and configuration-based delivery, enabling cross-project capability reuse and lower maintenance cost.",
+        "Able to drive end-to-end delivery from requirement decomposition and solution design to risk identification."
       ]
     },
     {
-      "name": "Architecture & Productivity",
+      "name": "Engineering Efficiency & Quality",
       "level": "Proficient",
       "keywords": [
-        "Hands-on experience in core performance optimization across startup, rendering, scrolling, and page responsiveness.",
-        "Familiar with common Instruments toolchains (Time Profiler, Allocations, Leaks) for diagnostics.",
-        "Experienced in crash/performance log analysis and driving issue closure for user experience improvements."
+        "Able to lead performance governance across startup, rendering, scrolling, and app package size, continuously improving responsiveness and user experience.",
+        "Proficient in locating and closing performance bottlenecks using Instruments (Time Profiler / Allocations / Leaks) and logging systems.",
+        "Experienced in crash analysis and online stability governance, driving continuous improvement from issue discovery to remediation."
+      ]
+    },
+    {
+      "name": "AI Productivity (Engineering)",
+      "level": "Proficient",
+      "keywords": [
+        "Use Claude Code, Codex, and Cursor to assist code refactoring, issue diagnosis, and documentation, improving delivery efficiency and review quality.",
+        "Experienced in prompt iteration and Skill / Agent / MCP workflow practices for development and code review processes."
       ]
     }
   ],
