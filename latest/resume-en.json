@@ -143,7 +143,6 @@
       "name": "Engineering Efficiency & Quality",
       "level": "Proficient",
       "keywords": [
-        "Able to lead performance governance across startup, rendering, scrolling, and app package size, continuously improving responsiveness and user experience.",
         "Proficient in locating and closing performance bottlenecks using Instruments (Time Profiler / Allocations / Leaks) and logging systems.",
         "Experienced in crash analysis and online stability governance, driving continuous improvement from issue discovery to remediation."
       ]
