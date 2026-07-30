@@ -140,20 +140,12 @@
       ]
     },
     {
-      "name": "工程效率与质量",
-      "level": "熟练",
-      "keywords": [
-        "可主导启动、渲染、滑动、包体等性能治理，持续优化页面响应与用户体验；",
-        "熟练使用 Instruments（Time Profiler / Allocations / Leaks）与日志体系进行性能瓶颈定位和问题闭环；",
-        "具备 Crash 分析与线上稳定性治理经验，推动质量问题从发现到修复的持续改进。"
-      ]
-    },
-    {
       "name": "AI 增效（工程场景）",
       "level": "熟练",
       "keywords": [
         "使用 Claude Code、Codex、Cursor 辅助代码重构、问题定位与文档沉淀，提升需求交付效率与评审质量；",
-        "具备 Prompt 迭代与 Skill / Agent / MCP 工作流实践，服务于开发与代码审查流程。"
+        "具备 Prompt 迭代与 Skill / Agent / MCP 工作流实践，并结合 LangGraph 进行 Agent 编排，支撑复杂任务拆解、并行执行与结果汇总；",
+        "探索将 Hermes 等工程工具链能力应用于 CI/CD 流程，提升构建检查、发布验证与质量反馈效率。"
       ]
     }
   ],
