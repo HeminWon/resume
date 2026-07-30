@@ -140,19 +140,12 @@
       ]
     },
     {
-      "name": "Engineering Efficiency & Quality",
-      "level": "Proficient",
-      "keywords": [
-        "Proficient in locating and closing performance bottlenecks using Instruments (Time Profiler / Allocations / Leaks) and logging systems.",
-        "Experienced in crash analysis and online stability governance, driving continuous improvement from issue discovery to remediation."
-      ]
-    },
-    {
       "name": "AI Productivity (Engineering)",
       "level": "Proficient",
       "keywords": [
         "Use Claude Code, Codex, and Cursor to assist code refactoring, issue diagnosis, and documentation, improving delivery efficiency and review quality.",
-        "Experienced in prompt iteration and Skill / Agent / MCP workflow practices for development and code review processes."
+        "Experienced in prompt iteration and Skill / Agent / MCP workflow practices, combined with LangGraph for agent orchestration to support complex task decomposition, parallel execution, and result aggregation.",
+        "Explore applying Hermes and other engineering toolchain capabilities to CI/CD workflows, improving build checks, pre-release validation, and quality feedback efficiency."
       ]
     }
   ],
