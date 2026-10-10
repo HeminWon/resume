@@ -42,7 +42,10 @@
       "highlights": [
         "Built a unified Super Search entry with SwiftUI + Combine, and split state/business logic using a TCA feature-based approach to improve extensibility, testability, and maintainability.",
         "Evaluated multiple Markdown libraries for streaming output support and rendering behavior, selected swift-markdown-ui, and optimized AI summary streaming UX with SSE.",
-        "Led interaction refinements on the search results page, covering skeleton states, task-level loading/error states, and improving image-generation progress algorithms and animations."
+        "Implemented AI assistant-driven web interactions, translating assistant commands into page clicks and scrolling through WKWebView script bridging; refreshed page context, validated browser snapshots, and deduplicated commands to handle stale context and repeated execution, returning action results and failure details to the conversation.",
+        "Led interaction refinements on the search results page, covering skeleton states, task-level loading/error states, and improving image-generation progress algorithms and animations.",
+        "Built AI-assisted development workflows for the team, standardizing requirements breakdown, implementation, and verification; enabled iOS test builds initiated through Feishu with automated packaging, signing, distribution, and team notifications, labeling artifacts with code versions and environments to reduce repetitive work and simplify testing.",
+        "Built a user feedback assistant to classify feedback emails, respond to common login issues, and summarize payment and other complex issues for team review, reducing manual triage."
       ]
     },
     {
@@ -140,12 +143,12 @@
       ]
     },
     {
-      "name": "AI Productivity (Engineering)",
+      "name": "AI-Assisted Development",
       "level": "Proficient",
       "keywords": [
-        "Use Claude Code, Codex, and Cursor to assist code refactoring, issue diagnosis, and documentation, improving delivery efficiency and review quality.",
-        "Experienced in prompt iteration and Skill / Agent / MCP workflow practices, combined with LangGraph for agent orchestration to support complex task decomposition, parallel execution, and result aggregation.",
-        "Explore applying Hermes and other engineering toolchain capabilities to CI/CD workflows, improving build checks, pre-release validation, and quality feedback efficiency."
+        "Build Skills / MCP workflows with Claude Code and Codex, codifying project standards and reusable tool capabilities; use staged orchestration, checkpoints, and quality gates to support interrupted task recovery and result verification.",
+        "Use Hermes Agent and lark-cli to automate iOS build signing, test build distribution, and feedback email handling, applying execution constraints and human review to ensure delivery quality.",
+        "Use AI-assisted full-stack development in company and personal projects, working with React / TypeScript frontends, Python / Go services, frontend-backend integration, and Docker containerization."
       ]
     }
   ],
