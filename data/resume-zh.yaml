@@ -96,6 +96,12 @@ work:
     highlights:
       - '职责: 同花顺客户端行情业务组，金融大师客户端 (企业版) 及 UI 自动化测试'
 skills:
+  - name: AI 辅助研发
+    level: 熟练
+    keywords:
+      - 基于 Claude Code、Codex 实践 Skills / MCP 工作流，沉淀项目规范与可复用工具能力，通过阶段编排、checkpoint 和质量门禁支持中断恢复与结果验证；
+      - 使用 Hermes Agent、lark-cli 集成 iOS 构建签名、测试包分发与邮件反馈处理，结合执行约束和人工复核保障交付质量。
+      - 在公司/个人项目中使用 AI 辅助开展全栈开发，涉及 React / TypeScript 前端、Python / Go 服务、前后端联调及 Docker 容器化。
   - name: 技术深度（iOS）
     level: 熟练
     keywords:
@@ -108,12 +114,6 @@ skills:
       - 能基于 TCA / Redux / MVVM 进行状态建模与模块边界拆分，支撑复杂业务长期演进；
       - 具备业务组件化与配置化落地经验，支持跨项目能力复用并降低维护成本；
       - 能从需求拆解、方案设计到风险识别推进完整交付链路。
-  - name: AI 辅助研发
-    level: 熟练
-    keywords:
-      - 基于 Claude Code、Codex 实践 Skills / MCP 工作流，沉淀项目规范与可复用工具能力，通过阶段编排、checkpoint 和质量门禁支持中断恢复与结果验证；
-      - 使用 Hermes Agent、lark-cli 集成 iOS 构建签名、测试包分发与邮件反馈处理，结合执行约束和人工复核保障交付质量。
-      - 在公司/个人项目中使用 AI 辅助开展全栈开发，涉及 React / TypeScript 前端、Python / Go 服务、前后端联调及 Docker 容器化。
 about:
   me:
     - 期望在复杂业务中承担架构与性能治理，提升交付质量与研发效率。

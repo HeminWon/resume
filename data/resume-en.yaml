@@ -102,6 +102,12 @@ work:
     highlights:
       - 'Role: Market business group, Finance Master (enterprise) client, and UI automation testing.'
 skills:
+  - name: AI-Assisted Development
+    level: Proficient
+    keywords:
+      - Build Skills / MCP workflows with Claude Code and Codex, codifying project standards and reusable tool capabilities; use staged orchestration, checkpoints, and quality gates to support interrupted task recovery and result verification.
+      - Use Hermes Agent and lark-cli to automate iOS build signing, test build distribution, and feedback email handling, applying execution constraints and human review to ensure delivery quality.
+      - Use AI-assisted full-stack development in company and personal projects, working with React / TypeScript frontends, Python / Go services, frontend-backend integration, and Docker containerization.
   - name: Technical Depth (iOS)
     level: Proficient
     keywords:
@@ -114,12 +120,6 @@ skills:
       - Able to perform state modeling and module boundary decomposition based on TCA / Redux / MVVM to support long-term evolution of complex products.
       - Experienced in implementing business componentization and configuration-based delivery, enabling cross-project capability reuse and lower maintenance cost.
       - Able to drive end-to-end delivery from requirement decomposition and solution design to risk identification.
-  - name: AI-Assisted Development
-    level: Proficient
-    keywords:
-      - Build Skills / MCP workflows with Claude Code and Codex, codifying project standards and reusable tool capabilities; use staged orchestration, checkpoints, and quality gates to support interrupted task recovery and result verification.
-      - Use Hermes Agent and lark-cli to automate iOS build signing, test build distribution, and feedback email handling, applying execution constraints and human review to ensure delivery quality.
-      - Use AI-assisted full-stack development in company and personal projects, working with React / TypeScript frontends, Python / Go services, frontend-backend integration, and Docker containerization.
 about:
   me:
     - I hope to take ownership of architecture and performance governance in complex products, improving delivery quality and engineering efficiency.
