@@ -20,7 +20,7 @@
 ## 运行环境
 
 - `ubuntu-latest`
-- Node 20
+- Node（版本读取根目录 `.nvmrc`）
 - Yarn（`corepack enable`）
 
 ## CI 构建链路

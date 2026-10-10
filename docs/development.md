@@ -2,28 +2,22 @@
 
 ## 环境与包管理
 
-- 默认包管理器：Yarn（仓库包含 `yarn.lock`）
-- 推荐 Node 版本：20（与 CI 保持一致）
-- 可选环境：Nix Flakes（仓库包含 `flake.nix`）
+- Node 版本：由根目录 `.nvmrc` 固定（CI 读取同一文件）
+- 默认包管理器：Yarn 1.22.22（由 `package.json` 的 `packageManager` 声明）
+- 依赖版本：由 `yarn.lock` 锁定
 
 ## 本地开发
 
 ```sh
+nvm install
+nvm use
+corepack enable
 yarn install
 yarn start
 ```
 
-## 使用 Nix（可选）
-
-如本机已安装 Nix，可进入统一开发环境后再执行 Yarn 命令：
-
-```sh
-nix develop
-yarn install
-yarn start
-```
-
-`nix develop` 会提供 Node 20、Yarn、git、jq、ripgrep 等工具。
+以上命令假设本机已安装 nvm。使用 fnm 时可执行 `fnm install` 和 `fnm use`，同样读取 `.nvmrc`。
+更新 Node 版本时修改 `.nvmrc`，并验证构建与 PDF 导出。
 
 ## 本地静态预览
 

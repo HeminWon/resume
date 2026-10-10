@@ -19,17 +19,14 @@
 
 ## 快速开始
 
-仓库包含 `yarn.lock`，默认使用 Yarn（建议先执行 `corepack enable`）。
+Node 版本由 `.nvmrc` 固定，CI 使用同一配置。默认使用 Yarn 1.22.22，依赖由 `yarn.lock` 锁定。
+
+使用 nvm 时，先安装并切换 Node，再启用 Corepack：
 
 ```sh
-yarn install
-yarn start
-```
-
-可选：使用 Nix 进入一致开发环境：
-
-```sh
-nix develop
+nvm install
+nvm use
+corepack enable
 yarn install
 yarn start
 ```
